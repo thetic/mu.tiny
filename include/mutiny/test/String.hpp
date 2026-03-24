@@ -109,11 +109,9 @@ void string_replace(String& str, char from, char to);
 void string_replace(String& str, const char* from, const char* to);
 
 bool iscntrl(char ch);
-bool is_control_with_short_escape_sequence(char ch);
 size_t strlen(const char* str);
 const char* strstr(const char* s1, const char* s2);
 
-void pad_strings_to_same_length(String& str1, String& str2, char ch);
 int atoi(const char* str);
 unsigned ato_u(const char* str);
 int strcmp(const char* s1, const char* s2);

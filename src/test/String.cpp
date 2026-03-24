@@ -517,16 +517,6 @@ int memcmp(const void* s1, const void* s2, size_t n)
 #endif
 }
 
-void pad_strings_to_same_length(String& str1, String& str2, char pad_character)
-{
-  if (str1.size() > str2.size()) {
-    pad_strings_to_same_length(str2, str1, pad_character);
-    return;
-  }
-
-  str1 = String(str2.size() - str1.size(), pad_character) + str1;
-}
-
 bool iscntrl(char ch)
 {
 #if MUTINY_USE_STD_STRING
@@ -534,11 +524,6 @@ bool iscntrl(char ch)
 #else
   return ch < ' ' || ch == char(0x7F);
 #endif
-}
-
-bool is_control_with_short_escape_sequence(char ch)
-{
-  return '\a' <= ch && '\r' >= ch;
 }
 
 String string_from(bool value)

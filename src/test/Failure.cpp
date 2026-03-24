@@ -18,6 +18,21 @@ namespace mu {
 namespace tiny {
 namespace test {
 namespace {
+bool is_control_with_short_escape_sequence(char ch)
+{
+  return '\a' <= ch && '\r' >= ch;
+}
+
+void pad_strings_to_same_length(String& str1, String& str2, char pad_character)
+{
+  if (str1.size() > str2.size()) {
+    pad_strings_to_same_length(str2, str1, pad_character);
+    return;
+  }
+
+  str1 = String(str2.size() - str1.size(), pad_character) + str1;
+}
+
 size_t get_printable_size(String const& str)
 {
   size_t str_size = str.size();

@@ -516,36 +516,6 @@ TEST(String, PlatformSpecificSprintf_doesNotFit)
   LONGS_EQUAL(11, count);
 }
 
-TEST(String, PadStringsToSameLengthString1Larger)
-{
-  mu::tiny::test::String str1("1");
-  mu::tiny::test::String str2("222");
-
-  mu::tiny::test::pad_strings_to_same_length(str1, str2, '4');
-  STRCMP_EQUAL("441", str1.c_str());
-  STRCMP_EQUAL("222", str2.c_str());
-}
-
-TEST(String, PadStringsToSameLengthString2Larger)
-{
-  mu::tiny::test::String str1("    ");
-  mu::tiny::test::String str2("");
-
-  mu::tiny::test::pad_strings_to_same_length(str1, str2, ' ');
-  STRCMP_EQUAL("    ", str1.c_str());
-  STRCMP_EQUAL("    ", str2.c_str());
-}
-
-TEST(String, PadStringsToSameLengthWithSameLengthStrings)
-{
-  mu::tiny::test::String str1("123");
-  mu::tiny::test::String str2("123");
-
-  mu::tiny::test::pad_strings_to_same_length(str1, str2, ' ');
-  STRCMP_EQUAL("123", str1.c_str());
-  STRCMP_EQUAL("123", str2.c_str());
-}
-
 TEST(String, NullParameters2)
 {
   auto* arr = new mu::tiny::test::String[100];
