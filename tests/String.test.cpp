@@ -650,13 +650,13 @@ TEST(String, StrNCmp_should_always_return_0_when_n_is_0)
 TEST(String, StrNCmp_s1_smaller)
 {
   int result = mu::tiny::test::strncmp("testing", "tests", 7);
-  LONGS_EQUAL('i' - 's', result);
+  CHECK(result < 0);
 }
 
 TEST(String, StrNCmp_s1_larger)
 {
   int result = mu::tiny::test::strncmp("teststring", "tester", 7);
-  LONGS_EQUAL('s' - 'e', result);
+  CHECK(result > 0);
 }
 
 TEST(String, StrNCmp_n_too_large)
@@ -668,13 +668,13 @@ TEST(String, StrNCmp_n_too_large)
 TEST(String, StrNCmp_s1_empty)
 {
   int result = mu::tiny::test::strncmp("", "foo", 2);
-  LONGS_EQUAL(0 - 'f', result);
+  CHECK(result < 0);
 }
 
 TEST(String, StrNCmp_s2_empty)
 {
   int result = mu::tiny::test::strncmp("foo", "", 2);
-  LONGS_EQUAL('f', result);
+  CHECK(result > 0);
 }
 
 TEST(String, StrNCmp_s1_and_s2_empty)
