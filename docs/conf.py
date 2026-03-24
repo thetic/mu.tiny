@@ -89,8 +89,6 @@ html_theme_options = {
     "source_repository": _github_root,
     "source_branch": _github_branch,
     "source_directory": "docs/",
-    "pygments_light_style": "a11y-high-contrast-light",
-    "pygments_dark_style": "a11y-high-contrast-dark",
     "footer_icons": [
         {
             "name": "GitHub",
@@ -100,6 +98,9 @@ html_theme_options = {
         },
     ],
 }
+
+pygments_style = "a11y-high-contrast-light"
+pygments_dark_style = "a11y-high-contrast-dark"
 
 # Macros shared between test.h (C API) and test.hpp/Shell.hpp (C++ API) produce
 # duplicate c:macro declarations — Sphinx has no cpp:macro domain, so this is a
