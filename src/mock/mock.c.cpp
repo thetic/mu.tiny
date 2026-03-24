@@ -700,54 +700,52 @@ struct MutinyMockValue get_mock_value_c_from_named_value(
     const mu::tiny::mock::NamedValue& named_value
 )
 {
-  using mu::tiny::test::str_cmp;
+  using mu::tiny::test::strcmp;
   struct MutinyMockValue return_value;
-  if (str_cmp(named_value.get_type().c_str(), "bool") == 0) {
+  if (strcmp(named_value.get_type().c_str(), "bool") == 0) {
     return_value.type = mutiny_type_bool;
     return_value.value.bool_value = named_value.get_bool_value() ? 1 : 0;
-  } else if (str_cmp(named_value.get_type().c_str(), "int") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "int") == 0) {
     return_value.type = mutiny_type_integer;
     return_value.value.int_value = named_value.get_int_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "unsigned int") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "unsigned int") == 0) {
     return_value.type = mutiny_type_unsigned_integer;
     return_value.value.unsigned_int_value =
         named_value.get_unsigned_int_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "long int") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "long int") == 0) {
     return_value.type = mutiny_type_long_integer;
     return_value.value.long_int_value = named_value.get_long_int_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "unsigned long int") ==
-             0) {
+  } else if (strcmp(named_value.get_type().c_str(), "unsigned long int") == 0) {
     return_value.type = mutiny_type_unsigned_long_integer;
     return_value.value.unsigned_long_int_value =
         named_value.get_unsigned_long_int_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "long long int") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "long long int") == 0) {
     return_value.type = mutiny_type_long_long_integer;
     return_value.value.long_long_int_value =
         named_value.get_long_long_int_value();
-  } else if (str_cmp(
-                 named_value.get_type().c_str(), "unsigned long long int"
-             ) == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "unsigned long long int") ==
+             0) {
     return_value.type = mutiny_type_unsigned_long_long_integer;
     return_value.value.unsigned_long_long_int_value =
         named_value.get_unsigned_long_long_int_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "double") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "double") == 0) {
     return_value.type = mutiny_type_double;
     return_value.value.double_value = named_value.get_double_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "const char*") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "const char*") == 0) {
     return_value.type = mutiny_type_string;
     return_value.value.string_value = named_value.get_string_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "void*") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "void*") == 0) {
     return_value.type = mutiny_type_pointer;
     return_value.value.pointer_value = named_value.get_pointer_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "const void*") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "const void*") == 0) {
     return_value.type = mutiny_type_const_pointer;
     return_value.value.const_pointer_value =
         named_value.get_const_pointer_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "void (*)()") == 0) {
+  } else if (strcmp(named_value.get_type().c_str(), "void (*)()") == 0) {
     return_value.type = mutiny_type_functionpointer;
     return_value.value.function_pointer_value =
         named_value.get_function_pointer_value();
-  } else if (str_cmp(named_value.get_type().c_str(), "const unsigned char*") ==
+  } else if (strcmp(named_value.get_type().c_str(), "const unsigned char*") ==
              0) {
     return_value.type = mutiny_type_memorybuffer;
     return_value.value.memory_buffer_value = named_value.get_memory_buffer();

@@ -399,7 +399,7 @@ void Shell::assert_cstr_equal(
     );
     test_terminator.exit_current_test();
   }
-  if (str_cmp(expected, actual) != 0) {
+  if (strcmp(expected, actual) != 0) {
     add_failure(
         StringEqualFailure(this, file_name, line_number, expected, actual, text)
     );
@@ -426,7 +426,7 @@ void Shell::assert_cstr_n_equal(
     );
     test_terminator.exit_current_test();
   }
-  if (str_n_cmp(expected, actual, length) != 0) {
+  if (strncmp(expected, actual, length) != 0) {
     add_failure(
         StringEqualFailure(this, file_name, line_number, expected, actual, text)
     );
@@ -645,7 +645,7 @@ void Shell::assert_binary_equal(
     ));
     test_terminator.exit_current_test();
   }
-  if (mem_cmp(expected, actual, length) != 0) {
+  if (memcmp(expected, actual, length) != 0) {
     add_failure(BinaryEqualFailure(
         this,
         file_name,

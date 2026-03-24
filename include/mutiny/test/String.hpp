@@ -108,18 +108,18 @@ bool string_ends_with(const String& str, const String& suffix);
 void string_replace(String& str, char from, char to);
 void string_replace(String& str, const char* from, const char* to);
 
-bool is_control(char ch);
+bool iscntrl(char ch);
 bool is_control_with_short_escape_sequence(char ch);
-size_t str_len(const char* str);
-const char* str_str(const char* s1, const char* s2);
+size_t strlen(const char* str);
+const char* strstr(const char* s1, const char* s2);
 
 void pad_strings_to_same_length(String& str1, String& str2, char ch);
-int ato_i(const char* str);
+int atoi(const char* str);
 unsigned ato_u(const char* str);
-int str_cmp(const char* s1, const char* s2);
-int str_n_cmp(const char* s1, const char* s2, size_t n);
-char to_lower(char ch);
-int mem_cmp(const void* s1, const void* s2, size_t n);
+int strcmp(const char* s1, const char* s2);
+int strncmp(const char* s1, const char* s2, size_t n);
+char tolower(char ch);
+int memcmp(const void* s1, const void* s2, size_t n);
 
 String string_from(bool value);
 

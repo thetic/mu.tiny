@@ -657,59 +657,59 @@ TEST(String, StrCmp)
   char empty[] = "";
   char blabla[] = "blabla";
   char bla[] = "bla";
-  CHECK(mu::tiny::test::str_cmp(empty, empty) == 0);
-  CHECK(mu::tiny::test::str_cmp(bla, blabla) == -static_cast<int>('b'));
-  CHECK(mu::tiny::test::str_cmp(blabla, bla) == 'b');
-  CHECK(mu::tiny::test::str_cmp(bla, empty) == 'b');
-  CHECK(mu::tiny::test::str_cmp(empty, bla) == -static_cast<int>('b'));
-  CHECK(mu::tiny::test::str_cmp(bla, bla) == 0);
+  CHECK(mu::tiny::test::strcmp(empty, empty) == 0);
+  CHECK(mu::tiny::test::strcmp(bla, blabla) < 0);
+  CHECK(mu::tiny::test::strcmp(blabla, bla) > 0);
+  CHECK(mu::tiny::test::strcmp(bla, empty) > 0);
+  CHECK(mu::tiny::test::strcmp(empty, bla) < 0);
+  CHECK(mu::tiny::test::strcmp(bla, bla) == 0);
 }
 
 TEST(String, StrNCmp_equal)
 {
-  int result = mu::tiny::test::str_n_cmp("teststring", "tests", 5);
+  int result = mu::tiny::test::strncmp("teststring", "tests", 5);
   LONGS_EQUAL(0, result);
 }
 
 TEST(String, StrNCmp_should_always_return_0_when_n_is_0)
 {
-  int result = mu::tiny::test::str_n_cmp("a", "b", 0);
+  int result = mu::tiny::test::strncmp("a", "b", 0);
   LONGS_EQUAL(0, result);
 }
 
 TEST(String, StrNCmp_s1_smaller)
 {
-  int result = mu::tiny::test::str_n_cmp("testing", "tests", 7);
+  int result = mu::tiny::test::strncmp("testing", "tests", 7);
   LONGS_EQUAL('i' - 's', result);
 }
 
 TEST(String, StrNCmp_s1_larger)
 {
-  int result = mu::tiny::test::str_n_cmp("teststring", "tester", 7);
+  int result = mu::tiny::test::strncmp("teststring", "tester", 7);
   LONGS_EQUAL('s' - 'e', result);
 }
 
 TEST(String, StrNCmp_n_too_large)
 {
-  int result = mu::tiny::test::str_n_cmp("teststring", "teststring", 20);
+  int result = mu::tiny::test::strncmp("teststring", "teststring", 20);
   LONGS_EQUAL(0, result);
 }
 
 TEST(String, StrNCmp_s1_empty)
 {
-  int result = mu::tiny::test::str_n_cmp("", "foo", 2);
+  int result = mu::tiny::test::strncmp("", "foo", 2);
   LONGS_EQUAL(0 - 'f', result);
 }
 
 TEST(String, StrNCmp_s2_empty)
 {
-  int result = mu::tiny::test::str_n_cmp("foo", "", 2);
+  int result = mu::tiny::test::strncmp("foo", "", 2);
   LONGS_EQUAL('f', result);
 }
 
 TEST(String, StrNCmp_s1_and_s2_empty)
 {
-  int result = mu::tiny::test::str_n_cmp("", "", 2);
+  int result = mu::tiny::test::strncmp("", "", 2);
   LONGS_EQUAL(0, result);
 }
 
@@ -718,16 +718,16 @@ TEST(String, AtoI)
   char max_short_str[] = "32767";
   char min_short_str[] = "-32768";
 
-  CHECK(12345 == mu::tiny::test::ato_i("012345"));
-  CHECK(6789 == mu::tiny::test::ato_i("6789"));
-  CHECK(12345 == mu::tiny::test::ato_i("12345/"));
-  CHECK(12345 == mu::tiny::test::ato_i("12345:"));
-  CHECK(-12345 == mu::tiny::test::ato_i("-12345"));
-  CHECK(123 == mu::tiny::test::ato_i("\t \r\n123"));
-  CHECK(123 == mu::tiny::test::ato_i("123-foo"));
-  CHECK(0 == mu::tiny::test::ato_i("-foo"));
-  CHECK(-32768 == mu::tiny::test::ato_i(min_short_str));
-  CHECK(32767 == mu::tiny::test::ato_i(max_short_str));
+  CHECK(12345 == mu::tiny::test::atoi("012345"));
+  CHECK(6789 == mu::tiny::test::atoi("6789"));
+  CHECK(12345 == mu::tiny::test::atoi("12345/"));
+  CHECK(12345 == mu::tiny::test::atoi("12345:"));
+  CHECK(-12345 == mu::tiny::test::atoi("-12345"));
+  CHECK(123 == mu::tiny::test::atoi("\t \r\n123"));
+  CHECK(123 == mu::tiny::test::atoi("123-foo"));
+  CHECK(0 == mu::tiny::test::atoi("-foo"));
+  CHECK(-32768 == mu::tiny::test::atoi(min_short_str));
+  CHECK(32767 == mu::tiny::test::atoi(max_short_str));
 }
 
 TEST(String, AtoU)
@@ -807,10 +807,10 @@ TEST(String, MemCmp)
   unsigned char smaller[] = { 0x00, 0x01, 0x2A, 0xFF };
   unsigned char greater[] = { 0x00, 0x01, 0xFF, 0xFF };
 
-  LONGS_EQUAL(0, mu::tiny::test::mem_cmp(smaller, smaller, sizeof(smaller)));
-  CHECK(mu::tiny::test::mem_cmp(smaller, greater, sizeof(smaller)) < 0);
-  CHECK(mu::tiny::test::mem_cmp(greater, smaller, sizeof(smaller)) > 0);
-  LONGS_EQUAL(0, mu::tiny::test::mem_cmp(nullptr, nullptr, 0));
+  LONGS_EQUAL(0, mu::tiny::test::memcmp(smaller, smaller, sizeof(smaller)));
+  CHECK(mu::tiny::test::memcmp(smaller, greater, sizeof(smaller)) < 0);
+  CHECK(mu::tiny::test::memcmp(greater, smaller, sizeof(smaller)) > 0);
+  LONGS_EQUAL(0, mu::tiny::test::memcmp(nullptr, nullptr, 0));
 }
 
 TEST(String, MemCmpFirstLastNotMatching)
@@ -818,8 +818,8 @@ TEST(String, MemCmpFirstLastNotMatching)
   unsigned char base[] = { 0x00, 0x01, 0x2A, 0xFF };
   unsigned char first_not_matching[] = { 0x01, 0x01, 0x2A, 0xFF };
   unsigned char last_not_matching[] = { 0x00, 0x01, 0x2A, 0x00 };
-  CHECK(0 != mu::tiny::test::mem_cmp(base, first_not_matching, sizeof(base)));
-  CHECK(0 != mu::tiny::test::mem_cmp(base, last_not_matching, sizeof(base)));
+  CHECK(0 != mu::tiny::test::memcmp(base, first_not_matching, sizeof(base)));
+  CHECK(0 != mu::tiny::test::memcmp(base, last_not_matching, sizeof(base)));
 }
 
 TEST(String, StringFromOrdinalNumberOnes)

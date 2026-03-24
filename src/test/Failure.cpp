@@ -27,7 +27,7 @@ size_t get_printable_size(String const& str)
     char c = str.c_str()[i];
     if (is_control_with_short_escape_sequence(c)) {
       printable_str_size += 1;
-    } else if (is_control(c)) {
+    } else if (iscntrl(c)) {
       printable_str_size += 3;
     }
   }
@@ -48,7 +48,7 @@ String printable(String const& str)
     char c = str.c_str()[i];
     if (is_control_with_short_escape_sequence(c)) {
       result += short_escape_codes[static_cast<unsigned char>(c - '\a')];
-    } else if (is_control(c)) {
+    } else if (iscntrl(c)) {
       result += string_from_format("\\x%02X ", c);
     } else {
       result += c;
@@ -539,13 +539,13 @@ StringEqualNoCaseFailure::StringEqualNoCaseFailure(
   if ((expected) && (actual)) {
     size_t fail_start;
     for (fail_start = 0;
-         to_lower(actual[fail_start]) == to_lower(expected[fail_start]);
+         tolower(actual[fail_start]) == tolower(expected[fail_start]);
          fail_start++)
       ;
     size_t fail_start_printable;
     for (fail_start_printable = 0;
-         to_lower(printable_actual[fail_start_printable]) ==
-         to_lower(printable_expected[fail_start_printable]);
+         tolower(printable_actual[fail_start_printable]) ==
+         tolower(printable_expected[fail_start_printable]);
          fail_start_printable++)
       ;
     message_ += create_difference_at_pos_string(

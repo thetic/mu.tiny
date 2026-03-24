@@ -468,7 +468,7 @@ bool NamedValue::equals(const NamedValue& p) const
     if (size_ != p.size_) {
       return false;
     }
-    return mem_cmp(
+    return memcmp(
                value_.memory_buffer_value, p.value_.memory_buffer_value, size_
            ) == 0;
   }

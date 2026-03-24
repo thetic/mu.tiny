@@ -10,13 +10,13 @@ size_t count_substr(const String& string, const String& substr)
   const char* str = string.c_str();
   const char* strpart = nullptr;
   if (*str) {
-    strpart = str_str(str, substr.c_str());
+    strpart = strstr(str, substr.c_str());
   }
   while (*str && strpart) {
     str = strpart;
     str++;
     num++;
-    strpart = str_str(str, substr.c_str());
+    strpart = strstr(str, substr.c_str());
   }
   return num;
 }
@@ -45,7 +45,7 @@ void StringCollection::split_string(String const& string, char d)
   const char* prev;
   for (size_t i = 0; i < num; ++i) {
     prev = str;
-    str = str_str(str, delimiter.c_str()) + 1;
+    str = strstr(str, delimiter.c_str()) + 1;
     (*this)[i] = String(prev).substr(0, size_t(str - prev));
   }
   if (extra_end_token) {

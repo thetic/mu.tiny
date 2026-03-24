@@ -6,6 +6,12 @@
 #include <string>
 #endif
 
+#if MUTINY_USE_STD_STRING
+#include <cctype>
+#include <cstdlib>
+#include <cstring>
+#endif
+
 #include <limits.h>
 #include <stdio.h>
 
@@ -49,10 +55,12 @@ bool is_space(char ch)
   return (ch == ' ') || (0x08 < ch && 0x0E > ch);
 }
 
+#if !MUTINY_USE_STD_STRING
 bool is_upper(char ch)
 {
   return 'A' <= ch && 'Z' >= ch;
 }
+#endif
 } // namespace
 
 #if !MUTINY_USE_STD_STRING
@@ -122,7 +130,7 @@ void String::copy_buffer_to_new_internal_buffer(const String& other_buffer)
 
 void String::copy_buffer_to_new_internal_buffer(const char* other_buffer)
 {
-  copy_buffer_to_new_internal_buffer(other_buffer, str_len(other_buffer) + 1);
+  copy_buffer_to_new_internal_buffer(other_buffer, strlen(other_buffer) + 1);
 }
 
 String::String(const char* other_buffer)
@@ -220,7 +228,7 @@ String::~String()
 
 bool operator==(const String& left, const String& right)
 {
-  return 0 == str_cmp(left.c_str(), right.c_str());
+  return 0 == strcmp(left.c_str(), right.c_str());
 }
 
 bool operator!=(const String& left, const String& right)
@@ -242,7 +250,7 @@ String& String::operator+=(const String& rhs)
 
 String& String::operator+=(const char* rhs)
 {
-  size_t rhs_len = str_len(rhs);
+  size_t rhs_len = strlen(rhs);
   size_t new_size = size_ + rhs_len;
   size_t needed = new_size + 1;
   if (needed <= buffer_size_) {
@@ -315,7 +323,7 @@ size_t String::find(const char* s, size_t pos) const
 {
   if (pos > size())
     return npos;
-  const char* found = str_str(c_str() + pos, s);
+  const char* found = strstr(c_str() + pos, s);
   if (found == nullptr)
     return npos;
   return static_cast<size_t>(found - c_str());
@@ -323,13 +331,13 @@ size_t String::find(const char* s, size_t pos) const
 
 bool operator<(const String& left, const String& right)
 {
-  return str_cmp(left.c_str(), right.c_str()) < 0;
+  return strcmp(left.c_str(), right.c_str()) < 0;
 }
 #endif
 
 bool string_contains(const String& str, const String& substr)
 {
-  return str_str(str.c_str(), substr.c_str()) != nullptr;
+  return strstr(str.c_str(), substr.c_str()) != nullptr;
 }
 
 bool string_starts_with(const String& str, const String& prefix)
@@ -339,7 +347,7 @@ bool string_starts_with(const String& str, const String& prefix)
   else if (str.size() == 0)
     return false;
   else
-    return str_str(str.c_str(), prefix.c_str()) == str.c_str();
+    return strstr(str.c_str(), prefix.c_str()) == str.c_str();
 }
 
 bool string_ends_with(const String& str, const String& suffix)
@@ -354,7 +362,7 @@ bool string_ends_with(const String& str, const String& suffix)
   if (len < other_len)
     return false;
 
-  return str_cmp(str.c_str() + len - other_len, suffix.c_str()) == 0;
+  return strcmp(str.c_str() + len - other_len, suffix.c_str()) == 0;
 }
 
 void string_replace(String& str, char from, char to)
@@ -368,7 +376,7 @@ void string_replace(String& str, char from, char to)
 
 void string_replace(String& str, const char* from, const char* to)
 {
-  size_t fromlen = str_len(from);
+  size_t fromlen = strlen(from);
   if (fromlen == 0)
     return;
 
@@ -401,8 +409,11 @@ unsigned ato_u(const char* str)
   return result;
 }
 
-int ato_i(const char* str)
+int atoi(const char* str)
 {
+#if MUTINY_USE_STD_STRING
+  return std::atoi(str);
+#else
   while (is_space(*str))
     str++;
 
@@ -416,29 +427,41 @@ int ato_i(const char* str)
     result += *str - '0';
   }
   return (first_char == '-') ? -result : result;
+#endif
 }
 
-int str_cmp(const char* s1, const char* s2)
+int strcmp(const char* s1, const char* s2)
 {
+#if MUTINY_USE_STD_STRING
+  return std::strcmp(s1, s2);
+#else
   while (*s1 && *s1 == *s2) {
     ++s1;
     ++s2;
   }
   return *reinterpret_cast<const unsigned char*>(s1) -
          *reinterpret_cast<const unsigned char*>(s2);
+#endif
 }
 
-size_t str_len(const char* str)
+size_t strlen(const char* str)
 {
+#if MUTINY_USE_STD_STRING
+  return std::strlen(str);
+#else
   auto n = static_cast<size_t>(-1);
   do
     n++;
   while (*str++);
   return n;
+#endif
 }
 
-int str_n_cmp(const char* s1, const char* s2, size_t n)
+int strncmp(const char* s1, const char* s2, size_t n)
 {
+#if MUTINY_USE_STD_STRING
+  return std::strncmp(s1, s2, n);
+#else
   while (n && *s1 && *s1 == *s2) {
     --n;
     ++s1;
@@ -447,27 +470,39 @@ int str_n_cmp(const char* s1, const char* s2, size_t n)
   return n ? *reinterpret_cast<const unsigned char*>(s1) -
                  *reinterpret_cast<const unsigned char*>(s2)
            : 0;
+#endif
 }
 
-const char* str_str(const char* s1, const char* s2)
+const char* strstr(const char* s1, const char* s2)
 {
+#if MUTINY_USE_STD_STRING
+  return std::strstr(s1, s2);
+#else
   if (!*s2)
     return s1;
-  size_t s2_len = str_len(s2);
+  size_t s2_len = strlen(s2);
   for (; *s1; s1++)
-    if (str_n_cmp(s1, s2, s2_len) == 0)
+    if (strncmp(s1, s2, s2_len) == 0)
       return s1;
   return nullptr;
+#endif
 }
 
-char to_lower(char ch)
+char tolower(char ch)
 {
+#if MUTINY_USE_STD_STRING
+  return static_cast<char>(std::tolower(static_cast<unsigned char>(ch)));
+#else
   return is_upper(ch) ? static_cast<char>(static_cast<int>(ch) + ('a' - 'A'))
                       : ch;
+#endif
 }
 
-int mem_cmp(const void* s1, const void* s2, size_t n)
+int memcmp(const void* s1, const void* s2, size_t n)
 {
+#if MUTINY_USE_STD_STRING
+  return std::memcmp(s1, s2, n);
+#else
   auto* p1 = static_cast<const unsigned char*>(s1);
   auto* p2 = static_cast<const unsigned char*>(s2);
 
@@ -479,6 +514,7 @@ int mem_cmp(const void* s1, const void* s2, size_t n)
       ++p2;
     }
   return 0;
+#endif
 }
 
 void pad_strings_to_same_length(String& str1, String& str2, char pad_character)
@@ -491,9 +527,13 @@ void pad_strings_to_same_length(String& str1, String& str2, char pad_character)
   str1 = String(str2.size() - str1.size(), pad_character) + str1;
 }
 
-bool is_control(char ch)
+bool iscntrl(char ch)
 {
+#if MUTINY_USE_STD_STRING
+  return std::iscntrl(static_cast<unsigned char>(ch)) != 0;
+#else
   return ch < ' ' || ch == char(0x7F);
+#endif
 }
 
 bool is_control_with_short_escape_sequence(char ch)
