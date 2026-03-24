@@ -37,9 +37,16 @@ alongside ``TEST_C_WRAPPER``:
 Listing Ordered Tests
 ---------------------
 
-.. code-block:: bash
+Pass :option:`-lo` to print each ordered test's location as ``group.name.file.line``:
 
-   ./my_tests -lo   # print ordered test locations: group.name.file.line
+.. code-block:: console
+
+   $ ./my_tests -lo
+   OrderedDemo.Init.examples/tests/OrderedTest.test.cpp.53
+   OrderedDemo.FirstEvent.examples/tests/OrderedTest.test.cpp.62
+   OrderedDemo.SecondEvent.examples/tests/OrderedTest.test.cpp.68
+   OrderedDemo.VerifyLog.examples/tests/OrderedTest.test.cpp.75
+   OrderedDemo.Shutdown.examples/tests/OrderedTest.test.cpp.83
 
 When to Use Ordered Tests
 --------------------------
