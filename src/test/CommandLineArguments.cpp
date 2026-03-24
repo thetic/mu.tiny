@@ -322,7 +322,7 @@ bool CommandLineArguments::set_shuffle(
   String shuffle_parameter = argv[i];
   if (shuffle_parameter.size() > 2) {
     shuffling_pre_seeded_ = true;
-    shuffle_seed_ = strtoul(argv[i] + 2);
+    shuffle_seed_ = static_cast<unsigned>(strtoul(argv[i] + 2));
   } else if (i + 1 < argc) {
     auto parsed_parameter = static_cast<unsigned>(strtoul(argv[i + 1]));
     if (parsed_parameter != 0) {
