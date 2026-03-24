@@ -1,4 +1,3 @@
-#include "mutiny/test.h"
 #include "mutiny/test.hpp"
 
 TEST_GROUP_C_WRAPPER(hello)
