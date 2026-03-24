@@ -3,8 +3,8 @@ import textwrap
 # -- Project information -------------------------------------------------------
 
 project = "mutiny"
-copyright = "mutiny contributors"
-author = "mutiny contributors"
+copyright = "2026, Chad Condon"
+author = "Chad Condon"
 
 # -- General configuration -----------------------------------------------------
 
