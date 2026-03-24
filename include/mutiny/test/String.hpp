@@ -112,8 +112,8 @@ bool iscntrl(char ch);
 size_t strlen(const char* str);
 const char* strstr(const char* s1, const char* s2);
 
-int atoi(const char* str);
-unsigned ato_u(const char* str);
+long strtol(const char* str);
+unsigned long strtoul(const char* str);
 int strcmp(const char* s1, const char* s2);
 int strncmp(const char* s1, const char* s2, size_t n);
 char tolower(char ch);

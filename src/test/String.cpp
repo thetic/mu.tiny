@@ -45,6 +45,7 @@ char* copy_to_new_buffer(const char* buffer_to_copy, size_t buffer_size)
 }
 #endif
 
+#if !MUTINY_USE_STD_STRING
 bool is_digit(char ch)
 {
   return '0' <= ch && '9' >= ch;
@@ -55,7 +56,6 @@ bool is_space(char ch)
   return (ch == ' ') || (0x08 < ch && 0x0E > ch);
 }
 
-#if !MUTINY_USE_STD_STRING
 bool is_upper(char ch)
 {
   return 'A' <= ch && 'Z' >= ch;
@@ -395,24 +395,10 @@ void string_replace(String& str, const char* from, const char* to)
   str = result;
 }
 
-// does not support + or - prefixes
-unsigned ato_u(const char* str)
-{
-  while (is_space(*str))
-    str++;
-
-  unsigned result = 0;
-  for (; is_digit(*str) && *str >= '0'; str++) {
-    result *= 10;
-    result += static_cast<unsigned>(*str - '0');
-  }
-  return result;
-}
-
-int atoi(const char* str)
+long strtol(const char* str)
 {
 #if MUTINY_USE_STD_STRING
-  return std::atoi(str);
+  return std::strtol(str, nullptr, 10);
 #else
   while (is_space(*str))
     str++;
@@ -421,12 +407,33 @@ int atoi(const char* str)
   if (first_char == '-' || first_char == '+')
     str++;
 
-  int result = 0;
+  long result = 0;
   for (; is_digit(*str); str++) {
     result *= 10;
     result += *str - '0';
   }
   return (first_char == '-') ? -result : result;
+#endif
+}
+
+unsigned long strtoul(const char* str)
+{
+#if MUTINY_USE_STD_STRING
+  return std::strtoul(str, nullptr, 10);
+#else
+  while (is_space(*str))
+    str++;
+
+  bool negative = (*str == '-');
+  if (*str == '-' || *str == '+')
+    str++;
+
+  unsigned long result = 0;
+  for (; is_digit(*str); str++) {
+    result *= 10;
+    result += static_cast<unsigned long>(*str - '0');
+  }
+  return negative ? -result : result;
 #endif
 }
 

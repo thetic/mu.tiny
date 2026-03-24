@@ -683,38 +683,37 @@ TEST(String, StrNCmp_s1_and_s2_empty)
   LONGS_EQUAL(0, result);
 }
 
-TEST(String, AtoI)
+TEST(String, strtol)
 {
   char max_short_str[] = "32767";
   char min_short_str[] = "-32768";
 
-  CHECK(12345 == mu::tiny::test::atoi("012345"));
-  CHECK(6789 == mu::tiny::test::atoi("6789"));
-  CHECK(12345 == mu::tiny::test::atoi("12345/"));
-  CHECK(12345 == mu::tiny::test::atoi("12345:"));
-  CHECK(-12345 == mu::tiny::test::atoi("-12345"));
-  CHECK(123 == mu::tiny::test::atoi("\t \r\n123"));
-  CHECK(123 == mu::tiny::test::atoi("123-foo"));
-  CHECK(0 == mu::tiny::test::atoi("-foo"));
-  CHECK(-32768 == mu::tiny::test::atoi(min_short_str));
-  CHECK(32767 == mu::tiny::test::atoi(max_short_str));
+  CHECK(12345 == mu::tiny::test::strtol("012345"));
+  CHECK(6789 == mu::tiny::test::strtol("6789"));
+  CHECK(12345 == mu::tiny::test::strtol("12345/"));
+  CHECK(12345 == mu::tiny::test::strtol("12345:"));
+  CHECK(-12345 == mu::tiny::test::strtol("-12345"));
+  CHECK(123 == mu::tiny::test::strtol("\t \r\n123"));
+  CHECK(123 == mu::tiny::test::strtol("123-foo"));
+  CHECK(0 == mu::tiny::test::strtol("-foo"));
+  CHECK(-32768 == mu::tiny::test::strtol(min_short_str));
+  CHECK(32767 == mu::tiny::test::strtol(max_short_str));
 }
 
-TEST(String, AtoU)
+TEST(String, strtoul)
 {
   char max_short_str[] = "65535";
-  CHECK(12345 == mu::tiny::test::ato_u("012345"));
-  CHECK(6789 == mu::tiny::test::ato_u("6789"));
-  CHECK(12345 == mu::tiny::test::ato_u("12345/"));
-  CHECK(12345 == mu::tiny::test::ato_u("12345:"));
-  CHECK(123 == mu::tiny::test::ato_u("\t \r\n123"));
-  CHECK(123 == mu::tiny::test::ato_u("123-foo"));
-  CHECK(65535 == mu::tiny::test::ato_u(max_short_str));
-  CHECK(0 == mu::tiny::test::ato_u("foo"));
-  CHECK(0 == mu::tiny::test::ato_u("-foo"));
-  CHECK(0 == mu::tiny::test::ato_u("+1"));
-  CHECK(0 == mu::tiny::test::ato_u("-1"));
-  CHECK(0 == mu::tiny::test::ato_u("0"));
+  CHECK(12345 == mu::tiny::test::strtoul("012345"));
+  CHECK(6789 == mu::tiny::test::strtoul("6789"));
+  CHECK(12345 == mu::tiny::test::strtoul("12345/"));
+  CHECK(12345 == mu::tiny::test::strtoul("12345:"));
+  CHECK(1 == mu::tiny::test::strtoul("+1"));
+  CHECK(123 == mu::tiny::test::strtoul("\t \r\n123"));
+  CHECK(123 == mu::tiny::test::strtoul("123-foo"));
+  CHECK(65535 == mu::tiny::test::strtoul(max_short_str));
+  CHECK(0 == mu::tiny::test::strtoul("foo"));
+  CHECK(0 == mu::tiny::test::strtoul("-foo"));
+  CHECK(0 == mu::tiny::test::strtoul("0"));
 }
 
 TEST(String, Binary)

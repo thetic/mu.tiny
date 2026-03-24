@@ -296,9 +296,9 @@ void CommandLineArguments::set_repeat_count(
 
   String repeat_parameter(argv[i]);
   if (repeat_parameter.size() > 2)
-    repeat_ = static_cast<size_t>(atoi(argv[i] + 2));
+    repeat_ = static_cast<size_t>(strtol(argv[i] + 2));
   else if (i + 1 < argc) {
-    repeat_ = static_cast<size_t>(atoi(argv[i + 1]));
+    repeat_ = static_cast<size_t>(strtol(argv[i + 1]));
     if (repeat_ != 0)
       i++;
   }
@@ -322,9 +322,9 @@ bool CommandLineArguments::set_shuffle(
   String shuffle_parameter = argv[i];
   if (shuffle_parameter.size() > 2) {
     shuffling_pre_seeded_ = true;
-    shuffle_seed_ = ato_u(argv[i] + 2);
+    shuffle_seed_ = strtoul(argv[i] + 2);
   } else if (i + 1 < argc) {
-    unsigned int parsed_parameter = ato_u(argv[i + 1]);
+    auto parsed_parameter = static_cast<unsigned>(strtoul(argv[i + 1]));
     if (parsed_parameter != 0) {
       shuffling_pre_seeded_ = true;
       shuffle_seed_ = parsed_parameter;
