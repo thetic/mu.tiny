@@ -182,7 +182,7 @@ test::String Support::append_scope_to_name(const test::String& function_name)
 {
   if (mock_name_.empty())
     return function_name;
-  return mock_name_ + "::" + function_name;
+  return mock_name_ + MUTINY_STR("::") + function_name;
 }
 
 ExpectedCall& Support::expect_one_call(const test::String& function_name)

@@ -79,6 +79,24 @@
       }
     },
     {
+      "name": "avr",
+      "inherits": ["GNU"],
+      "cacheVariables": {
+        "CMAKE_SYSTEM_NAME": "Generic",
+        "CMAKE_SYSTEM_PROCESSOR": "avr",
+        "CMAKE_C_COMPILER": "avr-gcc",
+        "CMAKE_CXX_COMPILER": "avr-g++",
+        "CMAKE_C_FLAGS_INIT": "-mmcu=atmega2560 -flto -ffunction-sections -fdata-sections",
+        "CMAKE_CXX_FLAGS_INIT": "-mmcu=atmega2560 -flto -ffunction-sections -fdata-sections",
+        "CMAKE_EXE_LINKER_FLAGS_INIT": "-mmcu=atmega2560 -mrelax -flto -Wl,--gc-sections",
+        "CMAKE_PROJECT_mutiny_INCLUDE": "${sourceDir}/cmake/avr.cmake",
+        "CMAKE_CROSSCOMPILING_EMULATOR": "${sourceDir}/cmake/avr-simavr.sh",
+        "CMAKE_BUILD_TYPE": "MinSizeRel",
+        "MUTINY_USE_STD_CPP_LIB": false,
+        "MUTINY_BUILD_TESTING": false
+      }
+    },
+    {
       "name": "coverage",
       "inherits": ["GNU"],
       "environment": {
@@ -164,6 +182,7 @@
     { "name": "ClangCL",       "inherits": "base", "configurePreset": "ClangCL",       "configuration": "Debug" },
     { "name": "MinGW",         "inherits": "base", "configurePreset": "MinGW" },
     { "name": "arm-embedded",  "inherits": "base", "configurePreset": "arm-embedded" },
+    { "name": "avr",           "inherits": "base", "configurePreset": "avr" },
     { "name": "coverage",      "inherits": "base", "configurePreset": "coverage" },
     { "name": "no-std-cpp",    "inherits": "base", "configurePreset": "no-std-cpp" },
     { "name": "no-rtti",       "inherits": "base", "configurePreset": "no-rtti" },
@@ -197,6 +216,7 @@
     { "name": "ClangCL",       "inherits": "base", "configurePreset": "ClangCL",       "configuration": "Debug" },
     { "name": "MinGW",         "inherits": "base", "configurePreset": "MinGW" },
     { "name": "arm-embedded",  "inherits": "base", "configurePreset": "arm-embedded" },
+    { "name": "avr",           "inherits": "base", "configurePreset": "avr" },
     { "name": "coverage",      "inherits": "base", "configurePreset": "coverage" },
     { "name": "no-std-cpp",    "inherits": "base", "configurePreset": "no-std-cpp" },
     { "name": "no-rtti",       "inherits": "base", "configurePreset": "no-rtti" },
@@ -243,6 +263,14 @@
         { "type": "configure", "name": "arm-embedded" },
         { "type": "build",     "name": "arm-embedded" },
         { "type": "test",      "name": "arm-embedded" }
+      ]
+    },
+    {
+      "name": "avr",
+      "steps": [
+        { "type": "configure", "name": "avr" },
+        { "type": "build",     "name": "avr" },
+        { "type": "test",      "name": "avr" }
       ]
     },
     {

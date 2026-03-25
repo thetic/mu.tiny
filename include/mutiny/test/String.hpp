@@ -25,6 +25,10 @@
 #include <string>
 #endif
 
+#ifdef __AVR__
+#include <avr/pgmspace.h>
+#endif
+
 #ifndef __has_attribute
 #define MUTINY_HAS_ATTRIBUTE(x) 0
 #else
@@ -40,6 +44,20 @@
 namespace mu {
 namespace tiny {
 namespace test {
+
+#ifdef __AVR__
+struct FlashStr
+{
+  const char* ptr;
+  explicit FlashStr(const char* p)
+    : ptr(p)
+  {
+  }
+};
+#define MUTINY_STR(s) ::mu::tiny::test::FlashStr(PSTR(s))
+#else
+#define MUTINY_STR(s) (s)
+#endif
 
 #if MUTINY_USE_STD_STRING
 #if !MUTINY_USE_STD_CPP_LIB
@@ -70,6 +88,14 @@ class String
 public:
   /** @brief Construct from a NUL-terminated C string (default: empty). */
   String(const char* value = "");
+#ifdef __AVR__
+  /** @brief Construct from a flash string (PROGMEM). */
+  String(FlashStr flash);
+  /** @brief Append from flash and return a reference to this string. */
+  String& operator+=(FlashStr flash);
+  /** @brief Return the concatenation of this string and a flash string. */
+  String operator+(FlashStr flash) const;
+#endif
   /**
    * @brief Construct a string of @p count copies of character @p ch.
    *

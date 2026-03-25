@@ -141,10 +141,10 @@ String JUnitOutput::create_file_name(const String& group)
   String file_name = "mutiny_";
   if (!impl_->package.empty()) {
     file_name += impl_->package;
-    file_name += "_";
+    file_name += MUTINY_STR("_");
   }
   file_name += group;
-  return encode_file_name(file_name) + ".xml";
+  return encode_file_name(file_name) + MUTINY_STR(".xml");
 }
 
 String JUnitOutput::encode_file_name(const String& file_name)

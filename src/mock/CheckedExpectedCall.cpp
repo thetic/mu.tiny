@@ -414,7 +414,7 @@ String CheckedExpectedCall::call_to_string()
     str = string_from_format("(object address: %p)::", object_ptr_);
 
   str += get_name();
-  str += " -> ";
+  str += MUTINY_STR(" -> ");
   if (initial_expected_call_order_ != no_expected_call_order) {
     if (initial_expected_call_order_ == final_expected_call_order_) {
       str += string_from_format(
@@ -431,8 +431,8 @@ String CheckedExpectedCall::call_to_string()
 
   if (input_parameters_->begin() == nullptr &&
       output_parameters_->begin() == nullptr) {
-    str +=
-        (ignore_other_parameters_) ? "all parameters ignored" : "no parameters";
+    str += (ignore_other_parameters_) ? MUTINY_STR("all parameters ignored")
+                                      : MUTINY_STR("no parameters");
   } else {
     NamedValueListNode* p;
 
@@ -444,11 +444,11 @@ String CheckedExpectedCall::call_to_string()
           get_input_parameter_value_string(p->get_name()).c_str()
       );
       if (p->next())
-        str += ", ";
+        str += MUTINY_STR(", ");
     }
 
     if (input_parameters_->begin() && output_parameters_->begin()) {
-      str += ", ";
+      str += MUTINY_STR(", ");
     }
 
     for (p = output_parameters_->begin(); p; p = p->next()) {
@@ -456,11 +456,11 @@ String CheckedExpectedCall::call_to_string()
           "%s %s: <output>", p->get_type().c_str(), p->get_name().c_str()
       );
       if (p->next())
-        str += ", ";
+        str += MUTINY_STR(", ");
     }
 
     if (ignore_other_parameters_)
-      str += ", other parameters are ignored";
+      str += MUTINY_STR(", other parameters are ignored");
   }
 
   str += string_from_format(
@@ -482,7 +482,7 @@ String CheckedExpectedCall::missing_parameters_to_string()
   for (p = input_parameters_->begin(); p; p = p->next()) {
     if (!item(p)->is_matching_actual_call()) {
       if (str != "")
-        str += ", ";
+        str += MUTINY_STR(", ");
       str += string_from_format(
           "%s %s", p->get_type().c_str(), p->get_name().c_str()
       );
@@ -491,7 +491,7 @@ String CheckedExpectedCall::missing_parameters_to_string()
   for (p = output_parameters_->begin(); p; p = p->next()) {
     if (!item(p)->is_matching_actual_call()) {
       if (str != "")
-        str += ", ";
+        str += MUTINY_STR(", ");
       str += string_from_format(
           "%s %s", p->get_type().c_str(), p->get_name().c_str()
       );

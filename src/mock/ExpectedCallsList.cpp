@@ -305,7 +305,7 @@ String string_or_none_text_when_empty(
   String str = input_string;
   if (str == "") {
     str += line_prefix;
-    str += "<none>";
+    str += MUTINY_STR("<none>");
   }
   return str;
 }
@@ -318,7 +318,7 @@ String append_string_on_a_new_line(
 {
   String str = input_string;
   if (str != "")
-    str += "\n";
+    str += MUTINY_STR("\n");
   str += line_prefix;
   str += string_to_append;
   return str;

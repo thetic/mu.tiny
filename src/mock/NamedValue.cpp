@@ -497,22 +497,22 @@ String NamedValue::to_string() const
   if (type_ == "bool")
     return string_from(value_.bool_value);
   else if (type_ == "int")
-    return string_from(value_.int_value) + " " +
+    return string_from(value_.int_value) + MUTINY_STR(" ") +
            brackets_formatted_hex_string_from(value_.int_value);
   else if (type_ == "unsigned int")
-    return string_from(value_.unsigned_int_value) + " " +
+    return string_from(value_.unsigned_int_value) + MUTINY_STR(" ") +
            brackets_formatted_hex_string_from(value_.unsigned_int_value);
   else if (type_ == "long int")
-    return string_from(value_.long_int_value) + " " +
+    return string_from(value_.long_int_value) + MUTINY_STR(" ") +
            brackets_formatted_hex_string_from(value_.long_int_value);
   else if (type_ == "unsigned long int")
-    return string_from(value_.unsigned_long_int_value) + " " +
+    return string_from(value_.unsigned_long_int_value) + MUTINY_STR(" ") +
            brackets_formatted_hex_string_from(value_.unsigned_long_int_value);
   else if (type_ == "long long int")
-    return string_from(value_.long_long_int_value) + " " +
+    return string_from(value_.long_long_int_value) + MUTINY_STR(" ") +
            brackets_formatted_hex_string_from(value_.long_long_int_value);
   else if (type_ == "unsigned long long int")
-    return string_from(value_.unsigned_long_long_int_value) + " " +
+    return string_from(value_.unsigned_long_long_int_value) + MUTINY_STR(" ") +
            brackets_formatted_hex_string_from(
                value_.unsigned_long_long_int_value
            );

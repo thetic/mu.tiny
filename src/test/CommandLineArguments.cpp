@@ -152,7 +152,7 @@ String CommandLineArguments::help() const
   String plugin_help = plugin->get_all_help();
 
   if (plugin_help != "") {
-    help_str += "\nOptions that are provided by plugins:\n";
+    help_str += MUTINY_STR("\nOptions that are provided by plugins:\n");
     help_str += plugin_help;
   }
 

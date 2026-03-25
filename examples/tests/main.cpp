@@ -1,12 +1,18 @@
+#include "mutiny/test/CommandLineRunner.hpp"
+
+#ifndef __AVR__
+// On AVR, plugins and the mock support framework exceed the 8 KB SRAM limit.
+// The bare CommandLineRunner::run_all_tests() entry point is used instead.
 #include "IEEE754ExceptionsPlugin.hpp"
 #include "TeamCityOutputPlugin.hpp"
 
 #include "mutiny/mock/SupportPlugin.hpp"
 
-#include "mutiny/test/CommandLineRunner.hpp"
 #include "mutiny/test/Plugin.hpp"
 #include "mutiny/test/Registry.hpp"
+#endif
 
+#ifndef __AVR__
 class MyDummyComparator : public mu::tiny::mock::NamedValueComparator
 {
 public:
@@ -20,9 +26,11 @@ public:
     return mu::tiny::test::string_from(object);
   }
 };
+#endif
 
 int main(int argc, char** argv)
 {
+#ifndef __AVR__
   MyDummyComparator dummy_comparator;
   mu::tiny::mock::SupportPlugin mock_plugin;
   IEEE754ExceptionsPlugin ieee754_plugin;
@@ -36,5 +44,6 @@ int main(int argc, char** argv)
       &ieee754_plugin
   );
   mu::tiny::test::Registry::get_current_registry()->install_plugin(&tc_plugin);
+#endif
   return mu::tiny::test::CommandLineRunner::run_all_tests(argc, argv);
 }

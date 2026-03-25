@@ -56,13 +56,13 @@ void Registry::list_test_group_names(Result& result)
 
   for (Shell* test = tests_; test != nullptr; test = test->get_next()) {
     String gname;
-    gname += "#";
+    gname += MUTINY_STR("#");
     gname += test->get_group();
-    gname += "#";
+    gname += MUTINY_STR("#");
 
     if (!string_contains(group_list, gname)) {
       group_list += gname;
-      group_list += " ";
+      group_list += MUTINY_STR(" ");
     }
   }
 
@@ -80,15 +80,15 @@ void Registry::list_test_group_and_case_names(Result& result)
   for (Shell* test = tests_; test != nullptr; test = test->get_next()) {
     if (test_should_run(test, result)) {
       String group_and_name;
-      group_and_name += "#";
+      group_and_name += MUTINY_STR("#");
       group_and_name += test->get_group();
-      group_and_name += ".";
+      group_and_name += MUTINY_STR(".");
       group_and_name += test->get_name();
-      group_and_name += "#";
+      group_and_name += MUTINY_STR("#");
 
       if (!string_contains(group_and_name_list, group_and_name)) {
         group_and_name_list += group_and_name;
-        group_and_name_list += " ";
+        group_and_name_list += MUTINY_STR(" ");
       }
     }
   }
@@ -108,11 +108,11 @@ void Registry::list_test_locations(Result& result)
   for (Shell* test = tests_; test != nullptr; test = test->get_next()) {
     String test_location;
     test_location += test->get_group();
-    test_location += ".";
+    test_location += MUTINY_STR(".");
     test_location += test->get_name();
-    test_location += ".";
+    test_location += MUTINY_STR(".");
     test_location += test->get_file();
-    test_location += ".";
+    test_location += MUTINY_STR(".");
     test_location +=
         string_from_format("%d\n", static_cast<int>(test->get_line_number()));
 
@@ -131,11 +131,11 @@ void Registry::list_ordered_test_locations(Result& result)
       continue;
     String test_location;
     test_location += test->get_group();
-    test_location += ".";
+    test_location += MUTINY_STR(".");
     test_location += test->get_name();
-    test_location += ".";
+    test_location += MUTINY_STR(".");
     test_location += test->get_file();
-    test_location += ".";
+    test_location += MUTINY_STR(".");
     test_location +=
         string_from_format("%d\n", static_cast<int>(test->get_line_number()));
 

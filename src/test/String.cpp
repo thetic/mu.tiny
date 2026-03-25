@@ -43,6 +43,26 @@ char* copy_to_new_buffer(const char* buffer_to_copy, size_t buffer_size)
     new_buffer[buffer_size - 1] = '\0';
   return new_buffer;
 }
+
+#ifdef __AVR__
+size_t flash_strlen(const char* flash_ptr)
+{
+  size_t n = 0;
+  while (pgm_read_byte(flash_ptr + n))
+    n++;
+  return n;
+}
+
+char* copy_flash_to_new_buffer(const char* flash_ptr, size_t buffer_size)
+{
+  char* new_buffer = new char[buffer_size];
+  for (size_t i = 0; i < buffer_size - 1; i++)
+    new_buffer[i] = static_cast<char>(pgm_read_byte(flash_ptr + i));
+  if (buffer_size > 0)
+    new_buffer[buffer_size - 1] = '\0';
+  return new_buffer;
+}
+#endif
 #endif
 
 #if !MUTINY_USE_STD_STRING
@@ -282,6 +302,52 @@ String& String::operator+=(char ch)
   char tmp[2] = { ch, '\0' };
   return operator+=(tmp);
 }
+
+#ifdef __AVR__
+String::String(FlashStr flash)
+  : buffer_(nullptr)
+  , buffer_size_(0)
+  , size_(0)
+{
+  size_t len = flash_strlen(flash.ptr);
+  buffer_size_ = len + 1;
+  size_ = len;
+  buffer_ = copy_flash_to_new_buffer(flash.ptr, buffer_size_);
+}
+
+String& String::operator+=(FlashStr flash)
+{
+  size_t rhs_len = flash_strlen(flash.ptr);
+  size_t new_size = size_ + rhs_len;
+  size_t needed = new_size + 1;
+  if (needed <= buffer_size_) {
+    for (size_t i = 0; i < rhs_len; i++)
+      buffer_[size_ + i] = static_cast<char>(pgm_read_byte(flash.ptr + i));
+    buffer_[new_size] = '\0';
+  } else {
+    size_t new_cap = buffer_size_ * 2;
+    if (new_cap < needed)
+      new_cap = needed;
+    char* nb = new char[new_cap];
+    str_n_cpy(nb, buffer_, size_ + 1);
+    for (size_t i = 0; i < rhs_len; i++)
+      nb[size_ + i] = static_cast<char>(pgm_read_byte(flash.ptr + i));
+    nb[new_size] = '\0';
+    delete[] buffer_;
+    buffer_ = nb;
+    buffer_size_ = new_cap;
+  }
+  size_ = new_size;
+  return *this;
+}
+
+String String::operator+(FlashStr flash) const
+{
+  String t(c_str());
+  t += flash;
+  return t;
+}
+#endif
 
 void String::resize(size_t new_size)
 {
@@ -625,7 +691,7 @@ String brackets_formatted_hex_string_from(signed char value)
 
 String brackets_formatted_hex_string(const String& hex_string)
 {
-  return String("(0x") + hex_string + ")";
+  return String("(0x") + hex_string + MUTINY_STR(")");
 }
 
 #if MUTINY_USE_STD_CPP_LIB
@@ -782,7 +848,7 @@ String string_from_binary_with_size(const unsigned char* value, size_t size)
   size_t displayed_size = ((size > 128) ? 128 : size);
   result += string_from_binary_or_null(value, displayed_size);
   if (size > displayed_size) {
-    result += " ...";
+    result += MUTINY_STR(" ...");
   }
   return result;
 }

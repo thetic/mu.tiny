@@ -78,11 +78,11 @@ String Filter::as_string() const
 {
   String text_filter = string_from_format("Filter: \"%s\"", filter_.c_str());
   if (strict_matching_ && invert_matching_)
-    text_filter += " with strict, invert matching";
+    text_filter += MUTINY_STR(" with strict, invert matching");
   else if (strict_matching_)
-    text_filter += " with strict matching";
+    text_filter += MUTINY_STR(" with strict matching");
   else if (invert_matching_)
-    text_filter += " with invert matching";
+    text_filter += MUTINY_STR(" with invert matching");
 
   return text_filter;
 }

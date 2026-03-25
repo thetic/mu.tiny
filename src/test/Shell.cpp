@@ -253,11 +253,11 @@ const char* Shell::get_group() const
 String Shell::get_formatted_name() const
 {
   String formatted_name(get_macro_name());
-  formatted_name += "(";
+  formatted_name += MUTINY_STR("(");
   formatted_name += group_;
-  formatted_name += ", ";
+  formatted_name += MUTINY_STR(", ");
   formatted_name += name_;
-  formatted_name += ")";
+  formatted_name += MUTINY_STR(")");
 
   return formatted_name;
 }

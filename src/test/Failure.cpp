@@ -203,7 +203,7 @@ String Failure::create_difference_at_pos_string(
       static_cast<unsigned long>(reported_position)
   );
 
-  result += "\n";
+  result += MUTINY_STR("\n");
   result += string_from_format(
       "\t%s%s>\n",
       different_string.c_str(),
@@ -226,9 +226,9 @@ String Failure::create_user_text(const String& text)
     // I don't think "Message: " adds anything, as you get to see the
     // message. I propose we remove "Message: " lead in
     if (!string_starts_with(text, "LONGS_EQUAL"))
-      user_message += "Message: ";
+      user_message += MUTINY_STR("Message: ");
     user_message += text;
-    user_message += "\n\t";
+    user_message += MUTINY_STR("\n\t");
   }
   return user_message;
 }
@@ -280,13 +280,13 @@ DoublesEqualFailure::DoublesEqualFailure(
 
   message_ +=
       create_but_was_string(string_from(expected, 7), string_from(actual, 7));
-  message_ += " threshold used was <";
+  message_ += MUTINY_STR(" threshold used was <");
   message_ += string_from(threshold, 7);
-  message_ += ">";
+  message_ += MUTINY_STR(">");
 
   if (mu::tiny::test::is_nan(expected) || mu::tiny::test::is_nan(actual) ||
       mu::tiny::test::is_nan(threshold))
-    message_ += "\n\tCannot make comparisons with Nan";
+    message_ += MUTINY_STR("\n\tCannot make comparisons with Nan");
 }
 
 CheckEqualFailure::CheckEqualFailure(
@@ -331,9 +331,9 @@ ComparisonFailure::ComparisonFailure(
 {
   message_ = create_user_text(text);
   message_ += check_string;
-  message_ += "(";
+  message_ += MUTINY_STR("(");
   message_ += comparison_string;
-  message_ += ") failed";
+  message_ += MUTINY_STR(") failed");
 }
 
 ContainsFailure::ContainsFailure(
@@ -366,9 +366,9 @@ CheckFailure::CheckFailure(
   message_ = create_user_text(text);
 
   message_ += check_string;
-  message_ += "(";
+  message_ += MUTINY_STR("(");
   message_ += condition_string;
-  message_ += ") failed";
+  message_ += MUTINY_STR(") failed");
 }
 
 FailFailure::FailFailure(
@@ -400,9 +400,9 @@ LongsEqualFailure::LongsEqualFailure(
   pad_strings_to_same_length(a_decimal, e_decimal, ' ');
 
   String actual_reported =
-      a_decimal + " " + brackets_formatted_hex_string_from(actual);
-  String expected_reported =
-      e_decimal + " " + brackets_formatted_hex_string_from(expected);
+      a_decimal + MUTINY_STR(" ") + brackets_formatted_hex_string_from(actual);
+  String expected_reported = e_decimal + MUTINY_STR(" ") +
+                             brackets_formatted_hex_string_from(expected);
   message_ += create_but_was_string(expected_reported, actual_reported);
 }
 
@@ -424,9 +424,9 @@ UnsignedLongsEqualFailure::UnsignedLongsEqualFailure(
   pad_strings_to_same_length(a_decimal, e_decimal, ' ');
 
   String actual_reported =
-      a_decimal + " " + brackets_formatted_hex_string_from(actual);
-  String expected_reported =
-      e_decimal + " " + brackets_formatted_hex_string_from(expected);
+      a_decimal + MUTINY_STR(" ") + brackets_formatted_hex_string_from(actual);
+  String expected_reported = e_decimal + MUTINY_STR(" ") +
+                             brackets_formatted_hex_string_from(expected);
 
   message_ += create_but_was_string(expected_reported, actual_reported);
 }
@@ -449,9 +449,9 @@ LongLongsEqualFailure::LongLongsEqualFailure(
   pad_strings_to_same_length(a_decimal, e_decimal, ' ');
 
   String actual_reported =
-      a_decimal + " " + brackets_formatted_hex_string_from(actual);
-  String expected_reported =
-      e_decimal + " " + brackets_formatted_hex_string_from(expected);
+      a_decimal + MUTINY_STR(" ") + brackets_formatted_hex_string_from(actual);
+  String expected_reported = e_decimal + MUTINY_STR(" ") +
+                             brackets_formatted_hex_string_from(expected);
   message_ += create_but_was_string(expected_reported, actual_reported);
 }
 
@@ -473,9 +473,9 @@ UnsignedLongLongsEqualFailure::UnsignedLongLongsEqualFailure(
   pad_strings_to_same_length(a_decimal, e_decimal, ' ');
 
   String actual_reported =
-      a_decimal + " " + brackets_formatted_hex_string_from(actual);
-  String expected_reported =
-      e_decimal + " " + brackets_formatted_hex_string_from(expected);
+      a_decimal + MUTINY_STR(" ") + brackets_formatted_hex_string_from(actual);
+  String expected_reported = e_decimal + MUTINY_STR(" ") +
+                             brackets_formatted_hex_string_from(expected);
   message_ += create_but_was_string(expected_reported, actual_reported);
 }
 
@@ -497,9 +497,9 @@ SignedBytesEqualFailure::SignedBytesEqualFailure(
   pad_strings_to_same_length(a_decimal, e_decimal, ' ');
 
   String actual_reported =
-      a_decimal + " " + brackets_formatted_hex_string_from(actual);
-  String expected_reported =
-      e_decimal + " " + brackets_formatted_hex_string_from(expected);
+      a_decimal + MUTINY_STR(" ") + brackets_formatted_hex_string_from(actual);
+  String expected_reported = e_decimal + MUTINY_STR(" ") +
+                             brackets_formatted_hex_string_from(expected);
   message_ += create_but_was_string(expected_reported, actual_reported);
 }
 

@@ -15,20 +15,30 @@ check_source_runs(CXX
 
 add_executable(ExampleTests
     main.cpp
-    CheatSheet.test.cpp
-    CircularBuffer.test.cpp
-    FEDemo.test.cpp
     hello.test.cpp
     hello.test.c
-    IEEE754ExceptionsPlugin.cpp
-    MockCheatSheet.test.cpp
-    MockDocumentation.test.c
-    MockDocumentation.test.cpp
     OrderedTest.test.cpp
-    Printer.test.cpp
-    TeamCityOutputPlugin.cpp
-    TeamCityTestOutput.test.cpp
 )
+
+# The ATmega2560 has only 8 KB SRAM.  On AVR, every string literal (including
+# test-group names, test names, and __FILE__ paths) lands in SRAM, so the
+# usable test set is constrained by that budget.  Files below are included on
+# all non-AVR targets.  On AVR the hello + OrderedTest set uses ~7.2 KB SRAM,
+# leaving ~1 KB of headroom for the framework's stack.
+if(NOT CMAKE_SYSTEM_PROCESSOR STREQUAL "avr")
+    target_sources(ExampleTests PRIVATE
+        CheatSheet.test.cpp
+        CircularBuffer.test.cpp
+        FEDemo.test.cpp
+        IEEE754ExceptionsPlugin.cpp
+        MockCheatSheet.test.cpp
+        MockDocumentation.test.c
+        MockDocumentation.test.cpp
+        Printer.test.cpp
+        TeamCityOutputPlugin.cpp
+        TeamCityTestOutput.test.cpp
+    )
+endif()
 
 if(MUTINY_USE_STD_CPP_LIB)
     target_sources(ExampleTests PRIVATE EventDispatcher.test.cpp)

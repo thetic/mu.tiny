@@ -72,9 +72,9 @@ void Failure::add_expectations_and_call_history(
     const ExpectedCallsList& expectations
 )
 {
-  message_ += "\tEXPECTED calls that WERE NOT fulfilled:\n";
+  message_ += MUTINY_STR("\tEXPECTED calls that WERE NOT fulfilled:\n");
   message_ += expectations.unfulfilled_calls_to_string("\t\t");
-  message_ += "\n\tEXPECTED calls that WERE fulfilled:\n";
+  message_ += MUTINY_STR("\n\tEXPECTED calls that WERE fulfilled:\n");
   message_ += expectations.fulfilled_calls_to_string("\t\t");
 }
 
@@ -86,15 +86,19 @@ void Failure::add_expectations_and_call_history_related_to(
   ExpectedCallsList expectations_for_function;
   expectations_for_function.add_expectations_related_to(name, expectations);
 
-  message_ += "\tEXPECTED calls that WERE NOT fulfilled related to function: ";
+  message_ += MUTINY_STR(
+      "\tEXPECTED calls that WERE NOT fulfilled related to function: "
+  );
   message_ += name;
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
 
   message_ += expectations_for_function.unfulfilled_calls_to_string("\t\t");
 
-  message_ += "\n\tEXPECTED calls that WERE fulfilled related to function: ";
+  message_ += MUTINY_STR(
+      "\n\tEXPECTED calls that WERE fulfilled related to function: "
+  );
   message_ += name;
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
 
   message_ += expectations_for_function.fulfilled_calls_to_string("\t\t");
 }
@@ -129,7 +133,7 @@ UnexpectedCallHappenedFailure::UnexpectedCallHappenedFailure(
     message_ = "Mock Failure: Unexpected call to function: ";
   }
   message_ += name;
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
   add_expectations_and_call_history(expectations);
 }
 
@@ -144,7 +148,7 @@ CallOrderFailure::CallOrderFailure(
   expectations_for_out_of_order.only_keep_out_of_order_expectations();
 
   message_ = "Mock Failure: Out of order calls";
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
   add_expectations_and_call_history(expectations_for_out_of_order);
 }
 
@@ -166,32 +170,33 @@ UnexpectedInputParameterFailure::UnexpectedInputParameterFailure(
   if (expectations_for_function_with_parameter_name.empty()) {
     message_ = "Mock Failure: Unexpected parameter name to function \"";
     message_ += function_name;
-    message_ += "\": ";
+    message_ += MUTINY_STR("\": ");
     message_ += parameter.get_name();
   } else {
     message_ = "Mock Failure: Unexpected parameter value to parameter \"";
     message_ += parameter.get_name();
-    message_ += "\" to function \"";
+    message_ += MUTINY_STR("\" to function \"");
     message_ += function_name;
-    message_ += "\": <";
+    message_ += MUTINY_STR("\": <");
     message_ += string_from(parameter);
-    message_ += ">";
+    message_ += MUTINY_STR(">");
   }
 
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
   add_expectations_and_call_history_related_to(function_name, expectations);
 
-  message_ += "\n\tACTUAL unexpected parameter passed to function: ";
+  message_ +=
+      MUTINY_STR("\n\tACTUAL unexpected parameter passed to function: ");
   message_ += function_name;
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
 
-  message_ += "\t\t";
+  message_ += MUTINY_STR("\t\t");
   message_ += parameter.get_type();
-  message_ += " ";
+  message_ += MUTINY_STR(" ");
   message_ += parameter.get_name();
-  message_ += ": <";
+  message_ += MUTINY_STR(": <");
   message_ += string_from(parameter);
-  message_ += ">";
+  message_ += MUTINY_STR(">");
 }
 
 UnexpectedOutputParameterFailure::UnexpectedOutputParameterFailure(
@@ -212,28 +217,29 @@ UnexpectedOutputParameterFailure::UnexpectedOutputParameterFailure(
   if (expectations_for_function_with_parameter_name.empty()) {
     message_ = "Mock Failure: Unexpected output parameter name to function \"";
     message_ += function_name;
-    message_ += "\": ";
+    message_ += MUTINY_STR("\": ");
     message_ += parameter.get_name();
   } else {
     message_ = "Mock Failure: Unexpected parameter type \"";
     message_ += parameter.get_type();
-    message_ += "\" to output parameter \"";
+    message_ += MUTINY_STR("\" to output parameter \"");
     message_ += parameter.get_name();
-    message_ += "\" to function \"";
+    message_ += MUTINY_STR("\" to function \"");
     message_ += function_name;
-    message_ += "\"";
+    message_ += MUTINY_STR("\"");
   }
 
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
   add_expectations_and_call_history_related_to(function_name, expectations);
 
-  message_ += "\n\tACTUAL unexpected output parameter passed to function: ";
+  message_ +=
+      MUTINY_STR("\n\tACTUAL unexpected output parameter passed to function: ");
   message_ += function_name;
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
 
-  message_ += "\t\t";
+  message_ += MUTINY_STR("\t\t");
   message_ += parameter.get_type();
-  message_ += " ";
+  message_ += MUTINY_STR(" ");
   message_ += parameter.get_name();
 }
 
@@ -247,15 +253,17 @@ ExpectedParameterDidntHappenFailure::ExpectedParameterDidntHappenFailure(
 {
   message_ = "Mock Failure: Expected parameter for function \"";
   message_ += function_name;
-  message_ += "\" did not happen.\n";
+  message_ += MUTINY_STR("\" did not happen.\n");
 
-  message_ += "\tEXPECTED calls with MISSING parameters related to function: ";
+  message_ += MUTINY_STR(
+      "\tEXPECTED calls with MISSING parameters related to function: "
+  );
   message_ += function_name;
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
   message_ += matching_expectations.calls_with_missing_parameters_to_string(
       "\t\t", "\tMISSING parameters: "
   );
-  message_ += "\n";
+  message_ += MUTINY_STR("\n");
 
   add_expectations_and_call_history_related_to(function_name, all_expectations);
 }
