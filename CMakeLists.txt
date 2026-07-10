@@ -18,10 +18,6 @@ cmake_dependent_option(MUTINY_BUILD_TESTING "Build tests for mutiny"
     ${PROJECT_IS_TOP_LEVEL}
     "BUILD_TESTING;EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/tests"
     OFF)
-cmake_dependent_option(MUTINY_BUILD_UNIT_TESTING "Build unit tests for mutiny"
-    ${PROJECT_IS_TOP_LEVEL}
-    "MUTINY_BUILD_TESTING;NOT BUILD_SHARED_LIBS"
-    OFF)
 cmake_dependent_option(MUTINY_EXAMPLES "Compile and make examples?"
     ON
     "PROJECT_IS_TOP_LEVEL;EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/examples"
