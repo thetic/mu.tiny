@@ -115,9 +115,9 @@ Functions
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1adb7b51bc6f61946f3ccd3f2733202053`
 
-- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a08c94524a3ad99555020bfd43bc80e3e`
-
 - :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1aa7e77cc87ecb9424da7d4a4c5a461d89`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a08c94524a3ad99555020bfd43bc80e3e`
 
 
 Variables
