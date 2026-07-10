@@ -10,7 +10,7 @@ dependencies = [
     "sphinxcontrib-moderncmakedomain>=3.0",
     "myst-parser>=5.1.0",
     "furo",
-    "sphinx-github-changelog>=1.2",
+    "sphinx-github-changelog>=2.3.0",
 ]
 
 [tool.uv]
