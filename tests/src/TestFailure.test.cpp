@@ -107,6 +107,18 @@ TEST(Failure, CheckEqualFailure)
   );
 }
 
+TEST(Failure, CheckEqualFailureIdenticalRepresentations)
+{
+  mu::tiny::test::CheckEqualFailure f(
+      test, fail_file_name, fail_line_number, "1", "1", ""
+  );
+  CHECK(
+      mu::tiny::string_contains(
+          f.get_message(), "difference starts at position 1"
+      )
+  );
+}
+
 TEST(Failure, CheckFailure)
 {
   mu::tiny::test::CheckFailure f(

@@ -279,13 +279,22 @@ CheckEqualFailure::CheckEqualFailure(
 
   message_ += create_but_was_string(printable_expected, printable_actual);
 
+  const size_t comparison_length =
+      actual.size() < expected.size() ? actual.size() : expected.size();
   size_t fail_start;
-  for (fail_start = 0; actual[fail_start] == expected[fail_start];
+  for (fail_start = 0; fail_start < comparison_length &&
+                       actual[fail_start] == expected[fail_start];
        fail_start++) {
   }
+  const size_t printable_comparison_length =
+      printable_actual.size() < printable_expected.size()
+          ? printable_actual.size()
+          : printable_expected.size();
   size_t fail_start_printable;
-  for (fail_start_printable = 0; printable_actual[fail_start_printable] ==
-                                 printable_expected[fail_start_printable];
+  for (fail_start_printable = 0;
+       fail_start_printable < printable_comparison_length &&
+       printable_actual[fail_start_printable] ==
+           printable_expected[fail_start_printable];
        fail_start_printable++) {
   }
   message_ += create_difference_at_pos_string(
