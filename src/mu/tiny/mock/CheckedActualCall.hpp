@@ -45,7 +45,7 @@ public:
   virtual void check_expectations();
 
   virtual void set_mock_failure_reporter(FailureReporter* reporter);
-  void set_name_and_check(StringView name);
+  void set_name_and_check(String name);
 
 protected:
   const String& get_name() const;
