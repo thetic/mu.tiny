@@ -5,6 +5,9 @@
 
 #if MUTINY_USE_STD_CPP_LIB
 #include <string>
+#if MUTINY_HAVE_EXCEPTIONS
+#include <stdexcept>
+#endif
 #endif
 
 #if MUTINY_USE_STD_STRING
@@ -323,7 +326,14 @@ void String::resize(size_t new_size)
 
 String String::substr(size_t begin_pos, size_t amount) const
 {
-  if (begin_pos >= size()) {
+  if (begin_pos > size()) {
+#if MUTINY_HAVE_EXCEPTIONS && MUTINY_USE_STD_CPP_LIB
+    throw std::out_of_range("String::substr");
+#else
+    return "";
+#endif
+  }
+  if (begin_pos == size()) {
     return "";
   }
 
