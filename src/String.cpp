@@ -323,7 +323,7 @@ void String::resize(size_t new_size)
 
 String String::substr(size_t begin_pos, size_t amount) const
 {
-  if (begin_pos > size() - 1) {
+  if (begin_pos >= size()) {
     return "";
   }
 

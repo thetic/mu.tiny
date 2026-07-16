@@ -199,6 +199,14 @@ TEST(String, subStringFromEmptyString)
   STRCMP_EQUAL("", str.substr(0, 1).c_str());
 }
 
+#if !MUTINY_USE_STD_CPP_LIB
+TEST(String, subStringFromEmptyStringWithNonZeroPos)
+{
+  mu::tiny::String str("");
+  STRCMP_EQUAL("", str.substr(1, 1).c_str());
+}
+#endif
+
 TEST(String, subStringFromSmallString)
 {
   mu::tiny::String str("H");
