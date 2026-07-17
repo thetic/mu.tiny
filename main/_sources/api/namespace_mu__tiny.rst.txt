@@ -30,11 +30,11 @@ Functions
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1abe3469aaec3e7d4ada2a4513694b36a1`
 
+- :ref:`exhale_function_namespacemu_1_1tiny_1ad240ce7450a3e4bed99458ac57079c3b`
+
 - :ref:`exhale_function_namespacemu_1_1tiny_1ae7db8b899fdd31f87041f8a9260861c7`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1a83fa9273b8fd5ac986b5c801c3766c02`
-
-- :ref:`exhale_function_namespacemu_1_1tiny_1ad240ce7450a3e4bed99458ac57079c3b`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1a30ab3a8cb1afe3c921d2aa9e7d7258df`
 
@@ -44,9 +44,9 @@ Functions
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1a750293f8477c2138834b60ec0ed61dd7`
 
-- :ref:`exhale_function_namespacemu_1_1tiny_1ad705f9f85c268ea4dbe91f1c73b1ccb8`
-
 - :ref:`exhale_function_namespacemu_1_1tiny_1a768854faf90d0ce2a07efcdf01164ab5`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1ad705f9f85c268ea4dbe91f1c73b1ccb8`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1aeef5e585e47b89f5c9b89d47fdf36eb3`
 
