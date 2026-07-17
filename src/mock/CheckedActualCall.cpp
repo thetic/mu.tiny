@@ -114,9 +114,9 @@ void CheckedActualCall::discard_currently_matching_expectations()
   potentially_matching_expectations_.only_keep_unmatching_expectations();
 }
 
-void CheckedActualCall::set_name_and_check(StringView name)
+void CheckedActualCall::set_name_and_check(String name)
 {
-  function_name_ = String(name.data(), name.size());
+  function_name_ = static_cast<String&&>(name);
   set_state(MutinyActualCallState::in_progress);
 
   potentially_matching_expectations_.only_keep_expectations_related_to(

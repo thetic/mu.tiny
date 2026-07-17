@@ -129,7 +129,8 @@
       "name": "asan",
       "inherits": ["Clang"],
       "cacheVariables": {
-        "CMAKE_BUILD_TYPE": "Debug"
+        "CMAKE_BUILD_TYPE": "Debug",
+        "MUTINY_USE_STD_STRING": false
       },
       "environment": {
         "CFLAGS": "-fsanitize=address -fno-omit-frame-pointer",
