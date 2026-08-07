@@ -30,10 +30,6 @@ Functions
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1abe3469aaec3e7d4ada2a4513694b36a1`
 
-- :ref:`exhale_function_namespacemu_1_1tiny_1ad240ce7450a3e4bed99458ac57079c3b`
-
-- :ref:`exhale_function_namespacemu_1_1tiny_1ae7db8b899fdd31f87041f8a9260861c7`
-
 - :ref:`exhale_function_namespacemu_1_1tiny_1a83fa9273b8fd5ac986b5c801c3766c02`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1a30ab3a8cb1afe3c921d2aa9e7d7258df`
@@ -44,7 +40,9 @@ Functions
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1a750293f8477c2138834b60ec0ed61dd7`
 
-- :ref:`exhale_function_namespacemu_1_1tiny_1a768854faf90d0ce2a07efcdf01164ab5`
+- :ref:`exhale_function_namespacemu_1_1tiny_1ad240ce7450a3e4bed99458ac57079c3b`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1ae7db8b899fdd31f87041f8a9260861c7`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1ad705f9f85c268ea4dbe91f1c73b1ccb8`
 
@@ -62,6 +60,8 @@ Functions
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1ab72ef15e036becd6d4c232d86167fd0f`
 
+- :ref:`exhale_function_namespacemu_1_1tiny_1a768854faf90d0ce2a07efcdf01164ab5`
+
 - :ref:`exhale_function_namespacemu_1_1tiny_1afe73ac5413e90b574aae574e7780b60e`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1a51c34a6341fe1ac38426e1f170351440`
@@ -75,16 +75,6 @@ Functions
 - :ref:`exhale_function_namespacemu_1_1tiny_1a49869428736c6d9e6a8bf370cfe6af7b`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1aedcc69cd5ee580a840185804345500a4`
-
-- :ref:`exhale_function_namespacemu_1_1tiny_1a6a7ea65c305bad0c0bb026656990569b`
-
-- :ref:`exhale_function_namespacemu_1_1tiny_1ab646edd6a31bf036cddefc1856fd0fca`
-
-- :ref:`exhale_function_namespacemu_1_1tiny_1ab9a0f27d880a8a4cedc5a629c6d3efc8`
-
-- :ref:`exhale_function_namespacemu_1_1tiny_1a9e5aeb8f25221ede2e67ee5024322891`
-
-- :ref:`exhale_function_namespacemu_1_1tiny_1af6c4eaebe6d98975f49e8a469d975c60`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1a5a1691ff0db11b6489f1d88362417e1b`
 
@@ -121,6 +111,16 @@ Functions
 - :ref:`exhale_function_namespacemu_1_1tiny_1a7cda397d4ac312cd78d1a31c20199423`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1adfcaad75719bb2c8a570f098a77a4532`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1a6a7ea65c305bad0c0bb026656990569b`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1ab646edd6a31bf036cddefc1856fd0fca`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1ab9a0f27d880a8a4cedc5a629c6d3efc8`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1af6c4eaebe6d98975f49e8a469d975c60`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1a9e5aeb8f25221ede2e67ee5024322891`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1aecd92e682283746c670d4d5c1ecd7062`
 

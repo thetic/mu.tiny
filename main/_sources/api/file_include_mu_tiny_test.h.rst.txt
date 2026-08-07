@@ -24,7 +24,7 @@ Detailed Description
 
 Include this header in C test files. Test definitions use the same macro names as the C++ interface (:ref:`exhale_define_test_8h_1a387737a52be7d4ade8c76832ec677100`, :ref:`exhale_define_test_8h_1a235cffa951470b7e037566c4f8f201f6`, :ref:`exhale_define_test_8h_1acb496fa2cbcfaf0cb310ee4d264bf249`) but expand to C function stubs that are called by corresponding C++ wrapper macros in the bridging C++ file.
 
-Assertion macros use type-specific names (:ref:`exhale_define_test_8h_1ac458251be52dfea31740683c18d05f88`, :ref:`exhale_define_test_8h_1aa146eed388611f514d5f16239b135459`, etc.) because C has no function overloading. 
+Assertion macros use type-specific names (:ref:`exhale_define_test_8h_1ac458251be52dfea31740683c18d05f88`, :ref:`exhale_define_test_8h_1aa146eed388611f514d5f16239b135459`, etc.) because C has no function overloading. :ref:`exhale_define_test_8h_1ad8fa79f5d491cc01af302832785e90fe` provides a type-generic alternative via C11 ``_Generic``. 
 
 
 
@@ -91,6 +91,8 @@ Defines
 
 - :ref:`exhale_define_test_8h_1a3e1cfef60e774a81f30eaddf26a3a274`
 
+- :ref:`exhale_define_test_8h_1ad8fa79f5d491cc01af302832785e90fe`
+
 - :ref:`exhale_define_test_8h_1a11bdac0d57c33921592bc1fa9134c61e`
 
 - :ref:`exhale_define_test_8h_1acf20261d1589833822b5923ef440aa24`
@@ -131,6 +133,8 @@ Defines
 
 - :ref:`exhale_define_test_8h_1a292e557f17cb9182c9cf5d9aa7d16731`
 
+- :ref:`exhale_define_test_8h_1a2681dda1dbf161c98ee17cbecb63c407`
+
 - :ref:`exhale_define_test_8h_1add54226633abeca99fca3eb16ef6754b`
 
 - :ref:`exhale_define_test_8h_1a1e2f10ca5d0d304b053f281ba8a536bd`
@@ -150,6 +154,8 @@ Defines
 - :ref:`exhale_define_test_8h_1af534f9fdbade10fe33a8ff1306df9bb3`
 
 - :ref:`exhale_define_test_8h_1a052944f0e69b65f45c7d49b536767dc5`
+
+- :ref:`exhale_define_test_8h_1a9d72da11719c04795f42b48717e296df`
 
 - :ref:`exhale_define_test_8h_1a235cffa951470b7e037566c4f8f201f6`
 
