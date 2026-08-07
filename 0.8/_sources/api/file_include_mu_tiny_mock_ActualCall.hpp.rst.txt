@@ -1,0 +1,67 @@
+
+.. _file_include_mu_tiny_mock_ActualCall.hpp:
+
+File ActualCall.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_mock>` (``include/mu/tiny/mock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Fluent interface returned by mu::tiny::mock::Support::actual_call(). 
+
+
+Definition (``include/mu/tiny/mock/ActualCall.hpp``)
+----------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Inside a mock function implementation, call mu::tiny::mock::Support::actual_call() and then chain mu::tiny::mock::ActualCall::with_parameter() for each argument before querying the return value. The framework matches the actual call against the registered expectations and fails the test if a mismatch is found. See also :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedCall`. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/StringView.hpp`` (:ref:`file_include_mu_tiny_StringView.hpp`)
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/mock/NamedValue.hpp`` (:ref:`file_include_mu_tiny_mock_NamedValue.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_mock.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__mock`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ActualCall`
+

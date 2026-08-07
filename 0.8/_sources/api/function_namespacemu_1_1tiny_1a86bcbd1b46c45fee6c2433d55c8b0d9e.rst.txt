@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a86bcbd1b46c45fee6c2433d55c8b0d9e:
+
+Function mu::tiny::string_from_format
+=====================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from_format(const char *, ...)
+   :project: mu::tiny

@@ -1,0 +1,65 @@
+
+.. _file_include_mu_tiny_test_SkippedShell.hpp:
+
+File SkippedShell.hpp
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Shell` subclass for tests marked as ignored. 
+
+
+Definition (``include/mu/tiny/test/SkippedShell.hpp``)
+------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Used by :ref:`exhale_define_test_8h_1a235cffa951470b7e037566c4f8f201f6` and :ref:`exhale_define_test_8hpp_1aa9a57a9652aaee3afddcce59b86c1aec`. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/Shell.hpp`` (:ref:`file_include_mu_tiny_test_Shell.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1SkippedShell`
+

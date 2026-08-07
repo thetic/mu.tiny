@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a5c13053d4583b33015fd540095ec1568:
+
+Define CHECK_APPROX_TEXT
+========================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_APPROX_TEXT
+   :project: mu::tiny

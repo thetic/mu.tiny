@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1acb4b8141b2d43c7db68970669fe9cc33:
+
+Function mutiny_check_equal_memcmp
+==================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_check_equal_memcmp(const void *, const void *, size_t, const char *, const char *, int_least32_t)
+   :project: mu::tiny

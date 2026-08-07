@@ -1,0 +1,14 @@
+.. _exhale_define_test_8hpp_1aa9ff545fa09da9acea1597de7ecbdd83:
+
+Define XFAIL_TEST
+=================
+
+- Defined in :ref:`file_include_mu_tiny_test.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: XFAIL_TEST
+   :project: mu::tiny

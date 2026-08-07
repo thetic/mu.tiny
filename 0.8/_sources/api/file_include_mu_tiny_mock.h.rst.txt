@@ -1,0 +1,87 @@
+
+.. _file_include_mu_tiny_mock.h:
+
+File mock.h
+===========
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny>` (``include/mu/tiny``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+C interface to the mutiny mock framework. 
+
+
+Definition (``include/mu/tiny/mock.h``)
+---------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Provides a vtable-style C API for mock interaction from pure C test code. Call :ref:`exhale_function_mock_8h_1a0ab307d5675f710eceb14b5d5567955e` to get the global mock scope, or :ref:`exhale_function_mock_8h_1ad749af26808dfba5e3404e9a2a3a62eb` for a named scope; then use the function pointers on the returned struct to set up expectations and report actual calls.
+
+:ref:`exhale_function_mock_8h_1a0ab307d5675f710eceb14b5d5567955e` 
+
+:ref:`exhale_function_mock_8h_1ad749af26808dfba5e3404e9a2a3a62eb` 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``stddef.h``
+
+
+
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_struct_structMutinyMockActualCall`
+
+- :ref:`exhale_struct_structMutinyMockExpectedCall`
+
+- :ref:`exhale_struct_structMutinyMockSupport`
+
+- :ref:`exhale_struct_structMutinyMockValue`
+
+
+Enums
+-----
+
+
+- :ref:`exhale_enum_mock_8h_1a9924d37bcacb6cc914b3254add989323`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_mock_8h_1a0ab307d5675f710eceb14b5d5567955e`
+
+- :ref:`exhale_function_mock_8h_1ad749af26808dfba5e3404e9a2a3a62eb`
+
+
+Typedefs
+--------
+
+
+- :ref:`exhale_typedef_mock_8h_1a7328c7e56848040e6073e88a6049813f`
+
+- :ref:`exhale_typedef_mock_8h_1a93b9aac1a099cf6ad4bf4ba4c779816e`
+
+- :ref:`exhale_typedef_mock_8h_1aaec1a1431ce09467b8f7cdd8d04e2eb7`
+

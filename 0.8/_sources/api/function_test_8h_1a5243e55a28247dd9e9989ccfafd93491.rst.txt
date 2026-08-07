@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1a5243e55a28247dd9e9989ccfafd93491:
+
+Function mutiny_check
+=====================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_check(int, const char *, const char *, const char *, int_least32_t)
+   :project: mu::tiny

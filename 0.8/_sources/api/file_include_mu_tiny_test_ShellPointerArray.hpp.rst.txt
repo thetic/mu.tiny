@@ -1,0 +1,72 @@
+
+.. _file_include_mu_tiny_test_ShellPointerArray.hpp:
+
+File ShellPointerArray.hpp
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Array-of-Shell-pointers helper for shuffling and reversing tests. 
+
+
+Definition (``include/mu/tiny/test/ShellPointerArray.hpp``)
+-----------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Used by mu::tiny::test::Registry::shuffle_tests() and mu::tiny::test::Registry::reverse_tests(). 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``stddef.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ShellPointerArray`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacemu_1_1tiny_1_1test_1a49a896bbdddfbc735f4aa0fb1786037e`
+

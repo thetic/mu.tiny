@@ -1,0 +1,67 @@
+
+.. _file_include_mu_tiny_test_GroupLocation.hpp:
+
+File GroupLocation.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Source-location record for a :ref:`exhale_define_test_8hpp_1a109b3c7ca51a87da0abc0a229663d7fd` declaration. 
+
+
+Definition (``include/mu/tiny/test/GroupLocation.hpp``)
+-------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Each :ref:`exhale_define_test_8hpp_1a109b3c7ca51a87da0abc0a229663d7fd` macro instantiates one GroupLocation at static initialisation time, capturing the file path and line number of the group declaration. The instances form a singly-linked list accessible through mu::tiny::test::GroupLocation::get_head(). Used by the command-line runner to implement the ``-lgl`` listing mode, which lets the cmake discovery script supply accurate ``DEF_SOURCE_LINE`` properties for group-level CTest entries. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``stddef.h``
+
+- ``stdint.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1GroupLocation`
+

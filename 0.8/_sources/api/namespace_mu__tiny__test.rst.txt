@@ -1,0 +1,127 @@
+
+.. _namespace_mu__tiny__test:
+
+Namespace mu::tiny::test
+========================
+
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ApproxEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1BinaryEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CheckEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CheckFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CommandLineArguments`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CommandLineRunner`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ComparisonFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ConsoleOutput`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ContainsFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CrashingTerminator`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CrashingTerminatorWithoutExceptions`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1EqualsFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ExecFunction`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ExpectFailShell`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1FailedException`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1FailFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Failure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1FeatureUnsupportedFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Filter`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1GroupLocation`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Installer`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1IntMaxEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1JUnitOutputPlugin`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1NormalTerminator`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1OrderedInstaller`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1OrderedShell`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Output`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Plugin`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Registry`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Result`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1SetPointerPlugin`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Shell`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ShellPointerArray`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1SkippedShell`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringBufferOutput`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringEqualNoCaseFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1TapOutputPlugin`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Terminator`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1TerminatorWithoutExceptions`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Test`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1TestingFixture`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1UintMaxEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1UnexpectedExceptionFailure`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a7e025e6bb54fadd02189d6e921a55f67`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a35b5a9e48ef7fbeb85c3c768e3e9b606`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a0f2089498afa5a1f2c5855f5b452554e`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1ad8e3aa7f958d28eae77fbb8c888888ff`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1acd81f0ee4a12665f995b20fa99c99d58`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1adb7b51bc6f61946f3ccd3f2733202053`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1aa7e77cc87ecb9424da7d4a4c5a461d89`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a08c94524a3ad99555020bfd43bc80e3e`
+
+
+Variables
+---------
+
+
+- :ref:`exhale_variable_namespacemu_1_1tiny_1_1test_1a49a896bbdddfbc735f4aa0fb1786037e`

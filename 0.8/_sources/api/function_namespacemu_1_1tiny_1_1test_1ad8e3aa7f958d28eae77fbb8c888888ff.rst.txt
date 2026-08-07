@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1_1test_1ad8e3aa7f958d28eae77fbb8c888888ff:
+
+Template Function mu::tiny::test::check_compare
+===============================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::test::check_compare(const T&, const U&, bool, const char *, const char *, const char *, int_least32_t)
+   :project: mu::tiny

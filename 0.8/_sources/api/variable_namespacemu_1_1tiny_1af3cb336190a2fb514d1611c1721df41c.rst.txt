@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacemu_1_1tiny_1af3cb336190a2fb514d1611c1721df41c:
+
+Variable mu::tiny::get_time_string
+==================================
+
+- Defined in :ref:`file_include_mu_tiny_time.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: mu::tiny::get_time_string
+   :project: mu::tiny

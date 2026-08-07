@@ -1,0 +1,74 @@
+
+.. _file_include_mu_tiny_test_SetPointerPlugin.hpp:
+
+File SetPointerPlugin.hpp
+=========================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Automatic pointer restoration after each test. 
+
+
+Definition (``include/mu/tiny/test/SetPointerPlugin.hpp``)
+----------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1SetPointerPlugin` records the original address stored in a pointer variable before it is overwritten and restores it at the end of every test, without requiring explicit teardown code.
+
+Use the :ref:`exhale_define_SetPointerPlugin_8hpp_1ab46a6c558e87a029cffe107b358a2691` macro (the preferred interface) or call mu::tiny::test::SetPointerPlugin::set_pointer() directly. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/Plugin.hpp`` (:ref:`file_include_mu_tiny_test_Plugin.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1SetPointerPlugin`
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_SetPointerPlugin_8hpp_1ab46a6c558e87a029cffe107b358a2691`
+

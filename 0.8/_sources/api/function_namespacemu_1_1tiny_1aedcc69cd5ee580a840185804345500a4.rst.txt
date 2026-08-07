@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1aedcc69cd5ee580a840185804345500a4:
+
+Function mu::tiny::string_ends_with
+===================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_ends_with(const String&, const String&)
+   :project: mu::tiny

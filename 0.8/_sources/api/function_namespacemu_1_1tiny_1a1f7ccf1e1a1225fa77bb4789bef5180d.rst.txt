@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a1f7ccf1e1a1225fa77bb4789bef5180d:
+
+Function mu::tiny::tolower
+==========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::tolower(char)
+   :project: mu::tiny

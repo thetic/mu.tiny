@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1ab6d61c1f18bf6ed38b7fb4ddfd7f1e0c:
+
+Define CHECK_THROWS
+===================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_THROWS
+   :project: mu::tiny

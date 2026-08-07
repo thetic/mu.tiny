@@ -1,0 +1,14 @@
+.. _exhale_define_test_8hpp_1a9be9c68fe88fa13774a2912f4dacb377:
+
+Define XFAIL_TEST_C_WRAPPER
+===========================
+
+- Defined in :ref:`file_include_mu_tiny_test.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: XFAIL_TEST_C_WRAPPER
+   :project: mu::tiny

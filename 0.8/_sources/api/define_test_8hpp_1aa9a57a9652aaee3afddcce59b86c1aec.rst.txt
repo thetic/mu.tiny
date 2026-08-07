@@ -1,0 +1,14 @@
+.. _exhale_define_test_8hpp_1aa9a57a9652aaee3afddcce59b86c1aec:
+
+Define SKIPPED_TEST_C_WRAPPER
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_test.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SKIPPED_TEST_C_WRAPPER
+   :project: mu::tiny

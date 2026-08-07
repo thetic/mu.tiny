@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a0495811ba2a07216fd5e4376f6cada18:
+
+Function mu::tiny::string_replace(String&, char, char)
+======================================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_replace(String&, char, char)
+   :project: mu::tiny

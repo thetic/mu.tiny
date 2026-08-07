@@ -1,0 +1,14 @@
+.. _exhale_define_test_8hpp_1a8327a4ff88f515110c861ff51be3aa4f:
+
+Define TEST_GROUP_C_WRAPPER
+===========================
+
+- Defined in :ref:`file_include_mu_tiny_test.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TEST_GROUP_C_WRAPPER
+   :project: mu::tiny

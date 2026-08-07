@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1a3b102d9012626a980de76fe0210cd48f:
+
+Function mutiny_check_equal_ubyte
+=================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_check_equal_ubyte(unsigned char, unsigned char, const char *, const char *, int_least32_t)
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_typedef_mock_8h_1a7328c7e56848040e6073e88a6049813f:
+
+Typedef MutinyMockTypeCopyFunction
+==================================
+
+- Defined in :ref:`file_include_mu_tiny_mock.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: MutinyMockTypeCopyFunction
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_define_test_8hpp_1a109b3c7ca51a87da0abc0a229663d7fd:
+
+Define TEST_GROUP
+=================
+
+- Defined in :ref:`file_include_mu_tiny_test.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TEST_GROUP
+   :project: mu::tiny

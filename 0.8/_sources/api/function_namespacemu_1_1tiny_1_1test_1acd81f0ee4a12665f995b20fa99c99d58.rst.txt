@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1_1test_1acd81f0ee4a12665f995b20fa99c99d58:
+
+Template Function mu::tiny::test::check_enum_equal
+==================================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::test::check_enum_equal(ENUM_TYPE, ENUM_TYPE, const char *, const char *, int_least32_t)
+   :project: mu::tiny

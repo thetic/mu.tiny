@@ -1,0 +1,14 @@
+.. _exhale_define_features_8hpp_1a2b5a2087ad8293d85d2612da40675a1b:
+
+Define MUTINY_USE_STD_STRING
+============================
+
+- Defined in :ref:`file_include_mu_tiny_features.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_USE_STD_STRING
+   :project: mu::tiny

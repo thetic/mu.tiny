@@ -1,0 +1,56 @@
+
+.. _file_include_mu_tiny_features.hpp:
+
+File features.hpp
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny>` (``include/mu/tiny``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Compiler feature-detection macros and opt-in build knobs. 
+
+
+Definition (``include/mu/tiny/features.hpp``)
+---------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Defines capability macros by inspecting compiler-specific flags, and provides defaults for build-configuration macros that may be overridden by the build system. All macros can be overridden before including this header. 
+
+
+
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_String.hpp`
+
+- :ref:`file_include_mu_tiny_test_Failure.hpp`
+
+- :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_features_8hpp_1a5a26da6f7c8a977c197d09ab19eae3e5`
+
+- :ref:`exhale_define_features_8hpp_1ad7c1f08117f27bae9353851f38c7fd55`
+
+- :ref:`exhale_define_features_8hpp_1a8f602349c2758b19ac1cb5f792134974`
+
+- :ref:`exhale_define_features_8hpp_1a2b5a2087ad8293d85d2612da40675a1b`
+

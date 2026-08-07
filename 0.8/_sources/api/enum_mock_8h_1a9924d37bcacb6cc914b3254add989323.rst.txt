@@ -1,0 +1,14 @@
+.. _exhale_enum_mock_8h_1a9924d37bcacb6cc914b3254add989323:
+
+Enum MutinyMockValueType
+========================
+
+- Defined in :ref:`file_include_mu_tiny_mock.h`
+
+
+Enum Documentation
+------------------
+
+
+.. doxygenenum:: MutinyMockValueType
+   :project: mu::tiny

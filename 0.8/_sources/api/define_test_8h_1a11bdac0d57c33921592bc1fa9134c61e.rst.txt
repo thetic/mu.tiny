@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a11bdac0d57c33921592bc1fa9134c61e:
+
+Define CHECK_EQUAL_BOOL
+=======================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_BOOL
+   :project: mu::tiny

@@ -1,0 +1,69 @@
+
+.. _file_include_mu_tiny_mock_SupportPlugin.hpp:
+
+File SupportPlugin.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_mock>` (``include/mu/tiny/mock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Plugin` that automates mock check/clear and comparator lifetime. 
+
+
+Definition (``include/mu/tiny/mock/SupportPlugin.hpp``)
+-------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Install :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1SupportPlugin` once in your test runner (or in the test group) to have the framework automatically call mu::tiny::mock::Support::check_expectations() and mu::tiny::mock::Support::clear() after each test, eliminating the need to write teardown code for every test group.
+
+It also provides mu::tiny::mock::SupportPlugin::install_comparator() and mu::tiny::mock::SupportPlugin::install_copier() methods whose lifetime is tied to the plugin scope, ensuring comparators and copiers are removed after each test run. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/StringView.hpp`` (:ref:`file_include_mu_tiny_StringView.hpp`)
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/mock/NamedValueComparator.hpp`` (:ref:`file_include_mu_tiny_mock_NamedValueComparator.hpp`)
+
+- ``mu/tiny/mock/NamedValueComparatorsAndCopiersRepository.hpp`` (:ref:`file_include_mu_tiny_mock_NamedValueComparatorsAndCopiersRepository.hpp`)
+
+- ``mu/tiny/mock/NamedValueCopier.hpp`` (:ref:`file_include_mu_tiny_mock_NamedValueCopier.hpp`)
+
+- ``mu/tiny/test/Plugin.hpp`` (:ref:`file_include_mu_tiny_test_Plugin.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__mock`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1SupportPlugin`
+

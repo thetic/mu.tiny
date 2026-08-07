@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1ad5a4920e736a4fa8746556f5d1c7bf92:
+
+Function mutiny_check_equal_ulonglong
+=====================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_check_equal_ulonglong(unsigned long long, unsigned long long, const char *, const char *, int_least32_t)
+   :project: mu::tiny

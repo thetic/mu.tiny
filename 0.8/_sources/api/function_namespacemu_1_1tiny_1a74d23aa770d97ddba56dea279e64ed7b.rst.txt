@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a74d23aa770d97ddba56dea279e64ed7b:
+
+Function mu::tiny::operator==
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_StringView.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::operator==(StringView, StringView)
+   :project: mu::tiny

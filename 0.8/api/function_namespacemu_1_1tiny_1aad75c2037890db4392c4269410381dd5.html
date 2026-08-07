@@ -1,0 +1,705 @@
+<!doctype html>
+<html class="no-js" lang="en" data-content_root="../">
+  <head><meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
+<link rel="index" title="Index" href="../genindex.html"><link rel="search" title="Search" href="../search.html"><link rel="next" title="Function mu::tiny::hex_string_from(signed char)" href="function_namespacemu_1_1tiny_1a768854faf90d0ce2a07efcdf01164ab5.html"><link rel="prev" title="Function mu::tiny::hex_string_from(unsigned int)" href="function_namespacemu_1_1tiny_1a546f3dbf2259a04bed0c91cba0ced487.html">
+        <link rel="prefetch" href="../_static/logo.png" as="image">
+
+    <!-- Generated with Sphinx 9.1.0 and Furo 2025.12.19 -->
+        <title>Function mu::tiny::hex_string_from(int) - mu::tiny</title>
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=7cde69a9" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=7bdb33bb" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=8dab3a3b" />
+    
+    
+
+
+<style>
+  body {
+    --color-code-background: #fefefe;
+  --color-code-foreground: #080808;
+  
+  }
+  @media not print {
+    body[data-theme="dark"] {
+      --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+    }
+    @media (prefers-color-scheme: dark) {
+      body:not([data-theme="light"]) {
+        --color-code-background: #2b2b2b;
+  --color-code-foreground: #f8f8f2;
+  
+      }
+    }
+  }
+</style></head>
+  <body>
+    
+    <script>
+      document.body.dataset.theme = localStorage.getItem("theme") || "auto";
+    </script>
+    
+
+<svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+  <symbol id="svg-toc" viewBox="0 0 24 24">
+    <title>Contents</title>
+    <svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 1024 1024">
+      <path d="M408 442h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8zm-8 204c0 4.4 3.6 8 8 8h480c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8H408c-4.4 0-8 3.6-8 8v56zm504-486H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zm0 632H120c-4.4 0-8 3.6-8 8v56c0 4.4 3.6 8 8 8h784c4.4 0 8-3.6 8-8v-56c0-4.4-3.6-8-8-8zM115.4 518.9L271.7 642c5.8 4.6 14.4.5 14.4-6.9V388.9c0-7.4-8.5-11.5-14.4-6.9L115.4 505.1a8.74 8.74 0 0 0 0 13.8z"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-menu" viewBox="0 0 24 24">
+    <title>Menu</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-menu">
+      <line x1="3" y1="12" x2="21" y2="12"></line>
+      <line x1="3" y1="6" x2="21" y2="6"></line>
+      <line x1="3" y1="18" x2="21" y2="18"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-arrow-right" viewBox="0 0 24 24">
+    <title>Expand</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather-chevron-right">
+      <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+  </symbol>
+  <symbol id="svg-sun" viewBox="0 0 24 24">
+    <title>Light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="feather-sun">
+      <circle cx="12" cy="12" r="5"></circle>
+      <line x1="12" y1="1" x2="12" y2="3"></line>
+      <line x1="12" y1="21" x2="12" y2="23"></line>
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+      <line x1="1" y1="12" x2="3" y2="12"></line>
+      <line x1="21" y1="12" x2="23" y2="12"></line>
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon" viewBox="0 0 24 24">
+    <title>Dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-moon">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M12 3c.132 0 .263 0 .393 0a7.5 7.5 0 0 0 7.92 12.446a9 9 0 1 1 -8.313 -12.454z" />
+    </svg>
+  </symbol>
+  <symbol id="svg-sun-with-moon" viewBox="0 0 24 24">
+    <title>Auto light/dark, in light mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path style="opacity: 50%" d="M 5.411 14.504 C 5.471 14.504 5.532 14.504 5.591 14.504 C 3.639 16.319 4.383 19.569 6.931 20.352 C 7.693 20.586 8.512 20.551 9.25 20.252 C 8.023 23.207 4.056 23.725 2.11 21.184 C 0.166 18.642 1.702 14.949 4.874 14.536 C 5.051 14.512 5.231 14.5 5.411 14.5 L 5.411 14.504 Z"/>
+      <line x1="14.5" y1="3.25" x2="14.5" y2="1.25"/>
+      <line x1="14.5" y1="15.85" x2="14.5" y2="17.85"/>
+      <line x1="10.044" y1="5.094" x2="8.63" y2="3.68"/>
+      <line x1="19" y1="14.05" x2="20.414" y2="15.464"/>
+      <line x1="8.2" y1="9.55" x2="6.2" y2="9.55"/>
+      <line x1="20.8" y1="9.55" x2="22.8" y2="9.55"/>
+      <line x1="10.044" y1="14.006" x2="8.63" y2="15.42"/>
+      <line x1="19" y1="5.05" x2="20.414" y2="3.636"/>
+      <circle cx="14.5" cy="9.55" r="3.6"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-moon-with-sun" viewBox="0 0 24 24">
+    <title>Auto light/dark, in dark mode</title>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round"
+      class="icon-custom-derived-from-feather-sun-and-tabler-moon">
+      <path d="M 8.282 7.007 C 8.385 7.007 8.494 7.007 8.595 7.007 C 5.18 10.184 6.481 15.869 10.942 17.24 C 12.275 17.648 13.706 17.589 15 17.066 C 12.851 22.236 5.91 23.143 2.505 18.696 C -0.897 14.249 1.791 7.786 7.342 7.063 C 7.652 7.021 7.965 7 8.282 7 L 8.282 7.007 Z"/>
+      <line style="opacity: 50%" x1="18" y1="3.705" x2="18" y2="2.5"/>
+      <line style="opacity: 50%" x1="18" y1="11.295" x2="18" y2="12.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="4.816" x2="14.464" y2="3.964"/>
+      <line style="opacity: 50%" x1="20.711" y1="10.212" x2="21.563" y2="11.063"/>
+      <line style="opacity: 50%" x1="14.205" y1="7.5" x2="13.001" y2="7.5"/>
+      <line style="opacity: 50%" x1="21.795" y1="7.5" x2="23" y2="7.5"/>
+      <line style="opacity: 50%" x1="15.316" y1="10.184" x2="14.464" y2="11.036"/>
+      <line style="opacity: 50%" x1="20.711" y1="4.789" x2="21.563" y2="3.937"/>
+      <circle style="opacity: 50%" cx="18" cy="7.5" r="2.169"/>
+    </svg>
+  </symbol>
+  <symbol id="svg-pencil" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-pencil-code">
+      <path d="M4 20h4l10.5 -10.5a2.828 2.828 0 1 0 -4 -4l-10.5 10.5v4" />
+      <path d="M13.5 6.5l4 4" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+  <symbol id="svg-eye" viewBox="0 0 24 24">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="1" stroke-linecap="round" stroke-linejoin="round" class="icon-tabler-eye-code">
+      <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+      <path d="M10 12a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" />
+      <path
+        d="M11.11 17.958c-3.209 -.307 -5.91 -2.293 -8.11 -5.958c2.4 -4 5.4 -6 9 -6c3.6 0 6.6 2 9 6c-.21 .352 -.427 .688 -.647 1.008" />
+      <path d="M20 21l2 -2l-2 -2" />
+      <path d="M17 17l-2 2l2 2" />
+    </svg>
+  </symbol>
+</svg>
+
+<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle site navigation sidebar">
+<input type="checkbox" class="sidebar-toggle" name="__toc" id="__toc" aria-label="Toggle table of contents sidebar">
+<label class="overlay sidebar-overlay" for="__navigation"></label>
+<label class="overlay toc-overlay" for="__toc"></label>
+
+<a class="skip-to-content muted-link" href="#furo-main-content">Skip to content</a>
+
+
+
+<div class="page">
+  <header class="mobile-header">
+    <div class="header-left">
+      <label class="nav-overlay-icon" for="__navigation">
+        <span class="icon"><svg><use href="#svg-menu"></use></svg></span>
+      </label>
+    </div>
+    <div class="header-center">
+      <a href="../index.html"><div class="brand">mu::tiny</div></a>
+    </div>
+    <div class="header-right">
+      <div class="theme-toggle-container theme-toggle-header">
+        <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+          <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+          <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+          <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+          <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+        </button>
+      </div>
+      <label class="toc-overlay-icon toc-header-icon" for="__toc">
+        <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+      </label>
+    </div>
+  </header>
+  <aside class="sidebar-drawer">
+    <div class="sidebar-container">
+      
+      <div class="sidebar-sticky"><a class="sidebar-brand" href="../index.html">
+  <div class="sidebar-logo-container">
+    <img class="sidebar-logo" src="../_static/logo.png" alt="Logo"/>
+  </div>
+  
+  <span class="sidebar-brand-text">mu::tiny</span>
+  
+</a><div class="sidebar-version-switcher">
+  <select
+    id="version-select"
+    aria-label="Select documentation version"
+    onchange="if(this.value) window.location.href=this.value;"
+  >
+    <option value="">Version: …</option>
+  </select>
+</div>
+<script>
+(function () {
+  // Derive the site root and current version slug from the URL.
+  // URL shape: /mu.tiny/<version>/path/to/page.html
+  //   parts[0] = ""
+  //   parts[1] = "mu.tiny"   (repo name / Pages base path)
+  //   parts[2] = "main" | "v0.1.0" | …
+  var parts = window.location.pathname.split("/");
+  var siteRoot = "/" + parts.slice(1, 2).join("/") + "/";  // e.g. "/mu.tiny/"
+  var currentSlug = parts[2] || "";                         // e.g. "main"
+  var versionsUrl = siteRoot + "versions.json";
+
+  fetch(versionsUrl)
+    .then(function (r) {
+      if (!r.ok) throw new Error("versions.json not found");
+      return r.json();
+    })
+    .then(function (versions) {
+      var sel = document.getElementById("version-select");
+      sel.innerHTML = "";
+      versions.forEach(function (v) {
+        var opt = document.createElement("option");
+        opt.value = siteRoot + v.url;
+        opt.textContent = v.version;
+        if (v.version === currentSlug) {
+          opt.selected = true;
+        }
+        sel.appendChild(opt);
+      });
+    })
+    .catch(function () {
+      // Not deployed (local build) — hide the switcher silently.
+      var wrapper = document.querySelector(".sidebar-version-switcher");
+      if (wrapper) wrapper.style.display = "none";
+    });
+})();
+</script>
+<style>
+.sidebar-version-switcher {
+  padding: 0.5rem;
+  border-bottom: 1px solid var(--color-sidebar-item-background--hover);
+}
+
+.sidebar-version-switcher select {
+  width: 100%;
+  padding: 0.3rem 0.5rem;
+  background: var(--color-sidebar-item-background);
+  color: var(--color-sidebar-link-text);
+  border: 1px solid var(--color-sidebar-item-background--hover);
+  border-radius: 4px;
+  font-size: var(--font-size--small);
+  cursor: pointer;
+}
+
+.sidebar-version-switcher select:hover,
+.sidebar-version-switcher select:focus {
+  border-color: var(--color-brand-primary);
+  outline: none;
+}
+</style><form class="sidebar-search-container" method="get" action="../search.html" role="search">
+  <input class="sidebar-search" placeholder="Search" name="q" aria-label="Search">
+  <input type="hidden" name="check_keywords" value="yes">
+  <input type="hidden" name="area" value="default">
+</form>
+<div id="searchbox"></div><div class="sidebar-scroll"><div class="sidebar-tree">
+  <p class="caption" role="heading"><span class="caption-text">User Guide</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../getting-started.html">Getting Started with mu::tiny</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../test-macros.html">Test Definition Macros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../assertions.html">Assertion Macros</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../mocking.html">Mocking</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../testing-in-c.html">Testing C Code</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../command-line-reference.html">Command-Line Reference</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../plugins.html">Plugins</a><input aria-label="Toggle navigation of Plugins" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" role="switch" type="checkbox"/><label for="toctree-checkbox-1"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../set-pointer-plugin.html">SetPointerPlugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../junit-output.html">JUnit XML Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tap-output.html">TAP Output</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">CMake Integration</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../cmake.html">CMake Integration</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">API Reference</span></p>
+<ul class="current">
+<li class="toctree-l1 current has-children"><a class="reference internal" href="library_root.html">API Reference</a><input aria-label="Toggle navigation of API Reference" checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><span class="icon"><svg><use href="#svg-arrow-right"></use></svg></span></label><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="namespace_mu.html">Namespace mu</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_mu__tiny.html">Namespace mu::tiny</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_mu__tiny__mock.html">Namespace mu::tiny::mock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="namespace_mu__tiny__test.html">Namespace mu::tiny::test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structMutinyMockActualCall.html">Struct MutinyMockActualCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structMutinyMockExpectedCall.html">Struct MutinyMockExpectedCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structMutinyMockSupport.html">Struct MutinyMockSupport</a></li>
+<li class="toctree-l2"><a class="reference internal" href="structMutinyMockValue.html">Struct MutinyMockValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1ActualCall.html">Class ActualCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1CallOrderFailure.html">Class CallOrderFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1ExpectedCall.html">Class ExpectedCall</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1ExpectedCallsDidntHappenFailure.html">Class ExpectedCallsDidntHappenFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1ExpectedObjectDidntHappenFailure.html">Class ExpectedObjectDidntHappenFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1ExpectedParameterDidntHappenFailure.html">Class ExpectedParameterDidntHappenFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1Failure.html">Class Failure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1FailureReporter.html">Class FailureReporter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1FunctionComparator.html">Class FunctionComparator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1FunctionCopier.html">Class FunctionCopier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1NamedValue.html">Class NamedValue</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1NamedValueComparator.html">Class NamedValueComparator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1NamedValueComparatorsAndCopiersRepository.html">Class NamedValueComparatorsAndCopiersRepository</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1NamedValueCopier.html">Class NamedValueCopier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1NoWayToCompareCustomTypeFailure.html">Class NoWayToCompareCustomTypeFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1NoWayToCopyCustomTypeFailure.html">Class NoWayToCopyCustomTypeFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1Support.html">Class Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1SupportPlugin.html">Class SupportPlugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1TypedMockComparator.html">Template Class TypedMockComparator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1TypedMockCopier.html">Template Class TypedMockCopier</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1UnexpectedCallHappenedFailure.html">Class UnexpectedCallHappenedFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1UnexpectedInputParameterFailure.html">Class UnexpectedInputParameterFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1UnexpectedObjectFailure.html">Class UnexpectedObjectFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1mock_1_1UnexpectedOutputParameterFailure.html">Class UnexpectedOutputParameterFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1String.html">Class String</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1StringView.html">Class StringView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1ApproxEqualFailure.html">Template Class ApproxEqualFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1BinaryEqualFailure.html">Class BinaryEqualFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1CheckEqualFailure.html">Class CheckEqualFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1CheckFailure.html">Class CheckFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1CommandLineArguments.html">Class CommandLineArguments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1CommandLineRunner.html">Class CommandLineRunner</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1ComparisonFailure.html">Class ComparisonFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1ConsoleOutput.html">Class ConsoleOutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1ContainsFailure.html">Class ContainsFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1CrashingTerminator.html">Class CrashingTerminator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1CrashingTerminatorWithoutExceptions.html">Class CrashingTerminatorWithoutExceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1EqualsFailure.html">Class EqualsFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1ExecFunction.html">Class ExecFunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1ExpectFailShell.html">Class ExpectFailShell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1FailedException.html">Class FailedException</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1FailFailure.html">Class FailFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Failure.html">Class Failure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1FeatureUnsupportedFailure.html">Class FeatureUnsupportedFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Filter.html">Class Filter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1GroupLocation.html">Class GroupLocation</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Installer.html">Class Installer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1IntMaxEqualFailure.html">Class IntMaxEqualFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1JUnitOutputPlugin.html">Class JUnitOutputPlugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1NormalTerminator.html">Class NormalTerminator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1OrderedInstaller.html">Class OrderedInstaller</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1OrderedShell.html">Class OrderedShell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Output.html">Class Output</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Plugin.html">Class Plugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Registry.html">Class Registry</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Result.html">Class Result</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1SetPointerPlugin.html">Class SetPointerPlugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Shell.html">Class Shell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1ShellPointerArray.html">Class ShellPointerArray</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1SkippedShell.html">Class SkippedShell</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1StringBufferOutput.html">Class StringBufferOutput</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1StringEqualFailure.html">Class StringEqualFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1StringEqualNoCaseFailure.html">Class StringEqualNoCaseFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1TapOutputPlugin.html">Class TapOutputPlugin</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Terminator.html">Class Terminator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1TerminatorWithoutExceptions.html">Class TerminatorWithoutExceptions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1Test.html">Class Test</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1TestingFixture.html">Class TestingFixture</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1UintMaxEqualFailure.html">Class UintMaxEqualFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="classmu_1_1tiny_1_1test_1_1UnexpectedExceptionFailure.html">Class UnexpectedExceptionFailure</a></li>
+<li class="toctree-l2"><a class="reference internal" href="enum_mock_8h_1a9924d37bcacb6cc914b3254add989323.html">Enum MutinyMockValueType</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1abe3469aaec3e7d4ada2a4513694b36a1.html">Function mu::tiny::brackets_formatted_hex_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ad240ce7450a3e4bed99458ac57079c3b.html">Function mu::tiny::brackets_formatted_hex_string_from(int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ae7db8b899fdd31f87041f8a9260861c7.html">Function mu::tiny::brackets_formatted_hex_string_from(unsigned int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a83fa9273b8fd5ac986b5c801c3766c02.html">Function mu::tiny::brackets_formatted_hex_string_from(long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a30ab3a8cb1afe3c921d2aa9e7d7258df.html">Function mu::tiny::brackets_formatted_hex_string_from(unsigned long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a45f3592166461d1f11139aa06396d355.html">Function mu::tiny::brackets_formatted_hex_string_from(long long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a6891f5aa3637001befc0815bec9e6783.html">Function mu::tiny::brackets_formatted_hex_string_from(unsigned long long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a750293f8477c2138834b60ec0ed61dd7.html">Function mu::tiny::brackets_formatted_hex_string_from(signed char)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a546f3dbf2259a04bed0c91cba0ced487.html">Function mu::tiny::hex_string_from(unsigned int)</a></li>
+<li class="toctree-l2 current current-page"><a class="current reference internal" href="#">Function mu::tiny::hex_string_from(int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a768854faf90d0ce2a07efcdf01164ab5.html">Function mu::tiny::hex_string_from(signed char)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ad705f9f85c268ea4dbe91f1c73b1ccb8.html">Function mu::tiny::hex_string_from(long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1aeef5e585e47b89f5c9b89d47fdf36eb3.html">Function mu::tiny::hex_string_from(unsigned long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a84632b2abccd160e9ff4fc6d17e2e5af.html">Function mu::tiny::hex_string_from(long long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a8d09d141a739468f393c3ce04bec7212.html">Function mu::tiny::hex_string_from(unsigned long long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ab72ef15e036becd6d4c232d86167fd0f.html">Function mu::tiny::hex_string_from(const void *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a5e118a4d72f9cfdd2f683306caaea06e.html">Function mu::tiny::hex_string_from(void(*)())</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1afe73ac5413e90b574aae574e7780b60e.html">Function mu::tiny::iscntrl</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a51c34a6341fe1ac38426e1f170351440.html">Function mu::tiny::memcmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1mock_1a0af8062d4a10b0c85a6e7b9b77da6c80.html">Function mu::tiny::mock::mock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1aa8605225c30f6cf65e1fe420ddb0a67c.html">Function mu::tiny::operator!=</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a74d23aa770d97ddba56dea279e64ed7b.html">Function mu::tiny::operator==</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a2d84cc2860315220cf97be95b550a899.html">Function mu::tiny::strcmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a49869428736c6d9e6a8bf370cfe6af7b.html">Function mu::tiny::string_contains</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1aedcc69cd5ee580a840185804345500a4.html">Function mu::tiny::string_ends_with</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a7f4ee5d7ddb8b802bcaea8a49c8839e9.html">Function mu::tiny::string_from(const mock::NamedValue&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1adfcaad75719bb2c8a570f098a77a4532.html">Function mu::tiny::string_from(bool)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a9e5aeb8f25221ede2e67ee5024322891.html">Function mu::tiny::string_from(const void *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a4ed86e1c76fb1cdf83fde89089dfa51e.html">Function mu::tiny::string_from(void(*)())</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a6d7c13f5d1cb346bd551fcfe36302771.html">Template Function mu::tiny::string_from(RET(*)(ARGS…))</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1abc5759d51a1cabd691bc9be3b0608447.html">Function mu::tiny::string_from(char)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a3af82d7d98ba9e84177b19579186464c.html">Function mu::tiny::string_from(const char *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ab646edd6a31bf036cddefc1856fd0fca.html">Function mu::tiny::string_from(int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a7b034422fdbdabf338619fdad83a5c5c.html">Function mu::tiny::string_from(unsigned int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1afc24d37f6fa341e1ec48d14ee7020a91.html">Function mu::tiny::string_from(signed char)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ae86d1b50b8868ea87c477b6d721006a9.html">Function mu::tiny::string_from(unsigned char)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a7145a6b87ea00d0240ab0d55a651c605.html">Function mu::tiny::string_from(long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a7cda397d4ac312cd78d1a31c20199423.html">Function mu::tiny::string_from(unsigned long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a6a7ea65c305bad0c0bb026656990569b.html">Function mu::tiny::string_from(long long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a5a1691ff0db11b6489f1d88362417e1b.html">Function mu::tiny::string_from(unsigned long long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a7a1573867da5c0180b3e6f9f0e58d05c.html">Function mu::tiny::string_from(float, int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ab9a0f27d880a8a4cedc5a629c6d3efc8.html">Function mu::tiny::string_from(double, int)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1aea35f9d8fe14d603bcc4f282bcb4e629.html">Function mu::tiny::string_from(const String&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1af6c4eaebe6d98975f49e8a469d975c60.html">Function mu::tiny::string_from(StringView)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1af2d8b91b625ea89bbde5b99b3bd85ef5.html">Function mu::tiny::string_from(decltype(nullptr))</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1af679e1540cf9b6c5b6259085f1bdfc9a.html">Function mu::tiny::string_from(void *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a8f8f5d7f2e478f0bdcbd28f9451b1f73.html">Template Function mu::tiny::string_from(T *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a69592375e6b6e57d437647d551378d87.html">Function mu::tiny::string_from(const test::Filter&amp;)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1aecd92e682283746c670d4d5c1ecd7062.html">Function mu::tiny::string_from_binary</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1acab423e999c2bc45f33448be343c5ac8.html">Function mu::tiny::string_from_binary_or_null</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ad7b2ecff3c5424b1870da24945a5f0eb.html">Function mu::tiny::string_from_binary_with_size</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a7f006fbc1c611904fb1b8046f6597f4b.html">Function mu::tiny::string_from_binary_with_size_or_null</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a86bcbd1b46c45fee6c2433d55c8b0d9e.html">Function mu::tiny::string_from_format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ad5f6a661c3d2bd7dd66d75bf1645bb6f.html">Function mu::tiny::string_from_or_null</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a048b10bdf5004a4d5a1f68b078fe5817.html">Function mu::tiny::string_from_ordinal_number</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a0495811ba2a07216fd5e4376f6cada18.html">Function mu::tiny::string_replace(String&amp;, char, char)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ac3ce989c364d775cb5d76109e93698e2.html">Function mu::tiny::string_replace(String&amp;, const char *, const char *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a812a28c32c23fe1cdd3a9e89304a0687.html">Function mu::tiny::string_starts_with</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a53779342b125c346e054cb43240078e0.html">Function mu::tiny::strlen</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a07b382064faa9d49abafebcc0cf3e1ac.html">Function mu::tiny::strncmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ad77a0c33a7ec541884fba17f14b5d83a.html">Function mu::tiny::strstr</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1ad8b68e9daaaaec02cc9290bfb6b1a473.html">Function mu::tiny::strtoul</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1a7e025e6bb54fadd02189d6e921a55f67.html">Function mu::tiny::test::approx_equal(double, double, double)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1a35b5a9e48ef7fbeb85c3c768e3e9b606.html">Template Function mu::tiny::test::approx_equal(T, T, T)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1a0f2089498afa5a1f2c5855f5b452554e.html">Template Function mu::tiny::test::check_approx</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1ad8e3aa7f958d28eae77fbb8c888888ff.html">Template Function mu::tiny::test::check_compare</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1acd81f0ee4a12665f995b20fa99c99d58.html">Template Function mu::tiny::test::check_enum_equal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1adb7b51bc6f61946f3ccd3f2733202053.html">Template Function mu::tiny::test::check_equal</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1aa7e77cc87ecb9424da7d4a4c5a461d89.html">Function mu::tiny::test::operator&lt;&lt;(Output&amp;, const char *)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1_1test_1a08c94524a3ad99555020bfd43bc80e3e.html">Function mu::tiny::test::operator&lt;&lt;(Output&amp;, long)</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a1f7ccf1e1a1225fa77bb4789bef5180d.html">Function mu::tiny::tolower</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_namespacemu_1_1tiny_1a82f5b8f2942bd27569faf58b2bff2cb3.html">Function mu::tiny::v_string_from_format</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a3f1626f0ff23bcbd1e20fd820c6c35ad.html">Function mutiny_add_test_property</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a5243e55a28247dd9e9989ccfafd93491.html">Function mutiny_check</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a087d6b66d0c52f58d47956ddb0be2a6d.html">Function mutiny_check_equal_bool</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1af7161a14ee0c1b43b438962380910528.html">Function mutiny_check_equal_char</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a433a33f766d4804b615503323845b153.html">Function mutiny_check_equal_double</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a5a02dde4d9ab8ebb87129e9441d2d5e7.html">Function mutiny_check_equal_int</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a1ed0fd0396ef55238d938dfd1cc8550b.html">Function mutiny_check_equal_long</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1aa6501ce4097dd55c560d8a7275564e54.html">Function mutiny_check_equal_longlong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1acb4b8141b2d43c7db68970669fe9cc33.html">Function mutiny_check_equal_memcmp</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a6c49e2e7383748cd093fb4b55c9121a6.html">Function mutiny_check_equal_pointer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a9aac610dd1d80f5dff72da3427431fe5.html">Function mutiny_check_equal_sbyte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1aa3e5ec1a03d76d4247b3044b2945e763.html">Function mutiny_check_equal_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a3b102d9012626a980de76fe0210cd48f.html">Function mutiny_check_equal_ubyte</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1af111693d0c3cb41219a51aef5f07a0ca.html">Function mutiny_check_equal_uint</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1a7e104986c23559a2c62d1c8ad936137b.html">Function mutiny_check_equal_ulong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1ad5a4920e736a4fa8746556f5d1c7bf92.html">Function mutiny_check_equal_ulonglong</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_test_8h_1abe37cdab2e524831617982d6dca5be2b.html">Function mutiny_fail</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_mock_8h_1a0ab307d5675f710eceb14b5d5567955e.html">Function mutiny_mock</a></li>
+<li class="toctree-l2"><a class="reference internal" href="function_mock_8h_1ad749af26808dfba5e3404e9a2a3a62eb.html">Function mutiny_mock_scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacemu_1_1tiny_1a522efb37a8be0ee86d1107038cea8afa.html">Variable mu::tiny::default_precision</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacemu_1_1tiny_1a041a877bd7d5eba33915becd08e5cc79.html">Variable mu::tiny::get_time_in_millis</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacemu_1_1tiny_1af3cb336190a2fb514d1611c1721df41c.html">Variable mu::tiny::get_time_string</a></li>
+<li class="toctree-l2"><a class="reference internal" href="variable_namespacemu_1_1tiny_1_1test_1a49a896bbdddfbc735f4aa0fb1786037e.html">Variable mu::tiny::test::rand</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a3e1cfef60e774a81f30eaddf26a3a274.html">Define CHECK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a3e1cfef60e774a81f30eaddf26a3a274.html">Define CHECK</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a732aa2054d70baf885b0d313974dcc3a.html">Define CHECK_APPROX</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a0f0012cc29327f6b7ec01a32dd28cbc0.html">Define CHECK_APPROX_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a5c13053d4583b33015fd540095ec1568.html">Define CHECK_APPROX_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a19c0cb87244aa821b500877f34957ef0.html">Define CHECK_COMPARE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a91c08131142117789b66aea679b4b791.html">Define CHECK_COMPARE_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a04786aa43d71f26e1dbec2c95bd9be17.html">Define CHECK_COMPARE_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ad8fa79f5d491cc01af302832785e90fe.html">Define CHECK_EQUAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1ad8fa79f5d491cc01af302832785e90fe.html">Define CHECK_EQUAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a11bdac0d57c33921592bc1fa9134c61e.html">Define CHECK_EQUAL_BOOL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1acf20261d1589833822b5923ef440aa24.html">Define CHECK_EQUAL_BOOL_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ada0e9ae901a7dd709a2286e5b6bf5213.html">Define CHECK_EQUAL_CHAR</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a1299dd5db8ca9df2277b7f21ab95dbf7.html">Define CHECK_EQUAL_CHAR_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a4009a3304234bd5aabde20c3776ad2c5.html">Define CHECK_EQUAL_DOUBLE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1afbf0ed823ffc55d0830d84c965f2f0b4.html">Define CHECK_EQUAL_DOUBLE_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ac458251be52dfea31740683c18d05f88.html">Define CHECK_EQUAL_INT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a4a832548475a8ec07c04ce8eb3bfd196.html">Define CHECK_EQUAL_INT_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1aaa8305c4be45c2fb2ea50df76cf4a891.html">Define CHECK_EQUAL_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1aa146eed388611f514d5f16239b135459.html">Define CHECK_EQUAL_LONG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a18b9e274a5b4c8ea76a3a7eda110a827.html">Define CHECK_EQUAL_LONG_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ac529b6a0c3cf7f6925efe00b1eee7a42.html">Define CHECK_EQUAL_LONGLONG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a4f2206ee68112c122130faa919d7ce2e.html">Define CHECK_EQUAL_LONGLONG_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1aa4ddf9691ad934507aad33da69d3b0f1.html">Define CHECK_EQUAL_MEMCMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a9e98bfc353b49e6b9fcb4ae62e296794.html">Define CHECK_EQUAL_MEMCMP_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a44dda1e7e3e1eeb51024a14aa8cebde8.html">Define CHECK_EQUAL_POINTER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a226d17718f97a5cefcc9fb9199769758.html">Define CHECK_EQUAL_POINTER_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ac88d18bc188a5480b8a7666fa239431d.html">Define CHECK_EQUAL_SBYTE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a484391138468268e8fa0d9ab06e62688.html">Define CHECK_EQUAL_SBYTE_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a82b48aca9addd6271f2d917b3815c45a.html">Define CHECK_EQUAL_STRING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a292e557f17cb9182c9cf5d9aa7d16731.html">Define CHECK_EQUAL_STRING_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a2681dda1dbf161c98ee17cbecb63c407.html">Define CHECK_EQUAL_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a2681dda1dbf161c98ee17cbecb63c407.html">Define CHECK_EQUAL_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1add54226633abeca99fca3eb16ef6754b.html">Define CHECK_EQUAL_UBYTE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a1e2f10ca5d0d304b053f281ba8a536bd.html">Define CHECK_EQUAL_UBYTE_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a2eabb8adadef8e1976946ca945b23f5b.html">Define CHECK_EQUAL_UINT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a0f6b39d285aa801686e0ca20693b6040.html">Define CHECK_EQUAL_UINT_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ac526456959b8aed7830e16a9cb723885.html">Define CHECK_EQUAL_ULONG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a7abf801ba797d9f6e9c0607da893cf17.html">Define CHECK_EQUAL_ULONG_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a9bca8904546da14f93b73e8b23dfe2bf.html">Define CHECK_EQUAL_ULONGLONG</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a6c3c63e90263a636fabe6ac06560f7fb.html">Define CHECK_EQUAL_ULONGLONG_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a729507cef1cb986490fdfcaa194b84dd.html">Define CHECK_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1af534f9fdbade10fe33a8ff1306df9bb3.html">Define CHECK_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1af534f9fdbade10fe33a8ff1306df9bb3.html">Define CHECK_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1ab6d61c1f18bf6ed38b7fb4ddfd7f1e0c.html">Define CHECK_THROWS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a20c162ab9de1aa85370fb133cba0579e.html">Define ENUMS_EQUAL_INT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a5702785c3eb3387382fbd7eb43117fce.html">Define ENUMS_EQUAL_INT_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1ac585af859ccda9322e72f60771c1d1dc.html">Define ENUMS_EQUAL_TYPE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a3d517aca774bffcb0d6fd972b80d513f.html">Define ENUMS_EQUAL_TYPE_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a36fe72c5d7f2bf84d9e7d943d19ef7d6.html">Define ENUMS_EQUAL_TYPE_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a052944f0e69b65f45c7d49b536767dc5.html">Define FAIL_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a052944f0e69b65f45c7d49b536767dc5.html">Define FAIL_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1afaad3794e9cb3251df0d40539b9dc6e5.html">Define FAIL_TEST_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a5d3d9fcb1ddddea44f3de9108102fdd9.html">Define MEMCMP_EQUAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1ac2632bd3818a98d6c361bdee9bdbffb4.html">Define MEMCMP_EQUAL_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1aea5d12dfaa5afd67fda54598b27d16ad.html">Define MEMCMP_EQUAL_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a9d72da11719c04795f42b48717e296df.html">Define MUTINY_CHECK_EQUAL_GENERIC</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_String_8hpp_1af753ad4faffbf7f582d1df554642a280.html">Define MUTINY_CHECK_FORMAT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_String_8hpp_1aa358201868d1baf8b902e408a9dfb27d.html">Define MUTINY_CHECK_FORMAT_TYPE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_String_8hpp_1ac8760637d44183b13b42e6f77cab9618.html">Define MUTINY_HAS_ATTRIBUTE</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_features_8hpp_1a5a26da6f7c8a977c197d09ab19eae3e5.html">Define MUTINY_HAVE_EXCEPTIONS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_features_8hpp_1ad7c1f08117f27bae9353851f38c7fd55.html">Define MUTINY_HAVE_RTTI</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_SetPointerPlugin_8hpp_1ab46a6c558e87a029cffe107b358a2691.html">Define MUTINY_PTR_SET</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_features_8hpp_1a8f602349c2758b19ac1cb5f792134974.html">Define MUTINY_USE_STD_CPP_LIB</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_features_8hpp_1a2b5a2087ad8293d85d2612da40675a1b.html">Define MUTINY_USE_STD_STRING</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a483edb811180703e72bc5f4bf542b63b.html">Define PASS_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a4e9cbfd269607f716b5ecfab126082ff.html">Define SKIP_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a5d02b853387f2fbd121717fa2691fb49.html">Define SKIP_TEST_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a235cffa951470b7e037566c4f8f201f6.html">Define SKIPPED_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1ae162bf4308def7ef20e29b0941459a7b.html">Define SKIPPED_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1aa9a57a9652aaee3afddcce59b86c1aec.html">Define SKIPPED_TEST_C_WRAPPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a13a6dd463439a53bd882a77f86550b1c.html">Define STRCMP_CONTAINS</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1ada21cc2c59c94d280ec1552b2f2646c1.html">Define STRCMP_CONTAINS_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a076de7a9490a8ad749b45cef17d64d43.html">Define STRCMP_CONTAINS_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1ade1dda09c948fee9ceb853bc6dd5f3cb.html">Define STRCMP_EQUAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a15c8b2f5a92a6329bf719b5165c95d1d.html">Define STRCMP_EQUAL_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1af9975aa9eed001ff2a87ec5d633f3721.html">Define STRCMP_EQUAL_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1acc15b778468d011be96bd6631c8152ef.html">Define STRNCMP_EQUAL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a857ff1670e4c8fb684fd293480d8fd0f.html">Define STRNCMP_EQUAL_LOCATION</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Shell_8hpp_1a2a0b026aed3349a3113a2dbd86c2cc6a.html">Define STRNCMP_EQUAL_TEXT</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a387737a52be7d4ade8c76832ec677100.html">Define TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1a13fb650bc56807117ccc8c53d4c957c9.html">Define TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1a6c0c65b643024b9ee58fdc07f8fbe979.html">Define TEST_C_WRAPPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1a109b3c7ca51a87da0abc0a229663d7fd.html">Define TEST_GROUP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1aeedf9322212e16ddaabc340404703745.html">Define TEST_GROUP_C_SETUP_WRAPPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1aead14428ba6b29b394a23d4d45184b3d.html">Define TEST_GROUP_C_TEARDOWN_WRAPPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1a8327a4ff88f515110c861ff51be3aa4f.html">Define TEST_GROUP_C_WRAPPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ab1dbd2ab676f33284ffc35f85d157862.html">Define TEST_GROUP_SETUP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1a86e1827120c7b2ce2771e9dd7995fe22.html">Define TEST_GROUP_TEARDOWN</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Ordered_8hpp_1aa15fbdcf13c65a0b0f686f4d1911b67c.html">Define TEST_ORDERED</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_Ordered_8hpp_1a2671506cabf3c48e0d2ab70c6114def5.html">Define TEST_ORDERED_C_WRAPPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1ab520808816db65b3eab94c6d3e54e26c.html">Define TEST_PROPERTY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1ab520808816db65b3eab94c6d3e54e26c.html">Define TEST_PROPERTY</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8h_1acb496fa2cbcfaf0cb310ee4d264bf249.html">Define XFAIL_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1aa9ff545fa09da9acea1597de7ecbdd83.html">Define XFAIL_TEST</a></li>
+<li class="toctree-l2"><a class="reference internal" href="define_test_8hpp_1a9be9c68fe88fa13774a2912f4dacb377.html">Define XFAIL_TEST_C_WRAPPER</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_mock_8h_1a7328c7e56848040e6073e88a6049813f.html">Typedef MutinyMockTypeCopyFunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_mock_8h_1a93b9aac1a099cf6ad4bf4ba4c779816e.html">Typedef MutinyMockTypeEqualFunction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="typedef_mock_8h_1aaec1a1431ce09467b8f7cdd8d04e2eb7.html">Typedef MutinyMockTypeValueToStringFunction</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing.html">Contributing to <em>mu::tiny</em></a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Release History</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../changelog.html">Changelog</a></li>
+</ul>
+
+</div></div>
+      </div>
+      
+    </div>
+  </aside>
+  <div class="main">
+    <div class="content">
+      <div class="article-container">
+        <a href="#" class="back-to-top muted-link">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12z"></path>
+          </svg>
+          <span>Back to top</span>
+        </a>
+        <div class="content-icon-container">
+          <div class="view-this-page">
+  <a class="muted-link" href="https://github.com/thetic/mu.tiny/blob/v0.8.0/docs/api/function_namespacemu_1_1tiny_1aad75c2037890db4392c4269410381dd5.rst?plain=true" title="View this page">
+    <svg><use href="#svg-eye"></use></svg>
+    <span class="visually-hidden">View this page</span>
+  </a>
+</div><div class="edit-this-page">
+  <a class="muted-link" href="https://github.com/thetic/mu.tiny/edit/v0.8.0/docs/api/function_namespacemu_1_1tiny_1aad75c2037890db4392c4269410381dd5.rst" rel="edit" title="Edit this page">
+    <svg><use href="#svg-pencil"></use></svg>
+    <span class="visually-hidden">Edit this page</span>
+  </a>
+</div><div class="theme-toggle-container theme-toggle-content">
+            <button class="theme-toggle" aria-label="Toggle Light / Dark / Auto color theme">
+              <svg class="theme-icon-when-auto-light"><use href="#svg-sun-with-moon"></use></svg>
+              <svg class="theme-icon-when-auto-dark"><use href="#svg-moon-with-sun"></use></svg>
+              <svg class="theme-icon-when-dark"><use href="#svg-moon"></use></svg>
+              <svg class="theme-icon-when-light"><use href="#svg-sun"></use></svg>
+            </button>
+          </div>
+          <label class="toc-overlay-icon toc-content-icon" for="__toc">
+            <span class="icon"><svg><use href="#svg-toc"></use></svg></span>
+          </label>
+        </div>
+        <article role="main" id="furo-main-content">
+          <section id="function-mu-tiny-hex-string-from-int">
+<span id="exhale-function-namespacemu-1-1tiny-1aad75c2037890db4392c4269410381dd5"></span><h1>Function mu::tiny::hex_string_from(int)<a class="headerlink" href="#function-mu-tiny-hex-string-from-int" title="Link to this heading">¶</a></h1>
+<ul class="simple">
+<li><p>Defined in <a class="reference internal" href="file_include_mu_tiny_String.hpp.html#file-include-mu-tiny-string-hpp"><span class="std std-ref">File String.hpp</span></a></p></li>
+</ul>
+<section id="function-documentation">
+<h2>Function Documentation<a class="headerlink" href="#function-documentation" title="Link to this heading">¶</a></h2>
+<dl class="cpp function">
+<dt class="sig sig-object cpp" id="_CPPv4N2mu4tiny15hex_string_fromEi">
+<span id="_CPPv3N2mu4tiny15hex_string_fromEi"></span><span id="_CPPv2N2mu4tiny15hex_string_fromEi"></span><span id="mu::tiny::hex_string_from__i"></span><span class="target" id="namespacemu_1_1tiny_1aad75c2037890db4392c4269410381dd5"></span><a class="reference internal" href="classmu_1_1tiny_1_1String.html#_CPPv4N2mu4tiny6StringE" title="mu::tiny::String"><span class="n"><span class="pre">String</span></span></a><span class="w"> </span><span class="sig-prename descclassname"><span class="n"><span class="pre">mu</span></span><span class="p"><span class="pre">::</span></span><span class="n"><span class="pre">tiny</span></span><span class="p"><span class="pre">::</span></span></span><span class="sig-name descname"><span class="n"><span class="pre">hex_string_from</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">int</span></span><span class="w"> </span><span class="n sig-param"><span class="pre">value</span></span><span class="sig-paren">)</span><a class="headerlink" href="#_CPPv4N2mu4tiny15hex_string_fromEi" title="Link to this definition">¶</a><br /></dt>
+<dd><p>Return <code class="docutils literal notranslate"><span class="pre">value</span></code> as a <code class="docutils literal notranslate"><span class="pre">0x</span></code>-prefixed hexadecimal string. </p>
+</dd></dl>
+
+</section>
+</section>
+
+        </article>
+      </div>
+      <footer>
+        
+        <div class="related-pages">
+          <a class="next-page" href="function_namespacemu_1_1tiny_1a768854faf90d0ce2a07efcdf01164ab5.html">
+              <div class="page-info">
+                <div class="context">
+                  <span>Next</span>
+                </div>
+                <div class="title">Function mu::tiny::hex_string_from(signed char)</div>
+              </div>
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+            </a>
+          <a class="prev-page" href="function_namespacemu_1_1tiny_1a546f3dbf2259a04bed0c91cba0ced487.html">
+              <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
+              <div class="page-info">
+                <div class="context">
+                  <span>Previous</span>
+                </div>
+                
+                <div class="title">Function mu::tiny::hex_string_from(unsigned int)</div>
+                
+              </div>
+            </a>
+        </div>
+        <div class="bottom-of-page">
+          <div class="left-details">
+            <div class="copyright">
+                Copyright &#169; 2026, Chad Condon
+            </div>
+            Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
+            
+            <a href="https://github.com/pradyunsg/furo">Furo</a>
+            
+          </div>
+          <div class="right-details">
+            <div class="icons">
+              <a class="muted-link " href="https://github.com/thetic/mu.tiny" aria-label="GitHub"><svg stroke="currentColor" fill="currentColor" stroke-width="0" viewBox="0 0 16 16"><path fill-rule="evenodd" d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0 0 16 8c0-4.42-3.58-8-8-8z"></path></svg></a>
+              
+            </div>
+          </div>
+        </div>
+        
+      </footer>
+    </div>
+    <aside class="toc-drawer">
+      
+      
+      <div class="toc-sticky toc-scroll">
+        <div class="toc-title-container">
+          <span class="toc-title">
+            On this page
+          </span>
+        </div>
+        <div class="toc-tree-container">
+          <div class="toc-tree">
+            <ul>
+<li><a class="reference internal" href="#">Function mu::tiny::hex_string_from(int)</a><ul>
+<li><a class="reference internal" href="#function-documentation">Function Documentation</a><ul>
+<li><a class="reference internal" href="#_CPPv4N2mu4tiny15hex_string_fromEi"><code class="docutils literal notranslate"><span class="pre">hex_string_from()</span></code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+          </div>
+        </div>
+      </div>
+      
+      
+    </aside>
+  </div>
+</div><script src="../_static/documentation_options.js?v=486e5634"></script>
+    <script src="../_static/doctools.js?v=fd6eb6e6"></script>
+    <script src="../_static/sphinx_highlight.js?v=6ffebe34"></script>
+    <script src="../_static/scripts/furo.js?v=46bd48cc"></script>
+    </body>
+</html>

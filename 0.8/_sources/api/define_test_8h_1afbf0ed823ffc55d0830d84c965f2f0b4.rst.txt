@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1afbf0ed823ffc55d0830d84c965f2f0b4:
+
+Define CHECK_EQUAL_DOUBLE_TEXT
+==============================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_DOUBLE_TEXT
+   :project: mu::tiny

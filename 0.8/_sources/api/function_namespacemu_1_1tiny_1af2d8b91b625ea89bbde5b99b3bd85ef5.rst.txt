@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1af2d8b91b625ea89bbde5b99b3bd85ef5:
+
+Function mu::tiny::string_from(decltype(nullptr))
+=================================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from(decltype(nullptr))
+   :project: mu::tiny

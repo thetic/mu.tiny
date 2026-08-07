@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a7f4ee5d7ddb8b802bcaea8a49c8839e9:
+
+Function mu::tiny::string_from(const mock::NamedValue&)
+=======================================================
+
+- Defined in :ref:`file_include_mu_tiny_mock_ExpectedCall.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from(const mock::NamedValue&)
+   :project: mu::tiny

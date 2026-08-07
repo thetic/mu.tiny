@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a226d17718f97a5cefcc9fb9199769758:
+
+Define CHECK_EQUAL_POINTER_TEXT
+===============================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_POINTER_TEXT
+   :project: mu::tiny

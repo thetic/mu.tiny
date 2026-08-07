@@ -1,0 +1,14 @@
+.. _exhale_define_Ordered_8hpp_1a2671506cabf3c48e0d2ab70c6114def5:
+
+Define TEST_ORDERED_C_WRAPPER
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_test_Ordered.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TEST_ORDERED_C_WRAPPER
+   :project: mu::tiny

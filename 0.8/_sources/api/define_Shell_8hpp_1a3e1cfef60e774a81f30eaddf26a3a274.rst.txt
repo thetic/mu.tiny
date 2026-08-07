@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a3e1cfef60e774a81f30eaddf26a3a274:
+
+Define CHECK
+============
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK
+   :project: mu::tiny

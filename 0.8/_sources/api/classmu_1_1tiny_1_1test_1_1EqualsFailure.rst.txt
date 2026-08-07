@@ -1,0 +1,26 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1EqualsFailure:
+
+Class EqualsFailure
+===================
+
+- Defined in :ref:`file_include_mu_tiny_test_Failure.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public mu::tiny::test::Failure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Failure`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::EqualsFailure
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

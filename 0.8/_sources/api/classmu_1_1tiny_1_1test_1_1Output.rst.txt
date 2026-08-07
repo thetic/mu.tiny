@@ -1,0 +1,27 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1Output:
+
+Class Output
+============
+
+- Defined in :ref:`file_include_mu_tiny_test_Output.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public mu::tiny::test::ConsoleOutput`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ConsoleOutput`)
+- ``public mu::tiny::test::StringBufferOutput`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringBufferOutput`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::Output
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

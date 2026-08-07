@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1aa8605225c30f6cf65e1fe420ddb0a67c:
+
+Function mu::tiny::operator!=
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_StringView.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::operator!=(StringView, StringView)
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a07b382064faa9d49abafebcc0cf3e1ac:
+
+Function mu::tiny::strncmp
+==========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::strncmp(const char *, const char *, size_t)
+   :project: mu::tiny

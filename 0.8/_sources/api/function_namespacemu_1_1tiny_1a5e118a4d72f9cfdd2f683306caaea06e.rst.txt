@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a5e118a4d72f9cfdd2f683306caaea06e:
+
+Function mu::tiny::hex_string_from(void(\*)())
+==============================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::hex_string_from(void(*)())
+   :project: mu::tiny

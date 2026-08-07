@@ -1,0 +1,17 @@
+.. _exhale_struct_structMutinyMockValue:
+
+Struct MutinyMockValue
+======================
+
+- Defined in :ref:`file_include_mu_tiny_mock.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: MutinyMockValue
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

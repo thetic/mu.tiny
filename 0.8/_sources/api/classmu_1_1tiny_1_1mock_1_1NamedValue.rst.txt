@@ -1,0 +1,17 @@
+.. _exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValue:
+
+Class NamedValue
+================
+
+- Defined in :ref:`file_include_mu_tiny_mock_NamedValue.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::mock::NamedValue
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

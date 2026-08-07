@@ -1,0 +1,17 @@
+.. _exhale_class_classmu_1_1tiny_1_1String:
+
+Class String
+============
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::String
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

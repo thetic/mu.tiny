@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a1299dd5db8ca9df2277b7f21ab95dbf7:
+
+Define CHECK_EQUAL_CHAR_TEXT
+============================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_CHAR_TEXT
+   :project: mu::tiny

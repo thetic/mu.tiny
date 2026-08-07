@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a5d3d9fcb1ddddea44f3de9108102fdd9:
+
+Define MEMCMP_EQUAL
+===================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MEMCMP_EQUAL
+   :project: mu::tiny

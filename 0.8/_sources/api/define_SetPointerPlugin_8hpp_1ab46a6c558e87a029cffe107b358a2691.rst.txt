@@ -1,0 +1,14 @@
+.. _exhale_define_SetPointerPlugin_8hpp_1ab46a6c558e87a029cffe107b358a2691:
+
+Define MUTINY_PTR_SET
+=====================
+
+- Defined in :ref:`file_include_mu_tiny_test_SetPointerPlugin.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_PTR_SET
+   :project: mu::tiny

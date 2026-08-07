@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a53779342b125c346e054cb43240078e0:
+
+Function mu::tiny::strlen
+=========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::strlen(const char *)
+   :project: mu::tiny

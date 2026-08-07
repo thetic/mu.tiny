@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1a3f1626f0ff23bcbd1e20fd820c6c35ad:
+
+Function mutiny_add_test_property
+=================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_add_test_property(const char *, const char *)
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1a9aac610dd1d80f5dff72da3427431fe5:
+
+Function mutiny_check_equal_sbyte
+=================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_check_equal_sbyte(signed char, signed char, const char *, const char *, int_least32_t)
+   :project: mu::tiny

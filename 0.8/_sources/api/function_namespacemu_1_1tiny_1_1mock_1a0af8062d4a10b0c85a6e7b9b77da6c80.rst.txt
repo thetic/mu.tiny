@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1_1mock_1a0af8062d4a10b0c85a6e7b9b77da6c80:
+
+Function mu::tiny::mock::mock
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_mock.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::mock::mock(StringView, FailureReporter *)
+   :project: mu::tiny

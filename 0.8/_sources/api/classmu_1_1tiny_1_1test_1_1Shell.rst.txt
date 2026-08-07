@@ -1,0 +1,28 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1Shell:
+
+Class Shell
+===========
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public mu::tiny::test::ExpectFailShell`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ExpectFailShell`)
+- ``public mu::tiny::test::OrderedShell`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1OrderedShell`)
+- ``public mu::tiny::test::SkippedShell`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1SkippedShell`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::Shell
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

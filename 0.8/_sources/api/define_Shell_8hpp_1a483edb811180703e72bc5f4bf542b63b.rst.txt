@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a483edb811180703e72bc5f4bf542b63b:
+
+Define PASS_TEST
+================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: PASS_TEST
+   :project: mu::tiny

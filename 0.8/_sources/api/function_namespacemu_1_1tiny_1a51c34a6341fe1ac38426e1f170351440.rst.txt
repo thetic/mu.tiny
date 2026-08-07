@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a51c34a6341fe1ac38426e1f170351440:
+
+Function mu::tiny::memcmp
+=========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::memcmp(const void *, const void *, size_t)
+   :project: mu::tiny

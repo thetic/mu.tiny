@@ -1,0 +1,59 @@
+
+.. _file_include_mu_tiny_test_ConsoleOutput.hpp:
+
+File ConsoleOutput.hpp
+======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+printf-based :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Output` implementation for console logging. 
+
+
+Definition (``include/mu/tiny/test/ConsoleOutput.hpp``)
+-------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+The default :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Output` used by :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CommandLineRunner`. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/Output.hpp`` (:ref:`file_include_mu_tiny_test_Output.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ConsoleOutput`
+

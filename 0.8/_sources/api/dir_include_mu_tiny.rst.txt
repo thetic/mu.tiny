@@ -1,0 +1,34 @@
+.. _dir_include_mu_tiny:
+
+
+Directory tiny
+==============
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu>` (``include/mu``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``include/mu/tiny``
+
+Subdirectories
+--------------
+
+- :ref:`dir_include_mu_tiny_mock`
+- :ref:`dir_include_mu_tiny_test`
+
+
+Files
+-----
+
+- :ref:`file_include_mu_tiny_features.hpp`
+- :ref:`file_include_mu_tiny_mock.h`
+- :ref:`file_include_mu_tiny_mock.hpp`
+- :ref:`file_include_mu_tiny_String.hpp`
+- :ref:`file_include_mu_tiny_StringView.hpp`
+- :ref:`file_include_mu_tiny_test.h`
+- :ref:`file_include_mu_tiny_test.hpp`
+- :ref:`file_include_mu_tiny_time.hpp`
+
+

@@ -1,0 +1,81 @@
+
+.. _file_include_mu_tiny_mock_Failure.hpp:
+
+File Failure.hpp
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_mock>` (``include/mu/tiny/mock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Mock failure reporter and failure types. 
+
+
+Definition (``include/mu/tiny/mock/Failure.hpp``)
+-------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1FailureReporter` routes failures from :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1Support` to the test framework. :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1Failure` is the base class for all mock-layer failure messages. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/Failure.hpp`` (:ref:`file_include_mu_tiny_test_Failure.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__mock`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1CallOrderFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedCallsDidntHappenFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedObjectDidntHappenFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedParameterDidntHappenFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1Failure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1FailureReporter`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NoWayToCompareCustomTypeFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NoWayToCopyCustomTypeFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedCallHappenedFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedInputParameterFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedObjectFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedOutputParameterFailure`
+

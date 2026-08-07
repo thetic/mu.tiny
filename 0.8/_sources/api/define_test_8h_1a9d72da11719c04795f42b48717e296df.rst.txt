@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a9d72da11719c04795f42b48717e296df:
+
+Define MUTINY_CHECK_EQUAL_GENERIC
+=================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_CHECK_EQUAL_GENERIC
+   :project: mu::tiny

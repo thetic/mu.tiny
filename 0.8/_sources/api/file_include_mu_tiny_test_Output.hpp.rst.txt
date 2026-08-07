@@ -1,0 +1,82 @@
+
+.. _file_include_mu_tiny_test_Output.hpp:
+
+File Output.hpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Abstract output interface for test result reporting. 
+
+
+Definition (``include/mu/tiny/test/Output.hpp``)
+------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Kept stream-free to reduce footprint and support limited compilers. Concrete implementations: :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ConsoleOutput`, :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringBufferOutput`, and :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1JUnitOutputPlugin`. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/String.hpp`` (:ref:`file_include_mu_tiny_String.hpp`)
+
+- ``mu/tiny/export.h``
+
+- ``stdint.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test_CommandLineArguments.hpp`
+
+- :ref:`file_include_mu_tiny_test_CommandLineRunner.hpp`
+
+- :ref:`file_include_mu_tiny_test_ConsoleOutput.hpp`
+
+- :ref:`file_include_mu_tiny_test_StringBufferOutput.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Output`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1aa7e77cc87ecb9424da7d4a4c5a461d89`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a08c94524a3ad99555020bfd43bc80e3e`
+

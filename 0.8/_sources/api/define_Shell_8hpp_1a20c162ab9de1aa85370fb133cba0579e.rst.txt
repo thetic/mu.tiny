@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a20c162ab9de1aa85370fb133cba0579e:
+
+Define ENUMS_EQUAL_INT
+======================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ENUMS_EQUAL_INT
+   :project: mu::tiny

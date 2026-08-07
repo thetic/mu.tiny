@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1af6c4eaebe6d98975f49e8a469d975c60:
+
+Function mu::tiny::string_from(StringView)
+==========================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from(StringView)
+   :project: mu::tiny

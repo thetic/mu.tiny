@@ -1,0 +1,26 @@
+.. _exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedInputParameterFailure:
+
+Class UnexpectedInputParameterFailure
+=====================================
+
+- Defined in :ref:`file_include_mu_tiny_mock_Failure.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public mu::tiny::mock::Failure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1Failure`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::mock::UnexpectedInputParameterFailure
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

@@ -1,0 +1,40 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1Failure:
+
+Class Failure
+=============
+
+- Defined in :ref:`file_include_mu_tiny_test_Failure.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public mu::tiny::mock::Failure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1Failure`)
+- ``public mu::tiny::test::ApproxEqualFailure< T >`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ApproxEqualFailure`)
+- ``public mu::tiny::test::BinaryEqualFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1BinaryEqualFailure`)
+- ``public mu::tiny::test::CheckEqualFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CheckEqualFailure`)
+- ``public mu::tiny::test::CheckFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CheckFailure`)
+- ``public mu::tiny::test::ComparisonFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ComparisonFailure`)
+- ``public mu::tiny::test::ContainsFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ContainsFailure`)
+- ``public mu::tiny::test::EqualsFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1EqualsFailure`)
+- ``public mu::tiny::test::FailFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1FailFailure`)
+- ``public mu::tiny::test::FeatureUnsupportedFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1FeatureUnsupportedFailure`)
+- ``public mu::tiny::test::IntMaxEqualFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1IntMaxEqualFailure`)
+- ``public mu::tiny::test::StringEqualFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringEqualFailure`)
+- ``public mu::tiny::test::StringEqualNoCaseFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringEqualNoCaseFailure`)
+- ``public mu::tiny::test::UintMaxEqualFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1UintMaxEqualFailure`)
+- ``public mu::tiny::test::UnexpectedExceptionFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1UnexpectedExceptionFailure`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::Failure
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

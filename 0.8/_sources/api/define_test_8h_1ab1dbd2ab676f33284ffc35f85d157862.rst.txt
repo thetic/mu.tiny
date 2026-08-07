@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1ab1dbd2ab676f33284ffc35f85d157862:
+
+Define TEST_GROUP_SETUP
+=======================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TEST_GROUP_SETUP
+   :project: mu::tiny

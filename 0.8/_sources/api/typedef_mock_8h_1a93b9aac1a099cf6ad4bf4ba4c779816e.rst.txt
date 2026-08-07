@@ -1,0 +1,14 @@
+.. _exhale_typedef_mock_8h_1a93b9aac1a099cf6ad4bf4ba4c779816e:
+
+Typedef MutinyMockTypeEqualFunction
+===================================
+
+- Defined in :ref:`file_include_mu_tiny_mock.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: MutinyMockTypeEqualFunction
+   :project: mu::tiny

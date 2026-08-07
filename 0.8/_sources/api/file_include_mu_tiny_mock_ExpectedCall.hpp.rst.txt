@@ -1,0 +1,74 @@
+
+.. _file_include_mu_tiny_mock_ExpectedCall.hpp:
+
+File ExpectedCall.hpp
+=====================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_mock>` (``include/mu/tiny/mock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Fluent interface returned by mu::tiny::mock::Support::expect_one_call() and friends. 
+
+
+Definition (``include/mu/tiny/mock/ExpectedCall.hpp``)
+------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Use the fluent methods to constrain which parameter values and call order the actual call must match, and to configure the return value the mock will produce. The corresponding fluent interface for actual calls is :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ActualCall`. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/StringView.hpp`` (:ref:`file_include_mu_tiny_StringView.hpp`)
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/mock/NamedValue.hpp`` (:ref:`file_include_mu_tiny_mock_NamedValue.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_mock.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__mock`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedCall`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1a7f4ee5d7ddb8b802bcaea8a49c8839e9`
+

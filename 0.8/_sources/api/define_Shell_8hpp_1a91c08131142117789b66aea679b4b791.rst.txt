@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a91c08131142117789b66aea679b4b791:
+
+Define CHECK_COMPARE_LOCATION
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_COMPARE_LOCATION
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a2a0b026aed3349a3113a2dbd86c2cc6a:
+
+Define STRNCMP_EQUAL_TEXT
+=========================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: STRNCMP_EQUAL_TEXT
+   :project: mu::tiny

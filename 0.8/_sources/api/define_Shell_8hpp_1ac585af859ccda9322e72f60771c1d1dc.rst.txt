@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1ac585af859ccda9322e72f60771c1d1dc:
+
+Define ENUMS_EQUAL_TYPE
+=======================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ENUMS_EQUAL_TYPE
+   :project: mu::tiny

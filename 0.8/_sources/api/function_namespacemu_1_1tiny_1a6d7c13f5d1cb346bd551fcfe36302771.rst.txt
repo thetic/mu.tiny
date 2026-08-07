@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a6d7c13f5d1cb346bd551fcfe36302771:
+
+Template Function mu::tiny::string_from(RET(\*)(ARGS...))
+=========================================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from(RET(*)(ARGS...))
+   :project: mu::tiny

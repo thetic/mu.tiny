@@ -1,0 +1,14 @@
+.. _exhale_define_test_8hpp_1ae162bf4308def7ef20e29b0941459a7b:
+
+Define SKIPPED_TEST
+===================
+
+- Defined in :ref:`file_include_mu_tiny_test.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SKIPPED_TEST
+   :project: mu::tiny

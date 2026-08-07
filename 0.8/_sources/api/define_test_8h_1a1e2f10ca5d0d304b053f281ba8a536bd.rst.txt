@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a1e2f10ca5d0d304b053f281ba8a536bd:
+
+Define CHECK_EQUAL_UBYTE_TEXT
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_UBYTE_TEXT
+   :project: mu::tiny

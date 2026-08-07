@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1ac529b6a0c3cf7f6925efe00b1eee7a42:
+
+Define CHECK_EQUAL_LONGLONG
+===========================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_LONGLONG
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_function_mock_8h_1a0ab307d5675f710eceb14b5d5567955e:
+
+Function mutiny_mock
+====================
+
+- Defined in :ref:`file_include_mu_tiny_mock.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_mock(void)
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1_1test_1adb7b51bc6f61946f3ccd3f2733202053:
+
+Template Function mu::tiny::test::check_equal
+=============================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::test::check_equal(const T&, const U&, const char *, const char *, int_least32_t)
+   :project: mu::tiny

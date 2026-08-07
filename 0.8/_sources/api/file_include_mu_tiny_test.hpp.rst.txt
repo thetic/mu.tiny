@@ -1,0 +1,88 @@
+
+.. _file_include_mu_tiny_test.hpp:
+
+File test.hpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny>` (``include/mu/tiny``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Primary test-definition header for mutiny. 
+
+
+Definition (``include/mu/tiny/test.hpp``)
+-----------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Include this header in every C++ test file. It provides the macros needed to declare test groups and individual tests: :ref:`exhale_define_test_8hpp_1a109b3c7ca51a87da0abc0a229663d7fd`, :ref:`exhale_define_test_8h_1a387737a52be7d4ade8c76832ec677100`, :ref:`exhale_define_test_8h_1a235cffa951470b7e037566c4f8f201f6`, :ref:`exhale_define_test_8h_1acb496fa2cbcfaf0cb310ee4d264bf249`, and the C-interop wrappers. Assertion macros are provided by :ref:`file_include_mu_tiny_test_Shell.hpp`, which this header includes transitively. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/test/ExpectFailShell.hpp`` (:ref:`file_include_mu_tiny_test_ExpectFailShell.hpp`)
+
+- ``mu/tiny/test/Failure.hpp`` (:ref:`file_include_mu_tiny_test_Failure.hpp`)
+
+- ``mu/tiny/test/GroupLocation.hpp`` (:ref:`file_include_mu_tiny_test_GroupLocation.hpp`)
+
+- ``mu/tiny/test/Installer.hpp`` (:ref:`file_include_mu_tiny_test_Installer.hpp`)
+
+- ``mu/tiny/test/Ordered.hpp`` (:ref:`file_include_mu_tiny_test_Ordered.hpp`)
+
+- ``mu/tiny/test/Plugin.hpp`` (:ref:`file_include_mu_tiny_test_Plugin.hpp`)
+
+- ``mu/tiny/test/Result.hpp`` (:ref:`file_include_mu_tiny_test_Result.hpp`)
+
+- ``mu/tiny/test/SetPointerPlugin.hpp`` (:ref:`file_include_mu_tiny_test_SetPointerPlugin.hpp`)
+
+- ``mu/tiny/test/Shell.hpp`` (:ref:`file_include_mu_tiny_test_Shell.hpp`)
+
+- ``mu/tiny/test/ShellPointerArray.hpp`` (:ref:`file_include_mu_tiny_test_ShellPointerArray.hpp`)
+
+- ``mu/tiny/test/SkippedShell.hpp`` (:ref:`file_include_mu_tiny_test_SkippedShell.hpp`)
+
+- ``mu/tiny/test/Test.hpp`` (:ref:`file_include_mu_tiny_test_Test.hpp`)
+
+
+
+
+
+
+Defines
+-------
+
+
+- :ref:`exhale_define_test_8hpp_1ae162bf4308def7ef20e29b0941459a7b`
+
+- :ref:`exhale_define_test_8hpp_1aa9a57a9652aaee3afddcce59b86c1aec`
+
+- :ref:`exhale_define_test_8hpp_1a13fb650bc56807117ccc8c53d4c957c9`
+
+- :ref:`exhale_define_test_8hpp_1a6c0c65b643024b9ee58fdc07f8fbe979`
+
+- :ref:`exhale_define_test_8hpp_1a109b3c7ca51a87da0abc0a229663d7fd`
+
+- :ref:`exhale_define_test_8hpp_1aeedf9322212e16ddaabc340404703745`
+
+- :ref:`exhale_define_test_8hpp_1aead14428ba6b29b394a23d4d45184b3d`
+
+- :ref:`exhale_define_test_8hpp_1a8327a4ff88f515110c861ff51be3aa4f`
+
+- :ref:`exhale_define_test_8hpp_1ab520808816db65b3eab94c6d3e54e26c`
+
+- :ref:`exhale_define_test_8hpp_1aa9ff545fa09da9acea1597de7ecbdd83`
+
+- :ref:`exhale_define_test_8hpp_1a9be9c68fe88fa13774a2912f4dacb377`
+

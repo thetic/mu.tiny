@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a052944f0e69b65f45c7d49b536767dc5:
+
+Define FAIL_TEST
+================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FAIL_TEST
+   :project: mu::tiny

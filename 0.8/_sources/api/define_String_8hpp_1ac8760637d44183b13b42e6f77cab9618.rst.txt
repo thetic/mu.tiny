@@ -1,0 +1,14 @@
+.. _exhale_define_String_8hpp_1ac8760637d44183b13b42e6f77cab9618:
+
+Define MUTINY_HAS_ATTRIBUTE
+===========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_HAS_ATTRIBUTE
+   :project: mu::tiny

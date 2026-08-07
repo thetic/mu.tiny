@@ -1,0 +1,78 @@
+
+.. _file_include_mu_tiny_StringView.hpp:
+
+File StringView.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny>` (``include/mu/tiny``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Non-owning view over a NUL-terminated character sequence. 
+
+
+Definition (``include/mu/tiny/StringView.hpp``)
+-----------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+StringView stores a pointer and a length without allocating or copying. It is always the custom implementation regardless of :ref:`exhale_define_features_8hpp_1a2b5a2087ad8293d85d2612da40675a1b`, keeping the type trivially copyable and free of standard-library dependencies. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/String.hpp`` (:ref:`file_include_mu_tiny_String.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_mock_ActualCall.hpp`
+
+- :ref:`file_include_mu_tiny_mock_ExpectedCall.hpp`
+
+- :ref:`file_include_mu_tiny_mock_NamedValue.hpp`
+
+- :ref:`file_include_mu_tiny_mock_NamedValueComparatorsAndCopiersRepository.hpp`
+
+- :ref:`file_include_mu_tiny_mock_SupportPlugin.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1StringView`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1aa8605225c30f6cf65e1fe420ddb0a67c`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1a74d23aa770d97ddba56dea279e64ed7b`
+

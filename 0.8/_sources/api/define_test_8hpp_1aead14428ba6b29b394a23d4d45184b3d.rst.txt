@@ -1,0 +1,14 @@
+.. _exhale_define_test_8hpp_1aead14428ba6b29b394a23d4d45184b3d:
+
+Define TEST_GROUP_C_TEARDOWN_WRAPPER
+====================================
+
+- Defined in :ref:`file_include_mu_tiny_test.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TEST_GROUP_C_TEARDOWN_WRAPPER
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a3e1cfef60e774a81f30eaddf26a3a274:
+
+Define CHECK
+============
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK
+   :project: mu::tiny

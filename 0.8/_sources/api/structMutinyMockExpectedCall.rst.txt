@@ -1,0 +1,17 @@
+.. _exhale_struct_structMutinyMockExpectedCall:
+
+Struct MutinyMockExpectedCall
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_mock.h`
+
+
+Struct Documentation
+--------------------
+
+
+.. doxygenstruct:: MutinyMockExpectedCall
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

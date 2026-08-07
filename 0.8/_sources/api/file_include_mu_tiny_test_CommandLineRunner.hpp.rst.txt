@@ -1,0 +1,73 @@
+
+.. _file_include_mu_tiny_test_CommandLineRunner.hpp:
+
+File CommandLineRunner.hpp
+==========================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Entry point for running all registered tests from a main() function. 
+
+
+Definition (``include/mu/tiny/test/CommandLineRunner.hpp``)
+-----------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Supported command-line flags:
+
+- ``-v`` verbose output
+
+- ``-g`` name run only tests in the named group
+
+- ``-n`` name run only tests with the given name
+
+- ``-r`` count repeat the test run ``count`` times
+
+- ``-s`` run each test in a separate subprocess (crash isolation) 
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/CommandLineArguments.hpp`` (:ref:`file_include_mu_tiny_test_CommandLineArguments.hpp`)
+
+- ``mu/tiny/test/Output.hpp`` (:ref:`file_include_mu_tiny_test_Output.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CommandLineRunner`
+

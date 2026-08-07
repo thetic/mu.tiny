@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a812a28c32c23fe1cdd3a9e89304a0687:
+
+Function mu::tiny::string_starts_with
+=====================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_starts_with(const String&, const String&)
+   :project: mu::tiny

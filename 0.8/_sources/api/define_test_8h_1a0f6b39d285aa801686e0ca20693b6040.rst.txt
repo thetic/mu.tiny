@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a0f6b39d285aa801686e0ca20693b6040:
+
+Define CHECK_EQUAL_UINT_TEXT
+============================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_UINT_TEXT
+   :project: mu::tiny

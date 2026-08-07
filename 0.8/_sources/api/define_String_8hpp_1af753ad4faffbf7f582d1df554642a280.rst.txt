@@ -1,0 +1,14 @@
+.. _exhale_define_String_8hpp_1af753ad4faffbf7f582d1df554642a280:
+
+Define MUTINY_CHECK_FORMAT
+==========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_CHECK_FORMAT
+   :project: mu::tiny

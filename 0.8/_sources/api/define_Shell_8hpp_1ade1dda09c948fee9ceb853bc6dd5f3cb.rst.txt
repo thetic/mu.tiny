@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1ade1dda09c948fee9ceb853bc6dd5f3cb:
+
+Define STRCMP_EQUAL
+===================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: STRCMP_EQUAL
+   :project: mu::tiny

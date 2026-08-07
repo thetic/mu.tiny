@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a3d517aca774bffcb0d6fd972b80d513f:
+
+Define ENUMS_EQUAL_TYPE_LOCATION
+================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: ENUMS_EQUAL_TYPE_LOCATION
+   :project: mu::tiny

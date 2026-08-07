@@ -1,0 +1,17 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1Registry:
+
+Class Registry
+==============
+
+- Defined in :ref:`file_include_mu_tiny_test_Registry.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::Registry
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

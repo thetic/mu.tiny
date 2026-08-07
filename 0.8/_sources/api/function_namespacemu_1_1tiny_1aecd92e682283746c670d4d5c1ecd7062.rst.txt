@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1aecd92e682283746c670d4d5c1ecd7062:
+
+Function mu::tiny::string_from_binary
+=====================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from_binary(const unsigned char *, size_t)
+   :project: mu::tiny

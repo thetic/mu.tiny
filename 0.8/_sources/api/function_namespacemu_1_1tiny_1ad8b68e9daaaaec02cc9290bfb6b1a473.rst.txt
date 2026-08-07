@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1ad8b68e9daaaaec02cc9290bfb6b1a473:
+
+Function mu::tiny::strtoul
+==========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::strtoul(const char *)
+   :project: mu::tiny

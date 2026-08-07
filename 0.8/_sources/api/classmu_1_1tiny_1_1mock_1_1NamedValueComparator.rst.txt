@@ -1,0 +1,27 @@
+.. _exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValueComparator:
+
+Class NamedValueComparator
+==========================
+
+- Defined in :ref:`file_include_mu_tiny_mock_NamedValueComparator.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public mu::tiny::mock::FunctionComparator`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1FunctionComparator`)
+- ``public mu::tiny::mock::TypedMockComparator< T >`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1TypedMockComparator`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::mock::NamedValueComparator
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

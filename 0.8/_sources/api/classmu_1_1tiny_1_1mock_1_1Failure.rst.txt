@@ -1,0 +1,41 @@
+.. _exhale_class_classmu_1_1tiny_1_1mock_1_1Failure:
+
+Class Failure
+=============
+
+- Defined in :ref:`file_include_mu_tiny_mock_Failure.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public mu::tiny::test::Failure`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Failure`)
+
+
+Derived Types
+*************
+
+- ``public mu::tiny::mock::CallOrderFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1CallOrderFailure`)
+- ``public mu::tiny::mock::ExpectedCallsDidntHappenFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedCallsDidntHappenFailure`)
+- ``public mu::tiny::mock::ExpectedObjectDidntHappenFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedObjectDidntHappenFailure`)
+- ``public mu::tiny::mock::ExpectedParameterDidntHappenFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1ExpectedParameterDidntHappenFailure`)
+- ``public mu::tiny::mock::NoWayToCompareCustomTypeFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NoWayToCompareCustomTypeFailure`)
+- ``public mu::tiny::mock::NoWayToCopyCustomTypeFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NoWayToCopyCustomTypeFailure`)
+- ``public mu::tiny::mock::UnexpectedCallHappenedFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedCallHappenedFailure`)
+- ``public mu::tiny::mock::UnexpectedInputParameterFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedInputParameterFailure`)
+- ``public mu::tiny::mock::UnexpectedObjectFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedObjectFailure`)
+- ``public mu::tiny::mock::UnexpectedOutputParameterFailure`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1UnexpectedOutputParameterFailure`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::mock::Failure
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

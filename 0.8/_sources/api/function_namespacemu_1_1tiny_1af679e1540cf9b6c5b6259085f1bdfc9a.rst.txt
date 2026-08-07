@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1af679e1540cf9b6c5b6259085f1bdfc9a:
+
+Function mu::tiny::string_from(void \*)
+=======================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from(void *)
+   :project: mu::tiny

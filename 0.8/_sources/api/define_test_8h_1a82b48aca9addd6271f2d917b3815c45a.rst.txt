@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a82b48aca9addd6271f2d917b3815c45a:
+
+Define CHECK_EQUAL_STRING
+=========================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_STRING
+   :project: mu::tiny

@@ -1,0 +1,14 @@
+.. _exhale_typedef_mock_8h_1aaec1a1431ce09467b8f7cdd8d04e2eb7:
+
+Typedef MutinyMockTypeValueToStringFunction
+===========================================
+
+- Defined in :ref:`file_include_mu_tiny_mock.h`
+
+
+Typedef Documentation
+---------------------
+
+
+.. doxygentypedef:: MutinyMockTypeValueToStringFunction
+   :project: mu::tiny

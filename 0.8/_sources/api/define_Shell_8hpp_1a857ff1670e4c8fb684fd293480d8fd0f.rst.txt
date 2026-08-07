@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a857ff1670e4c8fb684fd293480d8fd0f:
+
+Define STRNCMP_EQUAL_LOCATION
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: STRNCMP_EQUAL_LOCATION
+   :project: mu::tiny

@@ -1,0 +1,32 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1TerminatorWithoutExceptions:
+
+Class TerminatorWithoutExceptions
+=================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Terminator.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Base Type
+*********
+
+- ``public mu::tiny::test::Terminator`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Terminator`)
+
+
+Derived Type
+************
+
+- ``public mu::tiny::test::CrashingTerminatorWithoutExceptions`` (:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CrashingTerminatorWithoutExceptions`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::TerminatorWithoutExceptions
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

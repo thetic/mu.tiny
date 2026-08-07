@@ -1,0 +1,74 @@
+
+.. _file_include_mu_tiny_test_Filter.hpp:
+
+File Filter.hpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Test name/group filter used by the command-line runner. 
+
+
+Definition (``include/mu/tiny/test/Filter.hpp``)
+------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Built from ``-g`` / ``-n`` arguments by :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CommandLineArguments` and applied via mu::tiny::test::Registry::set_name_filters() and mu::tiny::test::Registry::set_group_filters(). 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/String.hpp`` (:ref:`file_include_mu_tiny_String.hpp`)
+
+- ``mu/tiny/export.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test_CommandLineArguments.hpp`
+
+- :ref:`file_include_mu_tiny_test_Registry.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Filter`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1a69592375e6b6e57d437647d551378d87`
+

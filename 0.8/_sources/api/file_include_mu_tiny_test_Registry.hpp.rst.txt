@@ -1,0 +1,69 @@
+
+.. _file_include_mu_tiny_test_Registry.hpp:
+
+File Registry.hpp
+=================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Global collection of tests that can be discovered, filtered, and run. 
+
+
+Definition (``include/mu/tiny/test/Registry.hpp``)
+--------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Used by :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CommandLineRunner` to drive the test suite. Tests are registered into the Registry by :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Shell` instances (via :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Installer`) and executed via :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Plugin` hooks. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/String.hpp`` (:ref:`file_include_mu_tiny_String.hpp`)
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/Filter.hpp`` (:ref:`file_include_mu_tiny_test_Filter.hpp`)
+
+- ``stddef.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test_TestingFixture.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Registry`
+

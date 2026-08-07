@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a13a6dd463439a53bd882a77f86550b1c:
+
+Define STRCMP_CONTAINS
+======================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: STRCMP_CONTAINS
+   :project: mu::tiny

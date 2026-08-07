@@ -1,0 +1,14 @@
+.. _exhale_define_features_8hpp_1ad7c1f08117f27bae9353851f38c7fd55:
+
+Define MUTINY_HAVE_RTTI
+=======================
+
+- Defined in :ref:`file_include_mu_tiny_features.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_HAVE_RTTI
+   :project: mu::tiny

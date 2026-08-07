@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1_1test_1a08c94524a3ad99555020bfd43bc80e3e:
+
+Function mu::tiny::test::operator<<(Output&, long)
+==================================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Output.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::test::operator<<(Output&, long)
+   :project: mu::tiny

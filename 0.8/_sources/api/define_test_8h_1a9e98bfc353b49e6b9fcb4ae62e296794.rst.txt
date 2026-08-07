@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1a9e98bfc353b49e6b9fcb4ae62e296794:
+
+Define CHECK_EQUAL_MEMCMP_TEXT
+==============================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_MEMCMP_TEXT
+   :project: mu::tiny

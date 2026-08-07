@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1ab520808816db65b3eab94c6d3e54e26c:
+
+Define TEST_PROPERTY
+====================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TEST_PROPERTY
+   :project: mu::tiny

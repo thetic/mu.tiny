@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1afe73ac5413e90b574aae574e7780b60e:
+
+Function mu::tiny::iscntrl
+==========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::iscntrl(char)
+   :project: mu::tiny

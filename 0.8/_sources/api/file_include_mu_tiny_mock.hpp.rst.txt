@@ -1,0 +1,68 @@
+
+.. _file_include_mu_tiny_mock.hpp:
+
+File mock.hpp
+=============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny>` (``include/mu/tiny``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Core mock support: expectation recording, call verification, and data sharing. 
+
+
+Definition (``include/mu/tiny/mock.hpp``)
+-----------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+The canonical entry point is the free function :ref:`exhale_function_namespacemu_1_1tiny_1_1mock_1a0af8062d4a10b0c85a6e7b9b77da6c80`, which returns a reference to the global (or a named scope) :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1Support`. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/mock/ActualCall.hpp`` (:ref:`file_include_mu_tiny_mock_ActualCall.hpp`)
+
+- ``mu/tiny/mock/ExpectedCall.hpp`` (:ref:`file_include_mu_tiny_mock_ExpectedCall.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__mock`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1Support`
+
+
+Functions
+---------
+
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1mock_1a0af8062d4a10b0c85a6e7b9b77da6c80`
+

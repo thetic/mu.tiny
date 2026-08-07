@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1afaad3794e9cb3251df0d40539b9dc6e5:
+
+Define FAIL_TEST_LOCATION
+=========================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: FAIL_TEST_LOCATION
+   :project: mu::tiny

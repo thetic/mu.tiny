@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a048b10bdf5004a4d5a1f68b078fe5817:
+
+Function mu::tiny::string_from_ordinal_number
+=============================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from_ordinal_number(unsigned int)
+   :project: mu::tiny

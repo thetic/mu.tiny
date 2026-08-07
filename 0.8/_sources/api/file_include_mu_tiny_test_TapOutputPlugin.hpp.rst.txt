@@ -1,0 +1,53 @@
+
+.. _file_include_mu_tiny_test_TapOutputPlugin.hpp:
+
+File TapOutputPlugin.hpp
+========================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Plugin` that writes TAP version 13 output. 
+
+
+Definition (``include/mu/tiny/test/TapOutputPlugin.hpp``)
+---------------------------------------------------------
+
+
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/Plugin.hpp`` (:ref:`file_include_mu_tiny_test_Plugin.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1TapOutputPlugin`
+

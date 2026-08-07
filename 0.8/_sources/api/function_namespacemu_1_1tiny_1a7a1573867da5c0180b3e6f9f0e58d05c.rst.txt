@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a7a1573867da5c0180b3e6f9f0e58d05c:
+
+Function mu::tiny::string_from(float, int)
+==========================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from(float, int)
+   :project: mu::tiny

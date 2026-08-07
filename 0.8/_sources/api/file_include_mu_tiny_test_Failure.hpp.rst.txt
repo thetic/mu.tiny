@@ -1,0 +1,101 @@
+
+.. _file_include_mu_tiny_test_Failure.hpp:
+
+File Failure.hpp
+================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Test failure types carrying location and message information. 
+
+
+Definition (``include/mu/tiny/test/Failure.hpp``)
+-------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Failure` is the base class; each assertion macro creates an appropriate concrete subclass when the assertion does not hold. Failures are reported via mu::tiny::test::Shell::add_failure() and rendered by mu::tiny::test::Output::print_failure(). 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/String.hpp`` (:ref:`file_include_mu_tiny_String.hpp`)
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/features.hpp`` (:ref:`file_include_mu_tiny_features.hpp`)
+
+- ``stdint.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_mock_Failure.hpp`
+
+- :ref:`file_include_mu_tiny_test.hpp`
+
+- :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ApproxEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1BinaryEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CheckEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CheckFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ComparisonFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ContainsFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1EqualsFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1FailFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Failure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1FeatureUnsupportedFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1IntMaxEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1StringEqualNoCaseFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1UintMaxEqualFailure`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1UnexpectedExceptionFailure`
+

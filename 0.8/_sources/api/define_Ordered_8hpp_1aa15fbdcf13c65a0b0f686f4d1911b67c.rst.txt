@@ -1,0 +1,14 @@
+.. _exhale_define_Ordered_8hpp_1aa15fbdcf13c65a0b0f686f4d1911b67c:
+
+Define TEST_ORDERED
+===================
+
+- Defined in :ref:`file_include_mu_tiny_test_Ordered.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: TEST_ORDERED
+   :project: mu::tiny

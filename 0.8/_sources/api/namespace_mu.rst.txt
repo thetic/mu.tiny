@@ -1,0 +1,13 @@
+
+.. _namespace_mu:
+
+Namespace mu
+============
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu__tiny`

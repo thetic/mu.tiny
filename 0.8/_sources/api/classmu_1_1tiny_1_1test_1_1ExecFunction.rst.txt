@@ -1,0 +1,17 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1ExecFunction:
+
+Class ExecFunction
+==================
+
+- Defined in :ref:`file_include_mu_tiny_test_ExecFunction.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::ExecFunction
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

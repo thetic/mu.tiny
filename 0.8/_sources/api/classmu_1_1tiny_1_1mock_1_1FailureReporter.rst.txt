@@ -1,0 +1,17 @@
+.. _exhale_class_classmu_1_1tiny_1_1mock_1_1FailureReporter:
+
+Class FailureReporter
+=====================
+
+- Defined in :ref:`file_include_mu_tiny_mock_Failure.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::mock::FailureReporter
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

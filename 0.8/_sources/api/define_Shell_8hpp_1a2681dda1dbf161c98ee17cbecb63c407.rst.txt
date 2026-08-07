@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a2681dda1dbf161c98ee17cbecb63c407:
+
+Define CHECK_EQUAL_TEXT
+=======================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_TEXT
+   :project: mu::tiny

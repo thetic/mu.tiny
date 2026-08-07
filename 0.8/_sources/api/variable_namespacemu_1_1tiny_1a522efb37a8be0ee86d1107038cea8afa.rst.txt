@@ -1,0 +1,14 @@
+.. _exhale_variable_namespacemu_1_1tiny_1a522efb37a8be0ee86d1107038cea8afa:
+
+Variable mu::tiny::default_precision
+====================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Variable Documentation
+----------------------
+
+
+.. doxygenvariable:: mu::tiny::default_precision
+   :project: mu::tiny

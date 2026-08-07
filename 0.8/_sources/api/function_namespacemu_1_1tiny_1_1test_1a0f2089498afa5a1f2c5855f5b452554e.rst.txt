@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1_1test_1a0f2089498afa5a1f2c5855f5b452554e:
+
+Template Function mu::tiny::test::check_approx
+==============================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::test::check_approx(T, T, T, const char *, const char *, int_least32_t)
+   :project: mu::tiny

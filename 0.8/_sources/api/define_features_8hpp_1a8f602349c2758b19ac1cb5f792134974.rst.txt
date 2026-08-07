@@ -1,0 +1,14 @@
+.. _exhale_define_features_8hpp_1a8f602349c2758b19ac1cb5f792134974:
+
+Define MUTINY_USE_STD_CPP_LIB
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_features.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_USE_STD_CPP_LIB
+   :project: mu::tiny

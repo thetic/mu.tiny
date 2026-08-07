@@ -1,0 +1,14 @@
+.. _exhale_define_features_8hpp_1a5a26da6f7c8a977c197d09ab19eae3e5:
+
+Define MUTINY_HAVE_EXCEPTIONS
+=============================
+
+- Defined in :ref:`file_include_mu_tiny_features.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: MUTINY_HAVE_EXCEPTIONS
+   :project: mu::tiny

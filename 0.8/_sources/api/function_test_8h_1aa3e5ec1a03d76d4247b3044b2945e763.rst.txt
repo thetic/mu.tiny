@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1aa3e5ec1a03d76d4247b3044b2945e763:
+
+Function mutiny_check_equal_string
+==================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_check_equal_string(const char *, const char *, const char *, const char *, int_least32_t)
+   :project: mu::tiny

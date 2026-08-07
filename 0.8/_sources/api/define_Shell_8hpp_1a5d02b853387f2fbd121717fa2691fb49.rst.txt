@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a5d02b853387f2fbd121717fa2691fb49:
+
+Define SKIP_TEST_LOCATION
+=========================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: SKIP_TEST_LOCATION
+   :project: mu::tiny

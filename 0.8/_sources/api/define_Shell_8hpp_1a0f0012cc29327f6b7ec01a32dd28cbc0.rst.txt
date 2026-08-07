@@ -1,0 +1,14 @@
+.. _exhale_define_Shell_8hpp_1a0f0012cc29327f6b7ec01a32dd28cbc0:
+
+Define CHECK_APPROX_LOCATION
+============================
+
+- Defined in :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_APPROX_LOCATION
+   :project: mu::tiny

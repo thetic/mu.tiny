@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a49869428736c6d9e6a8bf370cfe6af7b:
+
+Function mu::tiny::string_contains
+==================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_contains(const String&, const String&)
+   :project: mu::tiny

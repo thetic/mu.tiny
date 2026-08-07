@@ -1,0 +1,65 @@
+
+.. _file_include_mu_tiny_test_TestingFixture.hpp:
+
+File TestingFixture.hpp
+=======================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Self-contained test harness for testing the framework itself. 
+
+
+Definition (``include/mu/tiny/test/TestingFixture.hpp``)
+--------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Owns a private :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Registry`, :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Output`, and :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Result` so that tests run through it do not affect global state. See also :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1ExecFunction` for the callable interface it accepts. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/test/ExecFunction.hpp`` (:ref:`file_include_mu_tiny_test_ExecFunction.hpp`)
+
+- ``mu/tiny/test/Registry.hpp`` (:ref:`file_include_mu_tiny_test_Registry.hpp`)
+
+- ``mu/tiny/test/Shell.hpp`` (:ref:`file_include_mu_tiny_test_Shell.hpp`)
+
+- ``mu/tiny/test/StringBufferOutput.hpp`` (:ref:`file_include_mu_tiny_test_StringBufferOutput.hpp`)
+
+
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1TestingFixture`
+

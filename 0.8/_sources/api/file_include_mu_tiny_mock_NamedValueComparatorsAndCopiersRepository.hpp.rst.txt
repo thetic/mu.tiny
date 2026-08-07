@@ -1,0 +1,69 @@
+
+.. _file_include_mu_tiny_mock_NamedValueComparatorsAndCopiersRepository.hpp:
+
+File NamedValueComparatorsAndCopiersRepository.hpp
+==================================================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_mock>` (``include/mu/tiny/mock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Repository of custom type comparators and copiers for mock parameter matching. 
+
+
+Definition (``include/mu/tiny/mock/NamedValueComparatorsAndCopiersRepository.hpp``)
+-----------------------------------------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Stores :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValueComparator` and :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValueCopier` instances keyed by type name. Populated via mu::tiny::mock::Support::install_comparator() and mu::tiny::mock::Support::install_copier(). 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/StringView.hpp`` (:ref:`file_include_mu_tiny_StringView.hpp`)
+
+- ``mu/tiny/export.h``
+
+- ``mu/tiny/mock/NamedValueComparator.hpp`` (:ref:`file_include_mu_tiny_mock_NamedValueComparator.hpp`)
+
+- ``mu/tiny/mock/NamedValueCopier.hpp`` (:ref:`file_include_mu_tiny_mock_NamedValueCopier.hpp`)
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_mock_SupportPlugin.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__mock`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValueComparatorsAndCopiersRepository`
+

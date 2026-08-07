@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a750293f8477c2138834b60ec0ed61dd7:
+
+Function mu::tiny::brackets_formatted_hex_string_from(signed char)
+==================================================================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::brackets_formatted_hex_string_from(signed char)
+   :project: mu::tiny

@@ -1,0 +1,71 @@
+
+.. _file_include_mu_tiny_test_Terminator.hpp:
+
+File Terminator.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Strategies for ending a failing test. 
+
+
+Definition (``include/mu/tiny/test/Terminator.hpp``)
+----------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+:ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Shell` calls the active :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Terminator` when a test must stop. The concrete subclasses implement normal (exception-based), exception-free, and crash-on-failure exit strategies. Retrieve the active terminator via mu::tiny::test::Shell::get_current_test_terminator(). 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/export.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_test_Shell.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CrashingTerminator`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CrashingTerminatorWithoutExceptions`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1NormalTerminator`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Terminator`
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1TerminatorWithoutExceptions`
+

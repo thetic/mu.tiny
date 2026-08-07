@@ -1,0 +1,27 @@
+.. _exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValueCopier:
+
+Class NamedValueCopier
+======================
+
+- Defined in :ref:`file_include_mu_tiny_mock_NamedValueCopier.hpp`
+
+
+Inheritance Relationships
+-------------------------
+
+Derived Types
+*************
+
+- ``public mu::tiny::mock::FunctionCopier`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1FunctionCopier`)
+- ``public mu::tiny::mock::TypedMockCopier< T >`` (:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1TypedMockCopier`)
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::mock::NamedValueCopier
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

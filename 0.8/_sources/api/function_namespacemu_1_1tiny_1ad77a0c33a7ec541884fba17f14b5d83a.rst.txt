@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1ad77a0c33a7ec541884fba17f14b5d83a:
+
+Function mu::tiny::strstr
+=========================
+
+- Defined in :ref:`file_include_mu_tiny_String.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::strstr(const char *, const char *)
+   :project: mu::tiny

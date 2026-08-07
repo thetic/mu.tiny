@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1a087d6b66d0c52f58d47956ddb0be2a6d:
+
+Function mutiny_check_equal_bool
+================================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_check_equal_bool(bool, bool, const char *, const char *, int_least32_t)
+   :project: mu::tiny

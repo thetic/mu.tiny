@@ -1,0 +1,14 @@
+.. _exhale_define_test_8h_1ac88d18bc188a5480b8a7666fa239431d:
+
+Define CHECK_EQUAL_SBYTE
+========================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Define Documentation
+--------------------
+
+
+.. doxygendefine:: CHECK_EQUAL_SBYTE
+   :project: mu::tiny

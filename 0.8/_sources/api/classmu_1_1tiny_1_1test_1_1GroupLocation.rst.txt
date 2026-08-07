@@ -1,0 +1,17 @@
+.. _exhale_class_classmu_1_1tiny_1_1test_1_1GroupLocation:
+
+Class GroupLocation
+===================
+
+- Defined in :ref:`file_include_mu_tiny_test_GroupLocation.hpp`
+
+
+Class Documentation
+-------------------
+
+
+.. doxygenclass:: mu::tiny::test::GroupLocation
+   :project: mu::tiny
+   :members:
+   :protected-members:
+   :undoc-members:

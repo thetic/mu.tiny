@@ -1,0 +1,69 @@
+
+.. _file_include_mu_tiny_mock_NamedValue.hpp:
+
+File NamedValue.hpp
+===================
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_mock>` (``include/mu/tiny/mock``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Generic named-value container used to store mock parameters and data. 
+
+
+Definition (``include/mu/tiny/mock/NamedValue.hpp``)
+----------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+:ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValue` ties together a name, a type tag, a value (from a union of all supported native types plus opaque object pointers), and optional :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValueComparator` / :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValueCopier` instances for non-native types. Users encounter :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValue` primarily via mu::tiny::mock::Support::get_data() and the mu::tiny::mock::ActualCall::return_value() methods. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/String.hpp`` (:ref:`file_include_mu_tiny_String.hpp`)
+
+- ``mu/tiny/StringView.hpp`` (:ref:`file_include_mu_tiny_StringView.hpp`)
+
+- ``mu/tiny/export.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_mock_ActualCall.hpp`
+
+- :ref:`file_include_mu_tiny_mock_ExpectedCall.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__mock`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1NamedValue`
+

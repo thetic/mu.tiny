@@ -1,0 +1,14 @@
+.. _exhale_function_test_8h_1abe37cdab2e524831617982d6dca5be2b:
+
+Function mutiny_fail
+====================
+
+- Defined in :ref:`file_include_mu_tiny_test.h`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mutiny_fail(const char *, const char *, int_least32_t)
+   :project: mu::tiny

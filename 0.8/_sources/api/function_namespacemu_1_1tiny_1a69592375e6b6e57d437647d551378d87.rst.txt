@@ -1,0 +1,14 @@
+.. _exhale_function_namespacemu_1_1tiny_1a69592375e6b6e57d437647d551378d87:
+
+Function mu::tiny::string_from(const test::Filter&)
+===================================================
+
+- Defined in :ref:`file_include_mu_tiny_test_Filter.hpp`
+
+
+Function Documentation
+----------------------
+
+
+.. doxygenfunction:: mu::tiny::string_from(const test::Filter&)
+   :project: mu::tiny

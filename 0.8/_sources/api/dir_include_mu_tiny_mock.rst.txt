@@ -1,0 +1,28 @@
+.. _dir_include_mu_tiny_mock:
+
+
+Directory mock
+==============
+
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny>` (``include/mu/tiny``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+*Directory path:* ``include/mu/tiny/mock``
+
+
+Files
+-----
+
+- :ref:`file_include_mu_tiny_mock_ActualCall.hpp`
+- :ref:`file_include_mu_tiny_mock_ExpectedCall.hpp`
+- :ref:`file_include_mu_tiny_mock_Failure.hpp`
+- :ref:`file_include_mu_tiny_mock_NamedValue.hpp`
+- :ref:`file_include_mu_tiny_mock_NamedValueComparator.hpp`
+- :ref:`file_include_mu_tiny_mock_NamedValueComparatorsAndCopiersRepository.hpp`
+- :ref:`file_include_mu_tiny_mock_NamedValueCopier.hpp`
+- :ref:`file_include_mu_tiny_mock_SupportPlugin.hpp`
+
+

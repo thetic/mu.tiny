@@ -1,0 +1,73 @@
+
+.. _file_include_mu_tiny_test_Plugin.hpp:
+
+File Plugin.hpp
+===============
+
+|exhale_lsh| :ref:`Parent directory <dir_include_mu_tiny_test>` (``include/mu/tiny/test``)
+
+.. |exhale_lsh| unicode:: U+021B0 .. UPWARDS ARROW WITH TIP LEFTWARDS
+
+
+
+Extension point for running code before/after every test. 
+
+
+Definition (``include/mu/tiny/test/Plugin.hpp``)
+------------------------------------------------
+
+
+
+
+Detailed Description
+--------------------
+
+Subclass :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Plugin` to intercept the test lifecycle, contribute a custom :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Output`, or handle extra command-line arguments. Plugins form a singly-linked list; install them with :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1CommandLineRunner` before calling mu::tiny::test::CommandLineRunner::run_all_tests_main(). See also :ref:`exhale_class_classmu_1_1tiny_1_1mock_1_1SupportPlugin` and :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1SetPointerPlugin` for built-in plugin implementations. 
+
+
+
+
+Includes
+--------
+
+
+- ``mu/tiny/String.hpp`` (:ref:`file_include_mu_tiny_String.hpp`)
+
+- ``mu/tiny/export.h``
+
+
+
+Included By
+-----------
+
+
+- :ref:`file_include_mu_tiny_mock_SupportPlugin.hpp`
+
+- :ref:`file_include_mu_tiny_test.hpp`
+
+- :ref:`file_include_mu_tiny_test_JUnitOutputPlugin.hpp`
+
+- :ref:`file_include_mu_tiny_test_SetPointerPlugin.hpp`
+
+- :ref:`file_include_mu_tiny_test_TapOutputPlugin.hpp`
+
+
+
+
+Namespaces
+----------
+
+
+- :ref:`namespace_mu`
+
+- :ref:`namespace_mu__tiny`
+
+- :ref:`namespace_mu__tiny__test`
+
+
+Classes
+-------
+
+
+- :ref:`exhale_class_classmu_1_1tiny_1_1test_1_1Plugin`
+
