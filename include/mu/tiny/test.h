@@ -8,7 +8,8 @@
  * corresponding C++ wrapper macros in the bridging C++ file.
  *
  * Assertion macros use type-specific names (@ref CHECK_EQUAL_INT, @ref
- * CHECK_EQUAL_LONG, etc.) because C has no function overloading.
+ * CHECK_EQUAL_LONG, etc.) because C has no function overloading. @ref
+ * CHECK_EQUAL provides a type-generic alternative via C11 `_Generic`.
  */
 
 #ifndef INCLUDED_MU_TINY_TEST_H
@@ -197,6 +198,49 @@ extern "C"
 /** @brief @ref CHECK_EQUAL_MEMCMP with a custom failure message. */
 #define CHECK_EQUAL_MEMCMP_TEXT(expected, actual, size, text)                  \
   mutiny_check_equal_memcmp(expected, actual, size, text, __FILE__, __LINE__)
+
+/** @brief Type dispatch used by @ref CHECK_EQUAL / @ref CHECK_EQUAL_TEXT. */
+#define MUTINY_CHECK_EQUAL_GENERIC(actual)                                     \
+  _Generic(                                                                    \
+      (actual),                                                                \
+      bool: mutiny_check_equal_bool,                                           \
+      int: mutiny_check_equal_int,                                             \
+      unsigned int: mutiny_check_equal_uint,                                   \
+      long: mutiny_check_equal_long,                                           \
+      unsigned long: mutiny_check_equal_ulong,                                 \
+      long long: mutiny_check_equal_longlong,                                  \
+      unsigned long long: mutiny_check_equal_ulonglong,                        \
+      char: mutiny_check_equal_char,                                           \
+      unsigned char: mutiny_check_equal_ubyte,                                 \
+      signed char: mutiny_check_equal_sbyte,                                   \
+      char*: mutiny_check_equal_string,                                        \
+      const char*: mutiny_check_equal_string,                                  \
+      default: mutiny_check_equal_pointer                                      \
+  )
+
+/**
+ * @brief Fail if @p expected != @p actual.
+ *
+ * Type-generic equivalent of the ``CHECK_EQUAL_*`` family (@ref
+ * CHECK_EQUAL_BOOL, @ref CHECK_EQUAL_INT, @ref CHECK_EQUAL_UINT, @ref
+ * CHECK_EQUAL_LONG, @ref CHECK_EQUAL_ULONG, @ref CHECK_EQUAL_LONGLONG, @ref
+ * CHECK_EQUAL_ULONGLONG, @ref CHECK_EQUAL_CHAR, @ref CHECK_EQUAL_UBYTE, @ref
+ * CHECK_EQUAL_SBYTE, @ref CHECK_EQUAL_STRING, @ref CHECK_EQUAL_POINTER),
+ * dispatching on the type of @p actual via C11 `_Generic`.
+ *
+ * Not available for `double` (needs a threshold, see @ref
+ * CHECK_EQUAL_DOUBLE) or buffers (see @ref CHECK_EQUAL_MEMCMP), since those
+ * take a different number of arguments.
+ *
+ * @param expected  Expected value.
+ * @param actual    Actual value.
+ */
+#define CHECK_EQUAL(expected, actual)                                          \
+  MUTINY_CHECK_EQUAL_GENERIC(actual)(expected, actual, "", __FILE__, __LINE__)
+
+/** @brief @ref CHECK_EQUAL with a custom failure message. */
+#define CHECK_EQUAL_TEXT(expected, actual, text)                               \
+  MUTINY_CHECK_EQUAL_GENERIC(actual)(expected, actual, text, __FILE__, __LINE__)
 
 /**
  * @brief Unconditionally fail with a message.

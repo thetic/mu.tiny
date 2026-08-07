@@ -197,6 +197,112 @@ TEST(MutinyC, memcmpText)
   CHECK_EQUAL_MEMCMP_TEXT("TEST", "TEST", 5, "Text");
 }
 
+TEST(MutinyC, genericBool)
+{
+  bool actual = true;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(true, actual);
+}
+
+TEST(MutinyC, genericInt)
+{
+  int actual = 2;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(2, actual);
+}
+
+TEST(MutinyC, genericIntText)
+{
+  int actual = 2;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL_TEXT(2, actual, "Text");
+}
+
+TEST(MutinyC, genericUInt)
+{
+  unsigned int actual = 2;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(2U, actual);
+}
+
+TEST(MutinyC, genericLong)
+{
+  long actual = 2;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(2L, actual);
+}
+
+TEST(MutinyC, genericULong)
+{
+  unsigned long actual = 2;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(2UL, actual);
+}
+
+TEST(MutinyC, genericLongLong)
+{
+  long long actual = 2;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(2LL, actual);
+}
+
+TEST(MutinyC, genericULongLong)
+{
+  unsigned long long actual = 2;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(2ULL, actual);
+}
+
+TEST(MutinyC, genericChar)
+{
+  char actual = 'a';
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL('a', actual);
+}
+
+TEST(MutinyC, genericUByte)
+{
+  unsigned char actual = 254;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL((unsigned char)254, actual);
+}
+
+TEST(MutinyC, genericSByte)
+{
+  signed char actual = -3;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL((signed char)-3, actual);
+}
+
+TEST(MutinyC, genericString)
+{
+  const char* actual = "Hello";
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL("Hello", actual);
+}
+
+TEST(MutinyC, genericPointer)
+{
+  int x = 0;
+  int* actual = &x;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(actual, actual);
+}
+
+XFAIL_TEST(MutinyC, genericIntFail)
+{
+  int actual = 3;
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL(2, actual);
+}
+
+XFAIL_TEST(MutinyC, genericStringFail)
+{
+  const char* actual = "World";
+  test_was_called_in_test_group_in_c++;
+  CHECK_EQUAL("Hello", actual);
+}
+
 TEST(MutinyC, check)
 {
   test_was_called_in_test_group_in_c++;
