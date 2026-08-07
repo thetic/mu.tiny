@@ -5,7 +5,7 @@ string(STRIP "${MUTINY_VERSION_RAW}" MUTINY_VERSION)
 
 project(mutiny
     VERSION ${MUTINY_VERSION}
-    LANGUAGES CXX
+    LANGUAGES CXX C
 )
 
 include(CTest)
@@ -164,7 +164,7 @@ include(CheckCXXSymbolExists)
 check_cxx_symbol_exists(gettimeofday "sys/time.h" MUTINY_HAVE_GETTIMEOFDAY)
 
 target_compile_features(mutiny
-    PUBLIC cxx_std_11
+    PUBLIC cxx_std_11 c_std_11
 )
 
 target_compile_definitions(mutiny

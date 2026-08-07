@@ -49,6 +49,8 @@ functions:
      - any non-zero value
    * - :c:macro:`CHECK_TEXT(condition, text) <CHECK_TEXT>`
      - same with message
+   * - :c:macro:`CHECK_EQUAL(expected, actual) <CHECK_EQUAL>`
+     - type-generic (C11 ``_Generic``, see below)
    * - :c:macro:`CHECK_EQUAL_BOOL(expected, actual) <CHECK_EQUAL_BOOL>`
      - ``bool``
    * - :c:macro:`CHECK_EQUAL_INT(expected, actual) <CHECK_EQUAL_INT>`
@@ -84,6 +86,28 @@ functions:
 
 Each macro also has a ``_TEXT`` variant that accepts an extra message
 string.
+
+Type-Generic ``CHECK_EQUAL``
+-----------------------------
+
+:c:macro:`CHECK_EQUAL` dispatches on the type of ``actual`` using C11
+``_Generic``, so a single macro covers the ``bool``, ``int``, ``unsigned
+int``, ``long``, ``unsigned long``, ``long long``, ``unsigned long long``,
+``char``, ``unsigned char``, ``signed char``, string, and pointer cases
+above without picking the type-specific name yourself:
+
+.. code-block:: c
+
+   int x = 2;
+   CHECK_EQUAL(2, x);           /* dispatches to CHECK_EQUAL_INT */
+   CHECK_EQUAL("Hello", str);   /* dispatches to CHECK_EQUAL_STRING */
+
+:c:macro:`CHECK_EQUAL_TEXT` is the matching variant with a custom failure
+message. ``double`` and buffer comparisons still need the explicit
+:c:macro:`CHECK_EQUAL_DOUBLE` and :c:macro:`CHECK_EQUAL_MEMCMP` macros,
+since those take a threshold or size argument that ``_Generic`` dispatch
+can't accommodate. The typed macros remain available and are what
+:c:macro:`CHECK_EQUAL` expands into.
 
 C Test Definition Macros
 -------------------------
