@@ -609,6 +609,43 @@
         <article role="main" id="furo-main-content">
           <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="release-0-8-0">
+<h2>v0.8.0<a class="headerlink" href="#release-0-8-0" title="Link to this heading">¶</a></h2>
+<p><em>Released on 2026-08-07 - <a class="reference external" href="https://github.com/thetic/mu.tiny/releases/tag/v0.8.0">GitHub</a></em></p>
+<section id="breaking-changes">
+<h3>Breaking Changes<a class="headerlink" href="#breaking-changes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>A C compiler is now required to configure this project</strong>, even for C++-only consumers — <code class="docutils literal notranslate"><span class="pre">test.h</span></code>’s new type-generic <code class="docutils literal notranslate"><span class="pre">CHECK_EQUAL</span></code> needs C11, enforced project-wide via <code class="docutils literal notranslate"><span class="pre">project(...</span> <span class="pre">LANGUAGES</span> <span class="pre">CXX</span> <span class="pre">C)</span></code>. (#100)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Plugin::parse_arguments</span></code> signature changed</strong>: <code class="docutils literal notranslate"><span class="pre">parse_arguments(int,</span> <span class="pre">const</span> <span class="pre">char*</span> <span class="pre">const*,</span> <span class="pre">int</span> <span class="pre">index)</span></code> → <code class="docutils literal notranslate"><span class="pre">parse_arguments(int,</span> <span class="pre">const</span> <span class="pre">char*</span> <span class="pre">const*)</span></code>. Subclasses must update their override and replace <code class="docutils literal notranslate"><span class="pre">argv[index]</span></code> with <code class="docutils literal notranslate"><span class="pre">argv[0]</span></code>. (#89)</p></li>
+<li><p><strong>Line numbers now use <code class="docutils literal notranslate"><span class="pre">int_least32_t</span></code></strong> instead of <code class="docutils literal notranslate"><span class="pre">int</span></code>/<code class="docutils literal notranslate"><span class="pre">size_t</span></code> throughout the public API — <code class="docutils literal notranslate"><span class="pre">int</span></code> is only guaranteed 16 bits, but <code class="docutils literal notranslate"><span class="pre">__LINE__</span></code> can reach <code class="docutils literal notranslate"><span class="pre">INT_MAX</span></code>. Test/check/skip/run counts now use <code class="docutils literal notranslate"><span class="pre">unsigned</span> <span class="pre">int</span></code> instead of <code class="docutils literal notranslate"><span class="pre">size_t</span></code>. <code class="docutils literal notranslate"><span class="pre">Output::print_double</span></code> renamed to <code class="docutils literal notranslate"><span class="pre">Output::print</span></code>. (#88)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">Registry::get_plugin_by_name()</span></code> / <code class="docutils literal notranslate"><span class="pre">remove_plugin_by_name()</span></code> removed</strong> (and their <code class="docutils literal notranslate"><span class="pre">Plugin</span></code> counterparts) — these were internal implementation details that leaked into the public API. The <code class="docutils literal notranslate"><span class="pre">name</span></code> static members on <code class="docutils literal notranslate"><span class="pre">SetPointerPlugin</span></code>, <code class="docutils literal notranslate"><span class="pre">JUnitOutputPlugin</span></code>, and <code class="docutils literal notranslate"><span class="pre">TapOutputPlugin</span></code> are removed with them. (#87)</p></li>
+</ul>
+</section>
+<section id="new-features">
+<h3>New Features<a class="headerlink" href="#new-features" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Type-generic <code class="docutils literal notranslate"><span class="pre">CHECK_EQUAL</span></code>/<code class="docutils literal notranslate"><span class="pre">CHECK_EQUAL_TEXT</span></code> for C</strong> — dispatches on the type of <code class="docutils literal notranslate"><span class="pre">actual</span></code> via C11 <code class="docutils literal notranslate"><span class="pre">_Generic</span></code>, covering the same types as the existing <code class="docutils literal notranslate"><span class="pre">CHECK_EQUAL_*</span></code> family (bool, int, unsigned int, long, unsigned long, long long, unsigned long long, char, unsigned char, signed char, strings, and pointers). (#100)</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">CommandLineRunner::install_plugin(Plugin&amp;)</span></code></strong> static helper replaces the verbose <code class="docutils literal notranslate"><span class="pre">Registry::get_current_registry()-&gt;install_plugin(&amp;plugin)</span></code> pattern. (#87)</p></li>
+</ul>
+</section>
+<section id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Fix unsigned underflow in <code class="docutils literal notranslate"><span class="pre">String::substr()</span></code> on empty strings, and unbounded difference scans in <code class="docutils literal notranslate"><span class="pre">CheckEqualFailure</span></code> when strings differ in length (mirrors cpputest#1889, cpputest#1890). (#99)</p></li>
+<li><p>Fix <code class="docutils literal notranslate"><span class="pre">String</span></code> leak in <code class="docutils literal notranslate"><span class="pre">CheckedActualCall</span></code> when <code class="docutils literal notranslate"><span class="pre">longjmp</span></code> unwinds the stack. (#99)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">String::substr()</span></code> now throws <code class="docutils literal notranslate"><span class="pre">std::out_of_range</span></code> when exceptions are available, narrowing the behavioral divergence from <code class="docutils literal notranslate"><span class="pre">std::string</span></code>. (#99)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">JUnitOutputPlugin</span></code> retains binary basename as its default package name. (#89)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ClangCL</span></code> preset no longer hardcodes a Visual Studio generator, fixing failures on runners with newer VS versions. (#98)</p></li>
+</ul>
+</section>
+<section id="housekeeping">
+<h3>Housekeeping<a class="headerlink" href="#housekeeping" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Removed unused <code class="docutils literal notranslate"><span class="pre">MUTINY_BUILD_UNIT_TESTING</span></code> CMake option — never referenced anywhere in the build. (#97)</p></li>
+<li><p>CMake test suite refactored to one <code class="docutils literal notranslate"><span class="pre">CMakeLists.txt</span></code> per test case; dropped dead CMake &lt;3.10 compatibility shim. (#90)</p></li>
+</ul>
+</section>
+</section>
 <section id="release-0-7-0">
 <h2>v0.7.0<a class="headerlink" href="#release-0-7-0" title="Link to this heading">¶</a></h2>
 <p><em>Released on 2026-04-20 - <a class="reference external" href="https://github.com/thetic/mu.tiny/releases/tag/v0.7.0">GitHub</a></em></p>
@@ -831,6 +868,13 @@ eliminating per-group ctest collisions</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#release-0-8-0">v0.8.0</a><ul>
+<li><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
+<li><a class="reference internal" href="#new-features">New Features</a></li>
+<li><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
+<li><a class="reference internal" href="#housekeeping">Housekeeping</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#release-0-7-0">v0.7.0</a><ul>
 <li><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
 <li><a class="reference internal" href="#internal">Internal</a></li>
