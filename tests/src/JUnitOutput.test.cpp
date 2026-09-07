@@ -820,6 +820,50 @@ TEST(JUnitOutput, testsuitesSummaryAggregatesAcrossGroups)
   );
 }
 
+TEST(JUnitOutput, interleavedGroupsAreMergedIntoOneTestSuiteBlock)
+{
+  // With shuffled (-s) execution, tests from the same group are not
+  // necessarily contiguous. groupA is visited, then groupB, then groupA
+  // again. All of groupA's tests should end up in a single <testsuite>
+  // block instead of being split across two blocks with the same name.
+  test_case_runner->start()
+      .with_group("groupA")
+      .with_test("first")
+      .with_group("groupB")
+      .with_test("onlyB")
+      .with_group("groupA")
+      .with_test("second")
+      .end();
+
+  output_file = file_system.file("mutiny.xml");
+  CHECK_EQUAL(size_t{ 13 }, output_file->amount_of_lines());
+
+  STRCMP_EQUAL(
+      "<testsuite errors=\"0\" failures=\"0\" skipped=\"0\" assertions=\"0\" "
+      "name=\"groupA\" tests=\"2\" time=\"0.000\" "
+      "timestamp=\"1978-10-03T00:00:00\">\n",
+      output_file->line(3)
+  );
+  STRCMP_EQUAL(
+      "<testcase classname=\"groupA\" name=\"first\" "
+      "assertions=\"0\" time=\"0.000\" file=\"file\" line=\"1\">\n",
+      output_file->line(4)
+  );
+  STRCMP_EQUAL(
+      "<testcase classname=\"groupA\" name=\"second\" "
+      "assertions=\"0\" time=\"0.000\" file=\"file\" line=\"1\">\n",
+      output_file->line(6)
+  );
+  STRCMP_EQUAL("</testsuite>\n", output_file->line(8));
+
+  STRCMP_EQUAL(
+      "<testsuite errors=\"0\" failures=\"0\" skipped=\"0\" assertions=\"0\" "
+      "name=\"groupB\" tests=\"1\" time=\"0.000\" "
+      "timestamp=\"1978-10-03T00:00:00\">\n",
+      output_file->line(9)
+  );
+}
+
 TEST(JUnitOutput, packageNameWithReservedCharsEncodedInFileName)
 {
   init("-pjunit=group/weird/name");
