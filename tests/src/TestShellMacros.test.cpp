@@ -391,6 +391,14 @@ TEST(TestShellMacros, passingCheckEqualWillNotBeEvaluatedMultipleTimesWithCHECK_
   CHECK_EQUAL(1, count_in_counting_method);
 }
 
+TEST(TestShellMacros, passingCheckCompareWillNotBeEvaluatedMultipleTimesWithCHECK_COMPARE)
+{
+  count_in_counting_method = 0;
+  CHECK_COMPARE(counting_method(), <, 10);
+
+  CHECK_EQUAL(1, count_in_counting_method);
+}
+
 TEST(TestShellMacros, failing_CHECK_EQUAL_withParamatersThatDontChangeWillNotGiveAnyWarning)
 {
   fixture.run_test_with_method(failing_test_method_with_check_equal);
