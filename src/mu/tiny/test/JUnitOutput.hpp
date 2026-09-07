@@ -11,6 +11,7 @@ namespace test {
 
 class JUnitTestOutputImpl;
 class JUnitTestCaseResultNode;
+class JUnitTestGroupResult;
 
 class JUnitOutput : public Output
 {
@@ -37,19 +38,18 @@ public:
 
 private:
   JUnitTestOutputImpl* impl_;
+  JUnitTestGroupResult* find_or_create_group(const String& group);
   void reset_test_group_result();
-  void open_file_for_write();
-  void write_test_group_to_file();
-  void write_to_file(const String& buffer);
-  void close_file();
+  void write_test_group_to_file(File file, JUnitTestGroupResult* group);
+  static void write_to_file(File file, const String& buffer);
 
-  void write_test_suite_summary();
-  void write_test_cases();
+  static void write_test_suite_summary(File file, JUnitTestGroupResult* group);
+  void write_test_cases(File file, JUnitTestGroupResult* group);
   static String encode_xml_text(const String& textbody);
   static String encode_file_name(const String& file_name);
-  void write_failure(JUnitTestCaseResultNode* node);
-  void write_error(JUnitTestCaseResultNode* node);
-  void write_file_ending();
+  static void write_failure(File file, JUnitTestCaseResultNode* node);
+  static void write_error(File file, JUnitTestCaseResultNode* node);
+  static void write_file_ending(File file);
 };
 
 } // namespace test
