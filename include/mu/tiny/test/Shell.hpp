@@ -663,9 +663,19 @@ void check_approx(
   CHECK_COMPARE_LOCATION(first, relop, second, text, __FILE__, __LINE__)
 
 #define CHECK_COMPARE_LOCATION(first, relop, second, text, file, line)         \
-  mu::tiny::test::check_compare(                                               \
-      (first), (second), (first)relop(second), #relop, text, file, line        \
-  )
+  do {                                                                         \
+    const auto& mutiny_check_compare_first_ = (first);                         \
+    const auto& mutiny_check_compare_second_ = (second);                       \
+    mu::tiny::test::check_compare(                                             \
+        mutiny_check_compare_first_,                                           \
+        mutiny_check_compare_second_,                                          \
+        mutiny_check_compare_first_ relop mutiny_check_compare_second_,        \
+        #relop,                                                                \
+        text,                                                                  \
+        file,                                                                  \
+        line                                                                   \
+    );                                                                         \
+  } while (0)
 
 /**
  * @brief Fail if the C strings @p expected and @p actual differ (strcmp).
