@@ -27,6 +27,7 @@ add_executable(mutiny_test
     src/OrderedTestC.test.c
     src/Ordered.test.cpp
     src/OrderedTestC.test.cpp
+    src/ParameterizedTest.test.cpp
     src/Preprocessor.test.cpp
     src/SetPointerPlugin.test.cpp
     src/String.test.cpp

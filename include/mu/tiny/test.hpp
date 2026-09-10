@@ -184,6 +184,56 @@
   void EXPECT_FAIL##testGroup##_##testName##_Test::test_body()
 
 /**
+ * @brief Define the shared body of a parameterized test.
+ *
+ * Write the body once, then list each case with @ref PARAMETERIZED_TEST_CASE.
+ * Every case expands to an ordinary @ref TEST() named "testName_id" -
+ * independently registered, filterable by name, and reported on failure like
+ * any other test. A case failing does not affect its siblings.
+ *
+ * @param testGroup   An already-declared @ref TEST_GROUP.
+ * @param testName    Base name; each case run as "testName_id".
+ * @param ParamsType  Type passed by value to the body as @c params.
+ *
+ * @code{.cpp}
+ * struct SquareCase { int input; int expected; };
+ *
+ * PARAMETERIZED_TEST(NumberChecks, square_matches_expected, SquareCase)
+ * {
+ *   CHECK_EQUAL(params.expected, params.input * params.input);
+ * }
+ * PARAMETERIZED_TEST_CASE(NumberChecks, square_matches_expected, two,
+ *     (SquareCase{2, 4}))
+ * PARAMETERIZED_TEST_CASE(NumberChecks, square_matches_expected, three,
+ *     (SquareCase{3, 9}))
+ * @endcode
+ *
+ * @see PARAMETERIZED_TEST_CASE
+ */
+#define PARAMETERIZED_TEST(testGroup, testName, ParamsType)                    \
+  void testGroup##_##testName##_body(ParamsType params)
+
+/**
+ * @brief Register one case of a parameterized test.
+ *
+ * Must follow the matching @ref PARAMETERIZED_TEST definition in the same
+ * translation unit.
+ *
+ * @param testGroup  Same group passed to the matching @ref PARAMETERIZED_TEST.
+ * @param testName   Same name passed to the matching @ref PARAMETERIZED_TEST.
+ * @param id         Short, unique-within-testName identifier for this case;
+ *                   becomes the "_id" suffix of the generated test name.
+ * @param expr       Expression producing a ParamsType value for this case.
+ *
+ * @see PARAMETERIZED_TEST
+ */
+#define PARAMETERIZED_TEST_CASE(testGroup, testName, id, expr)                 \
+  TEST(testGroup, testName##_##id)                                             \
+  {                                                                            \
+    testGroup##_##testName##_body(expr);                                       \
+  }
+
+/**
  * @brief Attach a key/value property to the currently running test.
  *
  * Properties appear in JUnit XML output inside the @c \<properties\> element,
