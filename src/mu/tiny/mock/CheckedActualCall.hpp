@@ -99,27 +99,21 @@ private:
     String name;
     String type;
     MutinyCopyDirection direction;
-    union
-    {
-      void* destination;
-      const void* source;
-    };
+    const void* value;
 
     MockOutputParametersListNode* next{ nullptr };
     MockOutputParametersListNode(StringView n, StringView t, void* p)
       : name(n.data(), n.size())
       , type(t.data(), t.size())
       , direction(MutinyCopyDirection::to_actual_call)
-      , destination(p)
-
+      , value(p)
     {
     }
     MockOutputParametersListNode(StringView n, StringView t, const void* p)
       : name(n.data(), n.size())
       , type(t.data(), t.size())
       , direction(MutinyCopyDirection::from_actual_call)
-      , source(p)
-
+      , value(p)
     {
     }
   };

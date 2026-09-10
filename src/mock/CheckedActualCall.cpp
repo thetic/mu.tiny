@@ -64,38 +64,41 @@ void CheckedActualCall::copy_output_parameters(
        p = p->next) {
     NamedValue output_parameter = expected_call->get_output_parameter(p->name);
     NamedValueCopier* copier = output_parameter.get_copier();
-    if (p->direction == MutinyCopyDirection::to_actual_call) {
-      if (copier != nullptr) {
+    const bool to_actual_call =
+        (p->direction == MutinyCopyDirection::to_actual_call);
+    const bool raw_pointer_pair =
+        to_actual_call ? ((output_parameter.get_type() == "const void*") &&
+                          (p->type == "void*"))
+                       : ((output_parameter.get_type() == "void*") &&
+                          (p->type == "const void*"));
+
+    if (copier != nullptr) {
+      if (to_actual_call) {
         copier->copy(
-            p->destination, output_parameter.get_const_object_pointer()
+            const_cast<void*>(p->value),
+            output_parameter.get_const_object_pointer()
         );
-      } else if (
-          (output_parameter.get_type() == "const void*") && (p->type == "void*")
-      ) {
-        const void* data = output_parameter.get_value<const void*>();
-        size_t size = output_parameter.get_size();
-        memcpy(p->destination, data, size);
-      } else if (!output_parameter.get_name().empty()) {
-        fail_with(NoWayToCopyCustomTypeFailure(
-            get_test(),
-            expected_call->get_output_parameter(p->name).get_type().c_str()
-        ));
+      } else {
+        copier->copy(output_parameter.get_object_pointer(), p->value);
       }
-    } else {
-      if (copier != nullptr) {
-        copier->copy(output_parameter.get_object_pointer(), p->source);
-      } else if (
-          (output_parameter.get_type() == "void*") && (p->type == "const void*")
-      ) {
-        void* destination = output_parameter.get_value<void*>();
-        size_t size = output_parameter.get_size();
-        memcpy(destination, p->source, size);
-      } else if (!output_parameter.get_name().empty()) {
-        fail_with(NoWayToCopyCustomTypeFailure(
-            get_test(),
-            expected_call->get_output_parameter(p->name).get_type().c_str()
-        ));
+    } else if (raw_pointer_pair) {
+      if (to_actual_call) {
+        memcpy(
+            const_cast<void*>(p->value),
+            output_parameter.get_value<const void*>(),
+            output_parameter.get_size()
+        );
+      } else {
+        memcpy(
+            output_parameter.get_value<void*>(),
+            p->value,
+            output_parameter.get_size()
+        );
       }
+    } else if (!output_parameter.get_name().empty()) {
+      fail_with(NoWayToCopyCustomTypeFailure(
+          get_test(), output_parameter.get_type().c_str()
+      ));
     }
   }
 }
