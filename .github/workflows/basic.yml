@@ -320,8 +320,16 @@ jobs:
         run: .github/scripts/tap_validate.pl build/defaults/tests/mutiny_test
 
   cmake_msys:
-    name: MSYS
+    name: MSYS ${{ matrix.msystem }}
     runs-on: windows-latest
+    strategy:
+      fail-fast: false
+      matrix:
+        include:
+          - msystem: MINGW64
+            prefix: mingw-w64-x86_64
+          - msystem: UCRT64
+            prefix: mingw-w64-ucrt-x86_64
     defaults:
       run:
         shell: msys2 {0}
@@ -334,17 +342,18 @@ jobs:
         uses: actions/checkout@v7
       - uses: msys2/setup-msys2@v2
         with:
-          msystem: MINGW64
+          msystem: ${{ matrix.msystem }}
           update: true
           install: >
             git
-            mingw-w64-x86_64-cc
-            mingw-w64-x86_64-cmake
-            mingw-w64-x86_64-make
-            mingw-w64-x86_64-ccache
+            ${{ matrix.prefix }}-cc
+            ${{ matrix.prefix }}-cmake
+            ${{ matrix.prefix }}-make
+            ${{ matrix.prefix }}-ccache
       - name: ccache
         uses: hendrikmuhs/ccache-action@v1.2.23
         with:
+          key: msys-${{ matrix.msystem }}
           variant: ccache
       - name: Workflow
         run: cmake --workflow --preset GNU

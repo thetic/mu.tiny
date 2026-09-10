@@ -37,7 +37,8 @@
 #define MUTINY_HAS_ATTRIBUTE(x) __has_attribute(x)
 #endif
 
-#ifdef __MINGW32__
+#if defined(__MINGW32__) && defined(__USE_MINGW_ANSI_STDIO) &&                 \
+    (__USE_MINGW_ANSI_STDIO > 0)
 #define MUTINY_CHECK_FORMAT_TYPE __MINGW_PRINTF_FORMAT
 #else
 #define MUTINY_CHECK_FORMAT_TYPE printf
