@@ -388,6 +388,32 @@ TEST(Support, outputParameterAfterFailedCallIsNotWritten)
   clear_mock_failure();
 }
 
+TEST(Support, capturedExpectationDoesNotMatchOutputParameterActualCall)
+{
+  int captured = 0;
+  int val = 5;
+  mock().expect_one_call("func").with_captured_parameter(
+      "param", &captured, sizeof(captured)
+  );
+  mock().actual_call("func").with_output_parameter("param", &val);
+  STRCMP_CONTAINS("Unexpected parameter type", mock_failure_string().c_str());
+  clear_mock_failure();
+  mock().clear();
+}
+
+TEST(Support, outputExpectationDoesNotMatchCapturedParameterActualCall)
+{
+  int expected = 5;
+  int val = 0;
+  mock().expect_one_call("func").with_output_parameter_returning(
+      "param", &expected, sizeof(expected)
+  );
+  mock().actual_call("func").with_captured_parameter("param", &val);
+  STRCMP_CONTAINS("Unexpected parameter type", mock_failure_string().c_str());
+  clear_mock_failure();
+  mock().clear();
+}
+
 TEST(Support, withParameterOfTypeStringOverloadNoComparatorFails)
 {
   int obj = 0;
