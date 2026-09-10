@@ -331,4 +331,27 @@
     expect_fail_##group_name##_##test_name##_wrapper_c();                      \
   }
 
+/**
+ * @brief Bridge a C-defined parameterized test body into one case.
+ *
+ * @p ParamsType must match the type used in the corresponding C-side @ref
+ * PARAMETERIZED_TEST definition (mu/tiny/test.h).
+ *
+ * @param testGroup   Test group.
+ * @param testName    Base name, matching the C-side @ref PARAMETERIZED_TEST.
+ * @param id          Short, unique-within-testName identifier for this case.
+ * @param ParamsType  Type passed by value to the C body.
+ * @param expr        Expression producing a ParamsType value for this case.
+ */
+#define PARAMETERIZED_TEST_CASE_C_WRAPPER(                                     \
+    testGroup, testName, id, ParamsType, expr                                  \
+)                                                                              \
+  extern "C" void parameterized_##testGroup##_##testName##_wrapper_c(          \
+      ParamsType                                                               \
+  );                                                                           \
+  TEST(testGroup, testName##_##id)                                             \
+  {                                                                            \
+    parameterized_##testGroup##_##testName##_wrapper_c(expr);                  \
+  }
+
 #endif
