@@ -211,6 +211,9 @@ jobs:
           sudo apt-get install -y ${{ matrix.apt_packages }}
         if: ${{ matrix.apt_packages }}
 
+      - name: Checkout
+        uses: actions/checkout@v7
+
       - uses: hendrikmuhs/ccache-action@v1.2.24
         with:
           key: ${{ matrix.name }}
@@ -218,9 +221,6 @@ jobs:
 
       - uses: carlosperate/arm-none-eabi-gcc-action@v1
         if: ${{ matrix.name == 'GCC ARM embedded' }}
-
-      - name: Checkout
-        uses: actions/checkout@v7
 
       ## BUILD AND TEST
 
@@ -287,6 +287,7 @@ jobs:
         uses: actions/checkout@v7
       - uses: hendrikmuhs/ccache-action@v1.2.24
         with:
+          key: test_report
           variant: ccache
       - run: cmake --preset=defaults -DMUTINY_JUNIT_REPORT=TRUE
       - run: cmake --build --preset defaults
@@ -313,6 +314,7 @@ jobs:
         uses: actions/checkout@v7
       - uses: hendrikmuhs/ccache-action@v1.2.24
         with:
+          key: tap_validate
           variant: ccache
       - run: cmake --preset=defaults
       - run: cmake --build --preset defaults
@@ -390,6 +392,7 @@ jobs:
         uses: actions/checkout@v7
       - uses: hendrikmuhs/ccache-action@v1.2.24
         with:
+          key: source_archive
           variant: ccache
       - name: Configure
         run: cmake --preset GNU
