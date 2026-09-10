@@ -33,6 +33,15 @@ public:
       StringView name,
       void* output
   ) override;
+  ActualCall& with_captured_parameter(
+      StringView name,
+      const void* value
+  ) override;
+  ActualCall& with_captured_parameter_of_type(
+      StringView type,
+      StringView name,
+      const void* value
+  ) override;
 
   bool has_return_value() override;
   NamedValue return_value() override;
@@ -78,18 +87,38 @@ private:
   ExpectedCallsList potentially_matching_expectations_;
   const ExpectedCallsList& all_expectations_;
 
+  enum class MutinyCopyDirection
+  {
+    to_actual_call,
+    from_actual_call
+  };
+
   class MockOutputParametersListNode
   {
   public:
     String name;
     String type;
-    void* ptr;
+    MutinyCopyDirection direction;
+    union
+    {
+      void* destination;
+      const void* source;
+    };
 
     MockOutputParametersListNode* next{ nullptr };
     MockOutputParametersListNode(StringView n, StringView t, void* p)
       : name(n.data(), n.size())
       , type(t.data(), t.size())
-      , ptr(p)
+      , direction(MutinyCopyDirection::to_actual_call)
+      , destination(p)
+
+    {
+    }
+    MockOutputParametersListNode(StringView n, StringView t, const void* p)
+      : name(n.data(), n.size())
+      , type(t.data(), t.size())
+      , direction(MutinyCopyDirection::from_actual_call)
+      , source(p)
 
     {
     }
@@ -102,6 +131,12 @@ private:
       StringView type,
       void* ptr
   );
+  virtual void add_captured_parameter(
+      StringView name,
+      StringView type,
+      const void* ptr
+  );
+  void add_output_parameter_node(MockOutputParametersListNode* new_node);
   void clean_up_output_parameter_list();
 };
 

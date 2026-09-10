@@ -286,6 +286,36 @@ TEST(MockSupport_c, outputParametersOfType)
   mutiny_mock()->remove_all_comparators_and_copiers();
 }
 
+TEST(MockSupport_c, capturedParameters)
+{
+  int captured = 1;
+  int actual = 2;
+  mutiny_mock()->expect_one_call("foo")->with_captured_parameter(
+      "out", &captured, sizeof(captured)
+  );
+  mutiny_mock()->actual_call("foo")->with_captured_parameter("out", &actual);
+  mutiny_mock()->check_expectations();
+  CHECK_EQUAL(2, captured);
+  CHECK_EQUAL(2, actual);
+}
+
+TEST(MockSupport_c, capturedParametersOfType)
+{
+  int captured = 1;
+  int actual = 2;
+  mutiny_mock()->install_copier("typeName", type_copy);
+  mutiny_mock()->expect_one_call("foo")->with_captured_parameter_of_type(
+      "typeName", "out", &captured
+  );
+  mutiny_mock()->actual_call("foo")->with_captured_parameter_of_type(
+      "typeName", "out", &actual
+  );
+  CHECK_EQUAL(2, captured);
+  CHECK_EQUAL(2, actual);
+  mutiny_mock()->check_expectations();
+  mutiny_mock()->remove_all_comparators_and_copiers();
+}
+
 TEST(MockSupport_c, ignoreOtherParameters)
 {
   mutiny_mock()

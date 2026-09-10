@@ -184,6 +184,43 @@ public:
   virtual ExpectedCall& with_unmodified_output_parameter(StringView name) = 0;
 
   /**
+   * @brief Capture a parameter: the framework will copy the value the actual
+   *        call reports for this parameter into @p value (plain memcpy).
+   *
+   * Use this instead of with_parameter_of_type() when the parameter's value
+   * can't be predicted ahead of time (a generated id, a timestamp, a struct
+   * populated by the code under test) and the test needs to inspect it after
+   * the call rather than compare it during the call.
+   *
+   * @param name   Parameter name.
+   * @param value  Pointer to the buffer to copy the actual value into.
+   * @param size   Number of bytes to copy.
+   * @return *this for chaining.
+   */
+  virtual ExpectedCall& with_captured_parameter(
+      StringView name,
+      void* value,
+      size_t size
+  ) = 0;
+
+  /**
+   * @brief Capture a parameter of a custom object type.
+   *
+   * Uses the NamedValueCopier installed for @p type_name to copy the actual
+   * object into @p value.
+   *
+   * @param type_name  Type name; must match the copier key.
+   * @param name       Parameter name.
+   * @param value      Pointer to the buffer to copy the actual object into.
+   * @return *this for chaining.
+   */
+  virtual ExpectedCall& with_captured_parameter_of_type(
+      StringView type_name,
+      StringView name,
+      void* value
+  ) = 0;
+
+  /**
    * @brief Allow the actual call to pass parameters not listed in this
    * expectation.
    *

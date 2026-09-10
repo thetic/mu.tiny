@@ -184,6 +184,25 @@ TEST(Support, tracingWithParameterOfType)
   STRCMP_CONTAINS("param:", mock().get_trace_output());
 }
 
+TEST(Support, tracingWithCapturedParameter)
+{
+  int obj = 0;
+  mock().tracing(true);
+  mock().actual_call("func").with_captured_parameter("param", &obj);
+  STRCMP_CONTAINS("param:", mock().get_trace_output());
+}
+
+TEST(Support, tracingWithCapturedParameterOfType)
+{
+  int obj = 0;
+  mock().tracing(true);
+  mock().actual_call("func").with_captured_parameter_of_type(
+      "MyType", "param", &obj
+  );
+  STRCMP_CONTAINS("MyType", mock().get_trace_output());
+  STRCMP_CONTAINS("param:", mock().get_trace_output());
+}
+
 TEST(Support, tracingOnObject)
 {
   int obj = 0;

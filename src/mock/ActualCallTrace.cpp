@@ -70,6 +70,29 @@ ActualCall& ActualCallTrace::with_output_parameter_of_type(
   return *this;
 }
 
+ActualCall& ActualCallTrace::with_captured_parameter(
+    StringView name,
+    const void* value
+)
+{
+  add_parameter_name(name);
+  trace_buffer_ += string_from(value);
+  return *this;
+}
+
+ActualCall& ActualCallTrace::with_captured_parameter_of_type(
+    StringView type_name,
+    StringView name,
+    const void* value
+)
+{
+  trace_buffer_ += " ";
+  trace_buffer_ += type_name.c_str();
+  add_parameter_name(name);
+  trace_buffer_ += string_from(value);
+  return *this;
+}
+
 bool ActualCallTrace::has_return_value()
 {
   return false;

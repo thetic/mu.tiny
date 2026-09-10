@@ -154,6 +154,15 @@ TEST(MockHierarchy, ignoredExpectedCallParameterMethodsReturnSelf)
       )
   );
   CHECK_EQUAL(&ignored, &ignored.with_unmodified_output_parameter("unmod"));
+  int captured = 0;
+  CHECK_EQUAL(
+      &ignored,
+      &ignored.with_captured_parameter("c", &captured, sizeof(captured))
+  );
+  CHECK_EQUAL(
+      &ignored,
+      &ignored.with_captured_parameter_of_type("type", "cot", &captured)
+  );
   CHECK_EQUAL(&ignored, &ignored.ignore_other_parameters());
 }
 

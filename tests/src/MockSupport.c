@@ -71,12 +71,16 @@ void mutiny_all_mock_support_c_calls(void)
       ->expect_one_call("boo")
       ->with_parameter_of_type("type", "name", (void*)1)
       ->with_output_parameter_returning("name", (void*)1, 0UL)
-      ->with_output_parameter_of_type_returning("type", "name", (void*)1);
+      ->with_output_parameter_of_type_returning("type", "name", (void*)1)
+      ->with_captured_parameter("name", (void*)1, 0UL)
+      ->with_captured_parameter_of_type("type", "name", (void*)1);
   mutiny_mock()
       ->actual_call("boo")
       ->with_parameter_of_type("type", "name", (void*)1)
       ->with_output_parameter("name", (void*)1)
-      ->with_output_parameter_of_type("type", "name", (void*)1);
+      ->with_output_parameter_of_type("type", "name", (void*)1)
+      ->with_captured_parameter("name", (const void*)1)
+      ->with_captured_parameter_of_type("type", "name", (const void*)1);
   mutiny_mock()->enable();
 
   mutiny_mock()->clear();

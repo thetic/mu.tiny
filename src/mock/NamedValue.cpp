@@ -659,6 +659,10 @@ bool NamedValue::compatible_for_copying(const NamedValue& p) const
     return true;
   }
 
+  if ((type_ == "void*") && (p.type_ == "const void*")) {
+    return true;
+  }
+
   return false;
 }
 

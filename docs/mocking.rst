@@ -137,6 +137,45 @@ For custom types use
 :cpp:func:`with_output_parameter_of_type() <mu::tiny::mock::ActualCall::with_output_parameter_of_type>`
 with a registered copier.
 
+Capturing Parameters
+---------------------
+
+Output parameters move data in a fixed, known direction: test → code under
+test. Sometimes you need the opposite — inspecting a value the code under test
+passes *into* a mocked call, such as a generated id, a timestamp, or a struct
+it populated. :cpp:func:`with_parameter_of_type() <mu::tiny::mock::ExpectedCall::with_parameter_of_type>`
+doesn't help here since it requires an exact match *during* the call; capturing
+lets you grab the value and assert on it *after* the call.
+
+On the expected side:
+
+.. code-block:: cpp
+
+   Message captured;
+   mock().expect_one_call("send")
+         .with_captured_parameter_of_type("Message", "msg", &captured);
+
+On the actual call side (in your mock implementation):
+
+.. code-block:: cpp
+
+   mock().actual_call("send")
+         .with_captured_parameter_of_type("Message", "msg", msg);
+
+.. code-block:: cpp
+
+   // Back in the test, after exercising the code under test:
+   CHECK_EQUAL(42, captured.id);
+
+The framework copies the actual call's parameter into ``captured`` when the
+call is matched — the mirror of `Output Parameters`_. For raw memory use
+:cpp:func:`with_captured_parameter() <mu::tiny::mock::ExpectedCall::with_captured_parameter>` +
+:cpp:func:`with_captured_parameter() <mu::tiny::mock::ActualCall::with_captured_parameter>`
+(plain memcpy); for custom types use
+:cpp:func:`with_captured_parameter_of_type() <mu::tiny::mock::ExpectedCall::with_captured_parameter_of_type>` +
+:cpp:func:`with_captured_parameter_of_type() <mu::tiny::mock::ActualCall::with_captured_parameter_of_type>`
+with a registered copier.
+
 Return Values
 -------------
 
