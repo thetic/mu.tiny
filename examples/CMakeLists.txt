@@ -7,8 +7,8 @@ if(PROJECT_IS_TOP_LEVEL)
     FetchContent_Declare(
         mu.tiny
         GIT_REPOSITORY https://github.com/thetic/mu.tiny.git
-        GIT_TAG v0.8.1
-        FIND_PACKAGE_ARGS 0.8
+        GIT_TAG v0.9.0
+        FIND_PACKAGE_ARGS 0.9
     )
     FetchContent_MakeAvailable(mu.tiny)
 endif()

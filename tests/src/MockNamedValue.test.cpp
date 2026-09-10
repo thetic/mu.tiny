@@ -602,11 +602,35 @@ TEST(NamedValue, CompatibleForCopyingConstVoidAgainstVoid)
   CHECK(value->compatible_for_copying(other));
 }
 
+TEST(NamedValue, CompatibleForCopyingVoidAgainstConstVoid)
+{
+  value->set_value<void*>(nullptr);
+  mu::tiny::mock::NamedValue other("other");
+  other.set_value<const void*>(nullptr);
+  CHECK(value->compatible_for_copying(other));
+}
+
 TEST(NamedValue, NotCompatibleForCopyingDifferentTypes)
 {
   value->set_value<int>(1);
   mu::tiny::mock::NamedValue other("other");
   other.set_value<const char*>("hello");
+  CHECK(!value->compatible_for_copying(other));
+}
+
+TEST(NamedValue, NotCompatibleForCopyingSameVoidType)
+{
+  value->set_value<void*>(nullptr);
+  mu::tiny::mock::NamedValue other("other");
+  other.set_value<void*>(nullptr);
+  CHECK(!value->compatible_for_copying(other));
+}
+
+TEST(NamedValue, NotCompatibleForCopyingSameConstVoidType)
+{
+  value->set_value<const void*>(nullptr);
+  mu::tiny::mock::NamedValue other("other");
+  other.set_value<const void*>(nullptr);
   CHECK(!value->compatible_for_copying(other));
 }
 

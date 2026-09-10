@@ -26,8 +26,8 @@ include(FetchContent)
 FetchContent_Declare(
     mu.tiny
     GIT_REPOSITORY    https://github.com/thetic/mu.tiny.git
-    GIT_TAG           v0.8.1
-    FIND_PACKAGE_ARGS 0.8
+    GIT_TAG           v0.9.0
+    FIND_PACKAGE_ARGS 0.9
 )
 FetchContent_MakeAvailable(mu.tiny)
 
@@ -44,7 +44,7 @@ If _mu::tiny_ is already installed and you prefer not to use
 [`find_package`](https://cmake.org/cmake/help/latest/command/find_package.html) directly:
 
 ```cmake
-find_package(mu.tiny 0.8 REQUIRED)
+find_package(mu.tiny 0.9 REQUIRED)
 ```
 
 ## Headers
