@@ -29,7 +29,7 @@ is not installed, CMake fetches and builds it from source automatically:
    FetchContent_Declare(
        mu.tiny
        GIT_REPOSITORY https://github.com/thetic/mu.tiny.git
-       GIT_TAG        v0.8.0
+       GIT_TAG        v0.8.1
        FIND_PACKAGE_ARGS 0.8
    )
    FetchContent_MakeAvailable(mu.tiny)
