@@ -206,6 +206,8 @@ These bridge C test files into the C++ test runner. See
      - Same as above but expected to fail
    * - :c:macro:`TEST_ORDERED_C_WRAPPER(group, name, level) <TEST_ORDERED_C_WRAPPER>`
      - Wires a C test function into a :c:macro:`TEST_ORDERED`
+   * - :c:macro:`PARAMETERIZED_TEST_CASE_C_WRAPPER(group, name, id, ParamsType, expr) <PARAMETERIZED_TEST_CASE_C_WRAPPER>`
+     - Wires one case into a C :c:macro:`PARAMETERIZED_TEST` body
 
 Examples
 --------
