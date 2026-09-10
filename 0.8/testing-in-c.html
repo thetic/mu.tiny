@@ -585,12 +585,12 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="https://github.com/thetic/mu.tiny/blob/v0.8.0/docs/testing-in-c.rst?plain=true" title="View this page">
+  <a class="muted-link" href="https://github.com/thetic/mu.tiny/blob/v0.8.1/docs/testing-in-c.rst?plain=true" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/thetic/mu.tiny/edit/v0.8.0/docs/testing-in-c.rst" rel="edit" title="Edit this page">
+  <a class="muted-link" href="https://github.com/thetic/mu.tiny/edit/v0.8.1/docs/testing-in-c.rst" rel="edit" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -834,20 +834,20 @@ can’t accommodate. The typed macros remain available and are what
 <h2>C Mock Interface (<code class="docutils literal notranslate"><span class="pre">mu/tiny/mock.h</span></code>)<a class="headerlink" href="#c-mock-interface-mu-tiny-mock-h" title="Link to this heading">¶</a></h2>
 <dl class="c struct">
 <dt class="sig sig-object c" id="c.MutinyMockSupport">
-<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MutinyMockSupport</span></span></span><a class="headerlink" href="#c.MutinyMockSupport" title="Link to this definition">¶</a><br /><a class="reference external" href="https://github.com/thetic/mu.tiny/blob/v0.8.0/include/mu/tiny/mock.h#L744"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<span class="k"><span class="pre">struct</span></span><span class="w"> </span><span class="sig-name descname"><span class="n"><span class="pre">MutinyMockSupport</span></span></span><a class="headerlink" href="#c.MutinyMockSupport" title="Link to this definition">¶</a><br /><a class="reference external" href="https://github.com/thetic/mu.tiny/blob/v0.8.1/include/mu/tiny/mock.h#L744"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Vtable of function pointers that form the C mock API.  Obtain a
 pointer via <a class="reference internal" href="#c.mutiny_mock" title="mutiny_mock"><code class="xref c c-func docutils literal notranslate"><span class="pre">mutiny_mock()</span></code></a> or <a class="reference internal" href="#c.mutiny_mock_scope" title="mutiny_mock_scope"><code class="xref c c-func docutils literal notranslate"><span class="pre">mutiny_mock_scope()</span></code></a>.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.mutiny_mock">
-<a class="reference internal" href="#c.MutinyMockSupport" title="MutinyMockSupport"><span class="n"><span class="pre">MutinyMockSupport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mutiny_mock</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.mutiny_mock" title="Link to this definition">¶</a><br /><a class="reference external" href="https://github.com/thetic/mu.tiny/blob/v0.8.0/include/mu/tiny/mock.h#L1093"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<a class="reference internal" href="#c.MutinyMockSupport" title="MutinyMockSupport"><span class="n"><span class="pre">MutinyMockSupport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mutiny_mock</span></span></span><span class="sig-paren">(</span><span class="kt"><span class="pre">void</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.mutiny_mock" title="Link to this definition">¶</a><br /><a class="reference external" href="https://github.com/thetic/mu.tiny/blob/v0.8.1/include/mu/tiny/mock.h#L1093"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Returns the global <a class="reference internal" href="#c.MutinyMockSupport" title="MutinyMockSupport"><code class="xref c c-struct docutils literal notranslate"><span class="pre">MutinyMockSupport</span></code></a> instance.</p>
 </dd></dl>
 
 <dl class="c function">
 <dt class="sig sig-object c" id="c.mutiny_mock_scope">
-<a class="reference internal" href="#c.MutinyMockSupport" title="MutinyMockSupport"><span class="n"><span class="pre">MutinyMockSupport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mutiny_mock_scope</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.mutiny_mock_scope" title="Link to this definition">¶</a><br /><a class="reference external" href="https://github.com/thetic/mu.tiny/blob/v0.8.0/include/mu/tiny/mock.h#L1103"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
+<a class="reference internal" href="#c.MutinyMockSupport" title="MutinyMockSupport"><span class="n"><span class="pre">MutinyMockSupport</span></span></a><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="sig-name descname"><span class="n"><span class="pre">mutiny_mock_scope</span></span></span><span class="sig-paren">(</span><span class="k"><span class="pre">const</span></span><span class="w"> </span><span class="kt"><span class="pre">char</span></span><span class="w"> </span><span class="p"><span class="pre">*</span></span><span class="n"><span class="pre">name</span></span><span class="sig-paren">)</span><a class="headerlink" href="#c.mutiny_mock_scope" title="Link to this definition">¶</a><br /><a class="reference external" href="https://github.com/thetic/mu.tiny/blob/v0.8.1/include/mu/tiny/mock.h#L1103"><span class="viewcode-link"><span class="pre">[source]</span></span></a></dt>
 <dd><p>Returns the named <a class="reference internal" href="#c.MutinyMockSupport" title="MutinyMockSupport"><code class="xref c c-struct docutils literal notranslate"><span class="pre">MutinyMockSupport</span></code></a> scope.</p>
 </dd></dl>
 
@@ -942,13 +942,13 @@ the named <a class="reference internal" href="#c.MutinyMockSupport" title="Mutin
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.0/examples/tests/hello.test.c">hello.test.c</a> +
-<a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.0/examples/tests/hello.test.cpp">hello.test.cpp</a></p></td>
+<tr class="row-even"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.1/examples/tests/hello.test.c">hello.test.c</a> +
+<a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.1/examples/tests/hello.test.cpp">hello.test.cpp</a></p></td>
 <td><p>Two-file pattern: stubs a function pointer with <a class="reference internal" href="api/define_SetPointerPlugin_8hpp_1ab46a6c558e87a029cffe107b358a2691.html#c.MUTINY_PTR_SET" title="MUTINY_PTR_SET"><code class="xref c c-macro docutils literal notranslate"><span class="pre">MUTINY_PTR_SET</span></code></a>,
 checks output with <a class="reference internal" href="api/define_test_8h_1a82b48aca9addd6271f2d917b3815c45a.html#c.CHECK_EQUAL_STRING" title="CHECK_EQUAL_STRING"><code class="xref c c-macro docutils literal notranslate"><span class="pre">CHECK_EQUAL_STRING</span></code></a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.0/examples/tests/MockDocumentation.test.c">MockDocumentation.test.c</a> +
-<a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.0/examples/tests/MockDocumentation.test.cpp">MockDocumentation.test.cpp</a></p></td>
+<tr class="row-odd"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.1/examples/tests/MockDocumentation.test.c">MockDocumentation.test.c</a> +
+<a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.1/examples/tests/MockDocumentation.test.cpp">MockDocumentation.test.cpp</a></p></td>
 <td><p>C mock interface: <a class="reference internal" href="#c.mutiny_mock" title="mutiny_mock"><code class="xref c c-func docutils literal notranslate"><span class="pre">mutiny_mock()</span></code></a>, typed parameters, custom
 comparator, data store</p></td>
 </tr>
@@ -1046,7 +1046,7 @@ comparator, data store</p></td>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=486e5634"></script>
+</div><script src="_static/documentation_options.js?v=ec16d22d"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>

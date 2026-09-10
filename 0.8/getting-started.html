@@ -585,12 +585,12 @@
         </a>
         <div class="content-icon-container">
           <div class="view-this-page">
-  <a class="muted-link" href="https://github.com/thetic/mu.tiny/blob/v0.8.0/docs/getting-started.rst?plain=true" title="View this page">
+  <a class="muted-link" href="https://github.com/thetic/mu.tiny/blob/v0.8.1/docs/getting-started.rst?plain=true" title="View this page">
     <svg><use href="#svg-eye"></use></svg>
     <span class="visually-hidden">View this page</span>
   </a>
 </div><div class="edit-this-page">
-  <a class="muted-link" href="https://github.com/thetic/mu.tiny/edit/v0.8.0/docs/getting-started.rst" rel="edit" title="Edit this page">
+  <a class="muted-link" href="https://github.com/thetic/mu.tiny/edit/v0.8.1/docs/getting-started.rst" rel="edit" title="Edit this page">
     <svg><use href="#svg-pencil"></use></svg>
     <span class="visually-hidden">Edit this page</span>
   </a>
@@ -620,9 +620,9 @@ cmake<span class="w"> </span>--install<span class="w"> </span>build<span class="
 </section>
 <section id="adding-mu-tiny-to-your-project">
 <h2>Adding mu::tiny to Your Project<a class="headerlink" href="#adding-mu-tiny-to-your-project" title="Link to this heading">¶</a></h2>
-<p>The recommended approach uses CMake <span class="target" id="index-0-module:cmake:module:FetchContent"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/module/FetchContent.html#module:FetchContent" title="(in CMake v4.4.2)"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FetchContent</span></code></a>
-with <span class="target" id="index-0-variable:cmake:variable:FETCHCONTENT_TRY_FIND_PACKAGE_MODE"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/module/FetchContent.html#variable:FETCHCONTENT_TRY_FIND_PACKAGE_MODE" title="(in CMake v4.4.2)"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">FIND_PACKAGE_ARGS</span></code></a>.
-This first attempts <span class="target" id="index-0-command:cmake:command:find_package"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/command/find_package.html#command:find_package" title="(in CMake v4.4.2)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_package</span></code></a>; if <em>mu::tiny</em>
+<p>The recommended approach uses CMake <span class="target" id="index-0-module:cmake:module:FetchContent"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/module/FetchContent.html#module:FetchContent" title="(in CMake v4.4.3)"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FetchContent</span></code></a>
+with <span class="target" id="index-0-variable:cmake:variable:FETCHCONTENT_TRY_FIND_PACKAGE_MODE"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/module/FetchContent.html#variable:FETCHCONTENT_TRY_FIND_PACKAGE_MODE" title="(in CMake v4.4.3)"><code class="xref cmake cmake-variable docutils literal notranslate"><span class="pre">FIND_PACKAGE_ARGS</span></code></a>.
+This first attempts <span class="target" id="index-0-command:cmake:command:find_package"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/command/find_package.html#command:find_package" title="(in CMake v4.4.3)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_package</span></code></a>; if <em>mu::tiny</em>
 is not installed, CMake fetches and builds it from source automatically:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">cmake_minimum_required(</span><span class="no">VERSION</span><span class="w"> </span><span class="m">3.24</span><span class="nf">)</span>
 <span class="nf">project(</span><span class="nb">my_tests</span><span class="nf">)</span>
@@ -631,7 +631,7 @@ is not installed, CMake fetches and builds it from source automatically:</p>
 <span class="nf">FetchContent_Declare(</span>
 <span class="w">    </span><span class="nb">mu.tiny</span>
 <span class="w">    </span><span class="no">GIT_REPOSITORY</span><span class="w"> </span><span class="na">https://github.com/thetic/mu.tiny.git</span>
-<span class="w">    </span><span class="no">GIT_TAG</span><span class="w">        </span><span class="nb">v0.8.0</span>
+<span class="w">    </span><span class="no">GIT_TAG</span><span class="w">        </span><span class="nb">v0.8.1</span>
 <span class="w">    </span><span class="no">FIND_PACKAGE_ARGS</span><span class="w"> </span><span class="m">0.8</span>
 <span class="nf">)</span>
 <span class="nf">FetchContent_MakeAvailable(</span><span class="nb">mu.tiny</span><span class="nf">)</span>
@@ -645,8 +645,8 @@ is not installed, CMake fetches and builds it from source automatically:</p>
 </pre></div>
 </div>
 <p>If <em>mu::tiny</em> is already installed and you prefer not to use
-<span class="target" id="index-1-module:cmake:module:FetchContent"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/module/FetchContent.html#module:FetchContent" title="(in CMake v4.4.2)"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FetchContent</span></code></a>, use
-<span class="target" id="index-1-command:cmake:command:find_package"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/command/find_package.html#command:find_package" title="(in CMake v4.4.2)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_package</span></code></a> directly:</p>
+<span class="target" id="index-1-module:cmake:module:FetchContent"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/module/FetchContent.html#module:FetchContent" title="(in CMake v4.4.3)"><code class="xref cmake cmake-module docutils literal notranslate"><span class="pre">FetchContent</span></code></a>, use
+<span class="target" id="index-1-command:cmake:command:find_package"></span><a class="reference external" href="https://cmake.org/cmake/help/latest/command/find_package.html#command:find_package" title="(in CMake v4.4.3)"><code class="xref cmake cmake-command docutils literal notranslate"><span class="pre">find_package</span></code></a> directly:</p>
 <div class="highlight-cmake notranslate"><div class="highlight"><pre><span></span><span class="nf">find_package(</span><span class="nb">mu.tiny</span><span class="w"> </span><span class="m">0.8</span><span class="w"> </span><span class="no">REQUIRED</span><span class="nf">)</span>
 </pre></div>
 </div>
@@ -791,11 +791,11 @@ ctest<span class="w"> </span>--preset<span class="w"> </span>GNU<span class="w">
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.0/examples/tests/CheatSheet.test.cpp">CheatSheet.test.cpp</a></p></td>
+<tr class="row-even"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.1/examples/tests/CheatSheet.test.cpp">CheatSheet.test.cpp</a></p></td>
 <td><p>Minimal <a class="reference internal" href="api/define_test_8hpp_1a109b3c7ca51a87da0abc0a229663d7fd.html#c.TEST_GROUP" title="TEST_GROUP"><code class="xref c c-macro docutils literal notranslate"><span class="pre">TEST_GROUP</span></code></a> + <a class="reference internal" href="api/define_test_8h_1a387737a52be7d4ade8c76832ec677100.html#c.TEST" title="TEST"><code class="xref c c-macro docutils literal notranslate"><span class="pre">TEST</span></code></a> with <a class="reference internal" href="api/classmu_1_1tiny_1_1test_1_1Test.html#_CPPv4N2mu4tiny4test4Test5setupEv" title="mu::tiny::test::Test::setup"><code class="xref cpp cpp-func docutils literal notranslate"><span class="pre">setup()</span></code></a>, <a class="reference internal" href="api/define_SetPointerPlugin_8hpp_1ab46a6c558e87a029cffe107b358a2691.html#c.MUTINY_PTR_SET" title="MUTINY_PTR_SET"><code class="xref c c-macro docutils literal notranslate"><span class="pre">MUTINY_PTR_SET</span></code></a>,
 and a handful of assertion macros</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.0/examples/tests/CircularBuffer.test.cpp">CircularBuffer.test.cpp</a></p></td>
+<tr class="row-odd"><td><p><a class="extlink-source reference external" href="https://github.com/thetic/mu.tiny/tree/v0.8.1/examples/tests/CircularBuffer.test.cpp">CircularBuffer.test.cpp</a></p></td>
 <td><p>Full group with setup/teardown, helper methods, and multiple assertion styles</p></td>
 </tr>
 </tbody>
@@ -883,7 +883,7 @@ and a handful of assertion macros</p></td>
       
     </aside>
   </div>
-</div><script src="_static/documentation_options.js?v=486e5634"></script>
+</div><script src="_static/documentation_options.js?v=ec16d22d"></script>
     <script src="_static/doctools.js?v=fd6eb6e6"></script>
     <script src="_static/sphinx_highlight.js?v=6ffebe34"></script>
     <script src="_static/scripts/furo.js?v=46bd48cc"></script>
