@@ -73,6 +73,41 @@ documenting known bugs that cannot yet be fixed.
        CHECK_EQUAL(expected, buggy_function()); // currently produces wrong result
    }
 
+Parameterized Tests
+--------------------
+
+Write a test body once, then run it against several cases without repeating
+it. Each case still becomes its own ordinary test - independently named,
+filterable, and reported on failure - so a failing case never hides its
+siblings.
+
+``PARAMETERIZED_TEST(group, name, ParamsType)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:c:macro:`PARAMETERIZED_TEST` defines the shared body, taking a ``params``
+value of ``ParamsType``. Write this before the
+:c:macro:`PARAMETERIZED_TEST_CASE` lines that use it.
+
+``PARAMETERIZED_TEST_CASE(group, name, id, expr)``
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+:c:macro:`PARAMETERIZED_TEST_CASE` registers one case as
+``TEST(group, name_id)``, calling the shared body with the value of
+``expr``.
+
+.. literalinclude:: ../examples/tests/ParameterizedTest.test.cpp
+   :language: cpp
+   :lines: 1-37
+
+To reuse the same set of cases across several checks - for example, running
+an interface-conformance suite against every implementation of an interface -
+write a small local macro that expands to one
+:c:macro:`PARAMETERIZED_TEST_CASE` per case and invoke it after each body:
+
+.. literalinclude:: ../examples/tests/ParameterizedTest.test.cpp
+   :language: cpp
+   :lines: 39-103
+
 Metadata
 --------
 
@@ -171,6 +206,8 @@ These bridge C test files into the C++ test runner. See
      - Same as above but expected to fail
    * - :c:macro:`TEST_ORDERED_C_WRAPPER(group, name, level) <TEST_ORDERED_C_WRAPPER>`
      - Wires a C test function into a :c:macro:`TEST_ORDERED`
+   * - :c:macro:`PARAMETERIZED_TEST_CASE_C_WRAPPER(group, name, id, ParamsType, expr) <PARAMETERIZED_TEST_CASE_C_WRAPPER>`
+     - Wires one case into a C :c:macro:`PARAMETERIZED_TEST` body
 
 Examples
 --------
@@ -187,3 +224,5 @@ Examples
      - C-wrapper two-file pattern with :c:macro:`TEST_GROUP_SETUP`, :c:macro:`TEST`, and :c:macro:`TEST_C_WRAPPER`
    * - :source:`OrderedTest.test.cpp <examples/tests/OrderedTest.test.cpp>`
      - :c:macro:`TEST_ORDERED` alongside regular :c:macro:`TEST`
+   * - :source:`ParameterizedTest.test.cpp <examples/tests/ParameterizedTest.test.cpp>`
+     - :c:macro:`PARAMETERIZED_TEST` and :c:macro:`PARAMETERIZED_TEST_CASE`, including reusing one case list across several checks

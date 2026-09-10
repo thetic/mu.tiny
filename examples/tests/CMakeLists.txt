@@ -29,6 +29,7 @@ add_executable(ExampleTests
     MockDocumentation.test.c
     MockDocumentation.test.cpp
     OrderedTest.test.cpp
+    ParameterizedTest.test.cpp
     Printer.test.cpp
     TeamCityOutputPlugin.cpp
     TeamCityTestOutput.test.cpp

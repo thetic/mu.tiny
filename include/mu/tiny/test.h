@@ -324,6 +324,24 @@ extern "C"
 #define XFAIL_TEST(group_name, test_name)                                      \
   extern void expect_fail_##group_name##_##test_name##_wrapper_c(void);        \
   void expect_fail_##group_name##_##test_name##_wrapper_c(void)
+
+/**
+ * @brief Define the C body of a parameterized test.
+ *
+ * The function stub is called once per case by the corresponding
+ * @c PARAMETERIZED_TEST_CASE_C_WRAPPER macro (mu/tiny/test.hpp) in the C++
+ * bridge file. @p ParamsType must be a type visible to both this file and
+ * the bridge file - typically a plain struct declared in a shared header.
+ *
+ * @param group_name  Test group.
+ * @param test_name   Base test name, shared by every case.
+ * @param ParamsType  Type received by value as @c params.
+ */
+#define PARAMETERIZED_TEST(group_name, test_name, ParamsType)                  \
+  extern void parameterized_##group_name##_##test_name##_wrapper_c(            \
+      ParamsType                                                               \
+  );                                                                           \
+  void parameterized_##group_name##_##test_name##_wrapper_c(ParamsType params)
 #endif
 
   /**

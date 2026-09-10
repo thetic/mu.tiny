@@ -184,6 +184,56 @@
   void EXPECT_FAIL##testGroup##_##testName##_Test::test_body()
 
 /**
+ * @brief Define the shared body of a parameterized test.
+ *
+ * Write the body once, then list each case with @ref PARAMETERIZED_TEST_CASE.
+ * Every case expands to an ordinary @ref TEST() named "testName_id" -
+ * independently registered, filterable by name, and reported on failure like
+ * any other test. A case failing does not affect its siblings.
+ *
+ * @param testGroup   An already-declared @ref TEST_GROUP.
+ * @param testName    Base name; each case run as "testName_id".
+ * @param ParamsType  Type passed by value to the body as @c params.
+ *
+ * @code{.cpp}
+ * struct SquareCase { int input; int expected; };
+ *
+ * PARAMETERIZED_TEST(NumberChecks, square_matches_expected, SquareCase)
+ * {
+ *   CHECK_EQUAL(params.expected, params.input * params.input);
+ * }
+ * PARAMETERIZED_TEST_CASE(NumberChecks, square_matches_expected, two,
+ *     (SquareCase{2, 4}))
+ * PARAMETERIZED_TEST_CASE(NumberChecks, square_matches_expected, three,
+ *     (SquareCase{3, 9}))
+ * @endcode
+ *
+ * @see PARAMETERIZED_TEST_CASE
+ */
+#define PARAMETERIZED_TEST(testGroup, testName, ParamsType)                    \
+  void testGroup##_##testName##_body(ParamsType params)
+
+/**
+ * @brief Register one case of a parameterized test.
+ *
+ * Must follow the matching @ref PARAMETERIZED_TEST definition in the same
+ * translation unit.
+ *
+ * @param testGroup  Same group passed to the matching @ref PARAMETERIZED_TEST.
+ * @param testName   Same name passed to the matching @ref PARAMETERIZED_TEST.
+ * @param id         Short, unique-within-testName identifier for this case;
+ *                   becomes the "_id" suffix of the generated test name.
+ * @param expr       Expression producing a ParamsType value for this case.
+ *
+ * @see PARAMETERIZED_TEST
+ */
+#define PARAMETERIZED_TEST_CASE(testGroup, testName, id, expr)                 \
+  TEST(testGroup, testName##_##id)                                             \
+  {                                                                            \
+    testGroup##_##testName##_body(expr);                                       \
+  }
+
+/**
  * @brief Attach a key/value property to the currently running test.
  *
  * Properties appear in JUnit XML output inside the @c \<properties\> element,
@@ -279,6 +329,29 @@
   XFAIL_TEST(group_name, test_name)                                            \
   {                                                                            \
     expect_fail_##group_name##_##test_name##_wrapper_c();                      \
+  }
+
+/**
+ * @brief Bridge a C-defined parameterized test body into one case.
+ *
+ * @p ParamsType must match the type used in the corresponding C-side @ref
+ * PARAMETERIZED_TEST definition (mu/tiny/test.h).
+ *
+ * @param testGroup   Test group.
+ * @param testName    Base name, matching the C-side @ref PARAMETERIZED_TEST.
+ * @param id          Short, unique-within-testName identifier for this case.
+ * @param ParamsType  Type passed by value to the C body.
+ * @param expr        Expression producing a ParamsType value for this case.
+ */
+#define PARAMETERIZED_TEST_CASE_C_WRAPPER(                                     \
+    testGroup, testName, id, ParamsType, expr                                  \
+)                                                                              \
+  extern "C" void parameterized_##testGroup##_##testName##_wrapper_c(          \
+      ParamsType                                                               \
+  );                                                                           \
+  TEST(testGroup, testName##_##id)                                             \
+  {                                                                            \
+    parameterized_##testGroup##_##testName##_wrapper_c(expr);                  \
   }
 
 #endif
