@@ -609,6 +609,24 @@
         <article role="main" id="furo-main-content">
           <section id="changelog">
 <h1>Changelog<a class="headerlink" href="#changelog" title="Link to this heading">¶</a></h1>
+<section id="release-0-8-1">
+<h2>v0.8.1<a class="headerlink" href="#release-0-8-1" title="Link to this heading">¶</a></h2>
+<p><em>Released on 2026-09-10 - <a class="reference external" href="https://github.com/thetic/mu.tiny/releases/tag/v0.8.1">GitHub</a></em></p>
+<section id="bug-fixes">
+<h3>Bug Fixes<a class="headerlink" href="#bug-fixes" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">JUnitOutput</span></code> now merges interleaved test groups into a single <code class="docutils literal notranslate"><span class="pre">&lt;testsuite&gt;</span></code> block — previously a group revisited later (e.g. under <code class="docutils literal notranslate"><span class="pre">-s</span></code> shuffle) produced a duplicate block instead of being appended to the first. (#102)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">CHECK_COMPARE</span></code> now evaluates each operand exactly once, fixing double-evaluation (and a possible mismatch between the compared value and the value shown in the failure message) for side-effecting operands (mirrors cpputest#1895). (#103)</p></li>
+<li><p>MinGW UCRT builds no longer fail under <code class="docutils literal notranslate"><span class="pre">-Werror</span></code> from mismatched printf format-checking — <code class="docutils literal notranslate"><span class="pre">__MINGW_PRINTF_FORMAT</span></code> is now only used under the classic MinGW runtime, where it’s actually correct (mirrors cpputest#1896). (#104)</p></li>
+</ul>
+</section>
+<section id="housekeeping">
+<h3>Housekeeping<a class="headerlink" href="#housekeeping" title="Link to this heading">¶</a></h3>
+<ul class="simple">
+<li><p>Release workflow now triggers on <code class="docutils literal notranslate"><span class="pre">published</span></code> instead of <code class="docutils literal notranslate"><span class="pre">created</span></code>, so publishing a release from a draft correctly builds and uploads the source archive. (#101)</p></li>
+</ul>
+</section>
+</section>
 <section id="release-0-8-0">
 <h2>v0.8.0<a class="headerlink" href="#release-0-8-0" title="Link to this heading">¶</a></h2>
 <p><em>Released on 2026-08-07 - <a class="reference external" href="https://github.com/thetic/mu.tiny/releases/tag/v0.8.0">GitHub</a></em></p>
@@ -868,6 +886,11 @@ eliminating per-group ctest collisions</p></li>
           <div class="toc-tree">
             <ul>
 <li><a class="reference internal" href="#">Changelog</a><ul>
+<li><a class="reference internal" href="#release-0-8-1">v0.8.1</a><ul>
+<li><a class="reference internal" href="#bug-fixes">Bug Fixes</a></li>
+<li><a class="reference internal" href="#housekeeping">Housekeeping</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#release-0-8-0">v0.8.0</a><ul>
 <li><a class="reference internal" href="#breaking-changes">Breaking Changes</a></li>
 <li><a class="reference internal" href="#new-features">New Features</a></li>
