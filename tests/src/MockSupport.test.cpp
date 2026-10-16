@@ -184,6 +184,25 @@ TEST(Support, tracingWithParameterOfType)
   STRCMP_CONTAINS("param:", mock().get_trace_output());
 }
 
+TEST(Support, tracingWithCapturedParameter)
+{
+  int obj = 0;
+  mock().tracing(true);
+  mock().actual_call("func").with_captured_parameter("param", &obj);
+  STRCMP_CONTAINS("param:", mock().get_trace_output());
+}
+
+TEST(Support, tracingWithCapturedParameterOfType)
+{
+  int obj = 0;
+  mock().tracing(true);
+  mock().actual_call("func").with_captured_parameter_of_type(
+      "MyType", "param", &obj
+  );
+  STRCMP_CONTAINS("MyType", mock().get_trace_output());
+  STRCMP_CONTAINS("param:", mock().get_trace_output());
+}
+
 TEST(Support, tracingOnObject)
 {
   int obj = 0;
@@ -367,6 +386,32 @@ TEST(Support, outputParameterAfterFailedCallIsNotWritten)
   mock().actual_call("nonexistent").with_output_parameter("out", &val);
   CHECK_EQUAL(99, val);
   clear_mock_failure();
+}
+
+TEST(Support, capturedExpectationDoesNotMatchOutputParameterActualCall)
+{
+  int captured = 0;
+  int val = 5;
+  mock().expect_one_call("func").with_captured_parameter(
+      "param", &captured, sizeof(captured)
+  );
+  mock().actual_call("func").with_output_parameter("param", &val);
+  STRCMP_CONTAINS("Unexpected parameter type", mock_failure_string().c_str());
+  clear_mock_failure();
+  mock().clear();
+}
+
+TEST(Support, outputExpectationDoesNotMatchCapturedParameterActualCall)
+{
+  int expected = 5;
+  int val = 0;
+  mock().expect_one_call("func").with_output_parameter_returning(
+      "param", &expected, sizeof(expected)
+  );
+  mock().actual_call("func").with_captured_parameter("param", &val);
+  STRCMP_CONTAINS("Unexpected parameter type", mock_failure_string().c_str());
+  clear_mock_failure();
+  mock().clear();
 }
 
 TEST(Support, withParameterOfTypeStringOverloadNoComparatorFails)

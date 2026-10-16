@@ -699,6 +699,119 @@ TEST(MockParameter, twoInterleavedOutputParameters)
   mock().check_expectations();
 }
 
+TEST(MockParameter, capturedParameterSucceeds)
+{
+  int param = 1;
+  int retval = 2;
+
+  mock()
+      .expect_one_call("function")
+      .with_captured_parameter("parameterName", &param, sizeof(param));
+  mock()
+      .actual_call("function")
+      .with_captured_parameter("parameterName", &retval);
+
+  CHECK_EQUAL(param, 2);
+  CHECK_EQUAL(retval, 2);
+  mock().check_expectations();
+}
+
+TEST(MockParameter, noActualCallForCapturedParameter)
+{
+  FailureReporterInstaller failure_reporter_installer;
+
+  int captured = 0;
+  mock().expect_one_call("foo").with_captured_parameter(
+      "captured", &captured, sizeof(captured)
+  );
+
+  mock().check_expectations();
+  STRCMP_CONTAINS("foo", mock_failure_string().c_str());
+}
+
+TEST(MockParameter, unexpectedCapturedParameter)
+{
+  FailureReporterInstaller failure_reporter_installer;
+
+  int retval = 0;
+  mock().expect_one_call("foo");
+  mock().actual_call("foo").with_captured_parameter("parameterName", &retval);
+
+  STRCMP_CONTAINS("foo", mock_failure_string().c_str());
+}
+
+TEST(MockParameter, capturedParameterMissing)
+{
+  FailureReporterInstaller failure_reporter_installer;
+
+  int captured = 0;
+  mock().expect_one_call("foo").with_captured_parameter(
+      "captured", &captured, sizeof(captured)
+  );
+  mock().actual_call("foo");
+
+  mock().check_expectations();
+  STRCMP_CONTAINS("foo", mock_failure_string().c_str());
+}
+
+TEST(MockParameter, twoCapturedParameters)
+{
+  int param1 = 55;
+  int retval1 = 1;
+  int param2 = 77;
+  int retval2 = 2;
+
+  mock()
+      .expect_one_call("function")
+      .with_captured_parameter("parameterName", &param1, sizeof(param1))
+      .with_parameter("id", 1);
+  mock()
+      .expect_one_call("function")
+      .with_captured_parameter("parameterName", &param2, sizeof(param2))
+      .with_parameter("id", 2);
+  mock()
+      .actual_call("function")
+      .with_captured_parameter("parameterName", &retval1)
+      .with_parameter("id", 1);
+  mock()
+      .actual_call("function")
+      .with_captured_parameter("parameterName", &retval2)
+      .with_parameter("id", 2);
+
+  CHECK_EQUAL(retval1, param1);
+  CHECK_EQUAL(retval2, param2);
+  mock().check_expectations();
+}
+
+TEST(MockParameter, twoInterleavedCapturedParameters)
+{
+  int param1 = 55;
+  int retval1 = 1;
+  int param2 = 77;
+  int retval2 = 2;
+
+  mock()
+      .expect_one_call("function")
+      .with_captured_parameter("parameterName", &param1, sizeof(param1))
+      .with_parameter("id", 1);
+  mock()
+      .expect_one_call("function")
+      .with_captured_parameter("parameterName", &param2, sizeof(param2))
+      .with_parameter("id", 2);
+  mock()
+      .actual_call("function")
+      .with_captured_parameter("parameterName", &retval2)
+      .with_parameter("id", 2);
+  mock()
+      .actual_call("function")
+      .with_captured_parameter("parameterName", &retval1)
+      .with_parameter("id", 1);
+
+  CHECK_EQUAL(retval1, param1);
+  CHECK_EQUAL(retval2, param2);
+  mock().check_expectations();
+}
+
 TEST(MockParameter, twoDifferentOutputParametersInSameFunctionCallSucceeds)
 {
   int param1 = 1;

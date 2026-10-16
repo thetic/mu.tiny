@@ -29,6 +29,15 @@ public:
       StringView name,
       void* output
   ) override;
+  ActualCall& with_captured_parameter(
+      StringView name,
+      const void* value
+  ) override;
+  ActualCall& with_captured_parameter_of_type(
+      StringView type_name,
+      StringView name,
+      const void* value
+  ) override;
 
   bool has_return_value() override;
   NamedValue return_value() override;

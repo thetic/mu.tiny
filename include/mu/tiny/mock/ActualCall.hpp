@@ -145,6 +145,39 @@ public:
       void* output
   ) = 0;
 
+  /**
+   * @brief Report a captured parameter by name.
+   *
+   * The framework copies @p value into the buffer configured on the
+   * matching expectation via @ref ExpectedCall::with_captured_parameter(),
+   * so the test can inspect it after the call. This is the mirror of
+   * with_output_parameter(): data flows from the actual call to the test
+   * instead of from the expectation to the actual call.
+   *
+   * @param name   Parameter name.
+   * @param value  Pointer to the data to copy into the test's buffer.
+   * @return *this for chaining.
+   */
+  virtual ActualCall& with_captured_parameter(
+      StringView name,
+      const void* value
+  ) = 0;
+
+  /**
+   * @brief Report a captured parameter with a custom object type.
+   *
+   * @param type_name  Type name; must match the copier installed via
+   * @ref Support::install_copier().
+   * @param name       Parameter name.
+   * @param value      Pointer to the object to copy into the test's buffer.
+   * @return *this for chaining.
+   */
+  virtual ActualCall& with_captured_parameter_of_type(
+      StringView type_name,
+      StringView name,
+      const void* value
+  ) = 0;
+
   /** @return true if the matching expectation set a return value. */
   virtual bool has_return_value() = 0;
   /** @return The configured return value as a generic NamedValue. */

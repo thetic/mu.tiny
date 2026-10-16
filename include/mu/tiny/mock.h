@@ -267,6 +267,30 @@ extern "C"
         void* value
     );
 
+    /**
+     * @brief Report a captured parameter.
+     * @param name Parameter name.
+     * @param value Pointer to the data to copy into the test's buffer.
+     * @return this.
+     */
+    struct MutinyMockActualCall* (*with_captured_parameter)(
+        const char* name,
+        const void* value
+    );
+
+    /**
+     * @brief Report a custom-type captured parameter.
+     * @param type Type name.
+     * @param name Parameter name.
+     * @param value Pointer to the object to copy into the test's buffer.
+     * @return this.
+     */
+    struct MutinyMockActualCall* (*with_captured_parameter_of_type)(
+        const char* type,
+        const char* name,
+        const void* value
+    );
+
     /** @return Non-zero if the expectation set a return value. */
     int (*has_return_value)(void);
 
@@ -611,6 +635,32 @@ extern "C"
      */
     struct MutinyMockExpectedCall* (*with_unmodified_output_parameter)(
         const char* name
+    );
+
+    /**
+     * @brief Capture a parameter (plain @c memcpy).
+     * @param name Name.
+     * @param value Buffer to copy the actual value into.
+     * @param size Bytes to copy.
+     * @return this.
+     */
+    struct MutinyMockExpectedCall* (*with_captured_parameter)(
+        const char* name,
+        void* value,
+        size_t size
+    );
+
+    /**
+     * @brief Capture a parameter of a custom object type.
+     * @param type Type name.
+     * @param name Name.
+     * @param value Buffer to copy the actual object into.
+     * @return this.
+     */
+    struct MutinyMockExpectedCall* (*with_captured_parameter_of_type)(
+        const char* type,
+        const char* name,
+        void* value
     );
 
     /**

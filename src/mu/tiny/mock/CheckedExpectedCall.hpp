@@ -44,6 +44,16 @@ public:
       const void* value
   ) override;
   ExpectedCall& with_unmodified_output_parameter(StringView name) override;
+  ExpectedCall& with_captured_parameter(
+      StringView name,
+      void* value,
+      size_t size
+  ) override;
+  ExpectedCall& with_captured_parameter_of_type(
+      StringView type_name,
+      StringView name,
+      void* value
+  ) override;
   ExpectedCall& ignore_other_parameters() override;
 
   ExpectedCall& and_return_typed_value(NamedValue value) override;

@@ -64,18 +64,40 @@ void CheckedActualCall::copy_output_parameters(
        p = p->next) {
     NamedValue output_parameter = expected_call->get_output_parameter(p->name);
     NamedValueCopier* copier = output_parameter.get_copier();
+    const bool to_actual_call =
+        (p->direction == MutinyCopyDirection::to_actual_call);
+    const bool raw_pointer_pair =
+        to_actual_call ? ((output_parameter.get_type() == "const void*") &&
+                          (p->type == "void*"))
+                       : ((output_parameter.get_type() == "void*") &&
+                          (p->type == "const void*"));
+
     if (copier != nullptr) {
-      copier->copy(p->ptr, output_parameter.get_const_object_pointer());
-    } else if (
-        (output_parameter.get_type() == "const void*") && (p->type == "void*")
-    ) {
-      const void* data = output_parameter.get_value<const void*>();
-      size_t size = output_parameter.get_size();
-      memcpy(p->ptr, data, size);
+      if (to_actual_call) {
+        copier->copy(
+            const_cast<void*>(p->value),
+            output_parameter.get_const_object_pointer()
+        );
+      } else {
+        copier->copy(output_parameter.get_object_pointer(), p->value);
+      }
+    } else if (raw_pointer_pair) {
+      if (to_actual_call) {
+        memcpy(
+            const_cast<void*>(p->value),
+            output_parameter.get_value<const void*>(),
+            output_parameter.get_size()
+        );
+      } else {
+        memcpy(
+            output_parameter.get_value<void*>(),
+            p->value,
+            output_parameter.get_size()
+        );
+      }
     } else if (!output_parameter.get_name().empty()) {
       fail_with(NoWayToCopyCustomTypeFailure(
-          get_test(),
-          expected_call->get_output_parameter(p->name).get_type().c_str()
+          get_test(), output_parameter.get_type().c_str()
       ));
     }
   }
@@ -247,6 +269,35 @@ ActualCall& CheckedActualCall::with_output_parameter_of_type(
   return *this;
 }
 
+ActualCall& CheckedActualCall::with_captured_parameter(
+    StringView name,
+    const void* value
+)
+{
+  add_captured_parameter(name, "const void*", value);
+
+  NamedValue captured_parameter(name);
+  captured_parameter.set_value(value);
+  check_output_parameter(static_cast<NamedValue&&>(captured_parameter));
+
+  return *this;
+}
+
+ActualCall& CheckedActualCall::with_captured_parameter_of_type(
+    StringView type,
+    StringView name,
+    const void* value
+)
+{
+  add_captured_parameter(name, type, value);
+
+  NamedValue captured_parameter(name);
+  captured_parameter.set_const_object_pointer(type, value);
+  check_output_parameter(static_cast<NamedValue&&>(captured_parameter));
+
+  return *this;
+}
+
 bool CheckedActualCall::is_fulfilled() const
 {
   return state_ == MutinyActualCallState::success;
@@ -353,8 +404,22 @@ void CheckedActualCall::add_output_parameter(
     void* ptr
 )
 {
-  auto* new_node = new MockOutputParametersListNode(name, type, ptr);
+  add_output_parameter_node(new MockOutputParametersListNode(name, type, ptr));
+}
 
+void CheckedActualCall::add_captured_parameter(
+    StringView name,
+    StringView type,
+    const void* ptr
+)
+{
+  add_output_parameter_node(new MockOutputParametersListNode(name, type, ptr));
+}
+
+void CheckedActualCall::add_output_parameter_node(
+    MockOutputParametersListNode* new_node
+)
+{
   if (output_parameter_expectations_ == nullptr) {
     output_parameter_expectations_ = new_node;
   } else {

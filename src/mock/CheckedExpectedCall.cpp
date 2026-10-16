@@ -95,6 +95,31 @@ ExpectedCall& CheckedExpectedCall::with_unmodified_output_parameter(
   return with_output_parameter_returning(name, nullptr, 0);
 }
 
+ExpectedCall& CheckedExpectedCall::with_captured_parameter(
+    StringView name,
+    void* value,
+    size_t size
+)
+{
+  NamedValue* new_parameter = new MockExpectedFunctionParameter(name);
+  output_parameters_->add(new_parameter);
+  new_parameter->set_value(value);
+  new_parameter->set_size(size);
+  return *this;
+}
+
+ExpectedCall& CheckedExpectedCall::with_captured_parameter_of_type(
+    StringView type,
+    StringView name,
+    void* value
+)
+{
+  NamedValue* new_parameter = new MockExpectedFunctionParameter(name);
+  output_parameters_->add(new_parameter);
+  new_parameter->set_object_pointer(type, value);
+  return *this;
+}
+
 bool CheckedExpectedCall::has_input_parameter_with_name(StringView name)
 {
   NamedValue* p = input_parameters_->get_value_by_name(name);

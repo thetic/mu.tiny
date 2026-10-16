@@ -56,6 +56,22 @@ public:
   {
     return *this;
   }
+  ExpectedCall& with_captured_parameter(
+      StringView /*name*/,
+      void* /*value*/,
+      size_t /*size*/
+  ) override
+  {
+    return *this;
+  }
+  ExpectedCall& with_captured_parameter_of_type(
+      StringView /*type_name*/,
+      StringView /*name*/,
+      void* /*value*/
+  ) override
+  {
+    return *this;
+  }
   ExpectedCall& ignore_other_parameters() override { return *this; }
 
   ExpectedCall& and_return_typed_value(NamedValue /*value*/) override

@@ -651,15 +651,25 @@ bool NamedValue::equals(const NamedValue& p) const
 
 bool NamedValue::compatible_for_copying(const NamedValue& p) const
 {
-  if (type_ == p.type_) {
-    return true;
-  }
-
   if ((type_ == "const void*") && (p.type_ == "void*")) {
     return true;
   }
 
-  return false;
+  if ((type_ == "void*") && (p.type_ == "const void*")) {
+    return true;
+  }
+
+  // with_output_parameter{,_returning} and with_captured_parameter{,_of_type}
+  // both store their raw-pointer form as "void*"/"const void*", but with the
+  // roles swapped between expectation and actual call (see the two checks
+  // above). A same-type match here means the two sides used mismatched
+  // directions (e.g. an output-parameter expectation paired with an actual
+  // with_captured_parameter() call), which is never a valid pairing.
+  if ((type_ == "void*") || (type_ == "const void*")) {
+    return false;
+  }
+
+  return type_ == p.type_;
 }
 
 String NamedValue::to_string() const

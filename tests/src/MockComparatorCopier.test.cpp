@@ -94,6 +94,28 @@ TEST(MockComparatorCopier, customObjectParameterFailsWhenNotHavingACopierReposit
   CHECK_EXPECTED_MOCK_FAILURE(expected_failure);
 }
 
+TEST(MockComparatorCopier, customObjectCapturedParameterFailsWhenNotHavingACopierRepository)
+{
+  FailureReporterInstaller failure_reporter_installer;
+
+  MyTypeForTesting object(1);
+  mock()
+      .expect_one_call("function")
+      .with_captured_parameter_of_type(
+          "MyTypeForTesting", "parameterName", &object
+      );
+  mock()
+      .actual_call("function")
+      .with_captured_parameter_of_type(
+          "MyTypeForTesting", "parameterName", &object
+      );
+
+  mu::tiny::mock::NoWayToCopyCustomTypeFailure expected_failure(
+      mock_failure_test(), "MyTypeForTesting"
+  );
+  CHECK_EXPECTED_MOCK_FAILURE(expected_failure);
+}
+
 TEST(MockComparatorCopier, customObjectParameterSucceeds)
 {
   MyTypeForTesting object(1);
@@ -237,6 +259,87 @@ TEST(MockComparatorCopier, customTypeOutputParameterMissing)
 
   mock().expect_one_call("foo").with_output_parameter_of_type_returning(
       "MyTypeForTesting", "output", &expected_object
+  );
+  mock().actual_call("foo");
+
+  mock().check_expectations();
+  STRCMP_CONTAINS("foo", mock_failure_string().c_str());
+
+  mock().remove_all_comparators_and_copiers();
+}
+
+TEST(MockComparatorCopier, customTypeCapturedParameterSucceeds)
+{
+  MyTypeForTesting captured_object(55);
+  MyTypeForTesting actual_object(99);
+  MyTypeForTestingCopier copier;
+  mock().install_copier("MyTypeForTesting", copier);
+
+  mock()
+      .expect_one_call("function")
+      .with_captured_parameter_of_type(
+          "MyTypeForTesting", "parameterName", &captured_object
+      );
+  mock()
+      .actual_call("function")
+      .with_captured_parameter_of_type(
+          "MyTypeForTesting", "parameterName", &actual_object
+      );
+
+  mock().check_expectations();
+  CHECK_EQUAL(99, *(captured_object.value));
+  CHECK_EQUAL(99, *(actual_object.value));
+
+  mock().remove_all_comparators_and_copiers();
+}
+
+TEST(MockComparatorCopier, noActualCallForCustomTypeCapturedParameter)
+{
+  FailureReporterInstaller failure_reporter_installer;
+
+  MyTypeForTesting captured_object(1);
+  MyTypeForTestingCopier copier;
+  mock().install_copier("MyTypeForTesting", copier);
+
+  mock().expect_one_call("foo").with_captured_parameter_of_type(
+      "MyTypeForTesting", "captured", &captured_object
+  );
+  mock().check_expectations();
+
+  STRCMP_CONTAINS("foo", mock_failure_string().c_str());
+
+  mock().remove_all_comparators_and_copiers();
+}
+
+TEST(MockComparatorCopier, unexpectedCustomTypeCapturedParameter)
+{
+  FailureReporterInstaller failure_reporter_installer;
+
+  MyTypeForTesting actual_object(8834);
+  MyTypeForTestingCopier copier;
+  mock().install_copier("MyTypeForTesting", copier);
+
+  mock().expect_one_call("foo");
+  mock().actual_call("foo").with_captured_parameter_of_type(
+      "MyTypeForTesting", "parameterName", &actual_object
+  );
+  mock().check_expectations();
+
+  STRCMP_CONTAINS("foo", mock_failure_string().c_str());
+
+  mock().remove_all_comparators_and_copiers();
+}
+
+TEST(MockComparatorCopier, customTypeCapturedParameterMissing)
+{
+  FailureReporterInstaller failure_reporter_installer;
+
+  MyTypeForTesting captured_object(123464);
+  MyTypeForTestingCopier copier;
+  mock().install_copier("MyTypeForTesting", copier);
+
+  mock().expect_one_call("foo").with_captured_parameter_of_type(
+      "MyTypeForTesting", "captured", &captured_object
   );
   mock().actual_call("foo");
 

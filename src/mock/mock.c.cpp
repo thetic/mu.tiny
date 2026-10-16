@@ -258,6 +258,16 @@ struct MutinyMockExpectedCall* with_output_parameter_of_type_returning(
 struct MutinyMockExpectedCall* with_unmodified_output_parameter(
     const char* name
 );
+struct MutinyMockExpectedCall* with_captured_parameter(
+    const char* name,
+    void* value,
+    size_t size
+);
+struct MutinyMockExpectedCall* with_captured_parameter_of_type(
+    const char* type,
+    const char* name,
+    void* value
+);
 struct MutinyMockExpectedCall* ignore_other_parameters();
 struct MutinyMockExpectedCall* and_return_bool_value(int value);
 struct MutinyMockExpectedCall* and_return_int_value(int value);
@@ -349,6 +359,15 @@ struct MutinyMockActualCall* with_actual_output_parameter_of_type(
     const char* name,
     void* value
 );
+struct MutinyMockActualCall* with_actual_captured_parameter(
+    const char* name,
+    const void* value
+);
+struct MutinyMockActualCall* with_actual_captured_parameter_of_type(
+    const char* type,
+    const char* name,
+    const void* value
+);
 struct MutinyMockValue return_value();
 int bool_return_value();
 int return_bool_value_or_default(int default_value);
@@ -397,6 +416,8 @@ struct MutinyMockExpectedCall g_expected_call = {
   with_output_parameter_returning,
   with_output_parameter_of_type_returning,
   with_unmodified_output_parameter,
+  with_captured_parameter,
+  with_captured_parameter_of_type,
   ignore_other_parameters,
   and_return_bool_value,
   and_return_unsigned_int_value,
@@ -429,6 +450,8 @@ struct MutinyMockActualCall g_actual_call = {
   with_actual_parameter_of_type,
   with_actual_output_parameter,
   with_actual_output_parameter_of_type,
+  with_actual_captured_parameter,
+  with_actual_captured_parameter_of_type,
   has_return_value,
   return_value,
   bool_return_value,
@@ -617,6 +640,27 @@ struct MutinyMockExpectedCall* with_unmodified_output_parameter(
 )
 {
   expected_call = &expected_call->with_unmodified_output_parameter(name);
+  return &g_expected_call;
+}
+
+struct MutinyMockExpectedCall* with_captured_parameter(
+    const char* name,
+    void* value,
+    size_t size
+)
+{
+  expected_call = &expected_call->with_captured_parameter(name, value, size);
+  return &g_expected_call;
+}
+
+struct MutinyMockExpectedCall* with_captured_parameter_of_type(
+    const char* type,
+    const char* name,
+    void* value
+)
+{
+  expected_call =
+      &expected_call->with_captured_parameter_of_type(type, name, value);
   return &g_expected_call;
 }
 
@@ -949,6 +993,27 @@ struct MutinyMockActualCall* with_actual_output_parameter_of_type(
 {
   current_actual_call =
       &current_actual_call->with_output_parameter_of_type(type, name, value);
+  return &g_actual_call;
+}
+
+struct MutinyMockActualCall* with_actual_captured_parameter(
+    const char* name,
+    const void* value
+)
+{
+  current_actual_call =
+      &current_actual_call->with_captured_parameter(name, value);
+  return &g_actual_call;
+}
+
+struct MutinyMockActualCall* with_actual_captured_parameter_of_type(
+    const char* type,
+    const char* name,
+    const void* value
+)
+{
+  current_actual_call =
+      &current_actual_call->with_captured_parameter_of_type(type, name, value);
   return &g_actual_call;
 }
 

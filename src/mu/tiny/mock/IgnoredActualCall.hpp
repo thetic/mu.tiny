@@ -46,6 +46,21 @@ public:
   {
     return *this;
   }
+  ActualCall& with_captured_parameter(
+      StringView /*name*/,
+      const void* /*value*/
+  ) override
+  {
+    return *this;
+  }
+  ActualCall& with_captured_parameter_of_type(
+      StringView /*type_name*/,
+      StringView /*name*/,
+      const void* /*value*/
+  ) override
+  {
+    return *this;
+  }
 
   bool has_return_value() override { return false; }
   NamedValue return_value() override { return NamedValue(""); }
