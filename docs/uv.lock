@@ -574,14 +574,14 @@ wheels = [
 
 [[package]]
 name = "sphinxcontrib-moderncmakedomain"
-version = "3.29.0"
+version = "4.4.3"
 source = { registry = "https://pypi.org/simple" }
 dependencies = [
     { name = "sphinx" },
 ]
-sdist = { url = "https://files.pythonhosted.org/packages/e8/13/976a19b5b3d05189e57a8414eb433f571792318980f18dadc9cb1cde98a8/sphinxcontrib_moderncmakedomain-3.29.0.tar.gz", hash = "sha256:3587def241ff2577d0bbef11810a082e9dec1b78a3d4b4a066240b5f3dc1b5b2", size = 16489, upload-time = "2024-05-22T04:14:56.933Z" }
+sdist = { url = "https://files.pythonhosted.org/packages/cc/58/b0cff6e84bf35b6c77e02a167ba683db338196efe246667510c567ac4100/sphinxcontrib_moderncmakedomain-4.4.3.tar.gz", hash = "sha256:23f80188bb241a4da6886f9e4b204dc62bae76060a41aa597b90f04d277410a8", size = 19130, upload-time = "2026-10-07T16:21:08.488Z" }
 wheels = [
-    { url = "https://files.pythonhosted.org/packages/da/30/c5452a906ad513b0ae610351b96852187195af3deb023f686873a7c3e154/sphinxcontrib_moderncmakedomain-3.29.0-py3-none-any.whl", hash = "sha256:22385d9956e9565311eca41a09f26688312e4997a7366cb965fa610d1fd1436c", size = 13130, upload-time = "2024-05-22T04:14:55.392Z" },
+    { url = "https://files.pythonhosted.org/packages/10/a2/e2794214390cc83583602c5e17699fb294ef9949481495df3fc1cf67a9e2/sphinxcontrib_moderncmakedomain-4.4.3-py3-none-any.whl", hash = "sha256:7064acdcabf5548f4038a0cf2b2b34d734de863e96c673053c3aba44d3f0851e", size = 14889, upload-time = "2026-10-07T16:21:07.274Z" },
 ]
 
 [[package]]
