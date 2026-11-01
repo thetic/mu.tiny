@@ -418,7 +418,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v7
       - name: Install Cygwin
-        uses: cygwin/cygwin-install-action@v6
+        uses: cygwin/cygwin-install-action@v7
         with:
           packages: >
             cmake
