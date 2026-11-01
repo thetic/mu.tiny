@@ -86,9 +86,9 @@ Functions
 ---------
 
 
-- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a7e025e6bb54fadd02189d6e921a55f67`
-
 - :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a35b5a9e48ef7fbeb85c3c768e3e9b606`
+
+- :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a7e025e6bb54fadd02189d6e921a55f67`
 
 - :ref:`exhale_function_namespacemu_1_1tiny_1_1test_1a0f2089498afa5a1f2c5855f5b452554e`
 
