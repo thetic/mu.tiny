@@ -44,7 +44,7 @@ Override the methods you need:
      - Restore pointers, verify mock expectations
    * - :cpp:func:`parse_arguments() <mu::tiny::test::Plugin::parse_arguments>`
      - During argument parsing
-     - Inspect ``argv[0]``; activate plugin via a :option:`-p\<plugin\>` argument
+     - Inspect ``argv[0]``; activate plugin via a :option:`-p` argument
    * - :cpp:func:`get_help() <mu::tiny::test::Plugin::get_help>`
      - When :option:`-h` is printed
      - Show plugin's flag description
